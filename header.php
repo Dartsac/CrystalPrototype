@@ -15,7 +15,7 @@
   <script type="text/javascript">
     let mykey = config.MY_GOOGLE_KEY;
   </script>
-  <script async defer src= 'https://maps.googleapis.com/maps/api/js?key=' + mykey + 'libraries=places&callback=activatePlacesSearch'></script>
+  <script async defer src= `https://maps.googleapis.com/maps/api/js?key=${mykey}libraries=places&callback=activatePlacesSearch`></script>
   <script src="js/script.js"></script>
   <script type='text/javascript' src='config.js'></script>
   <!--<link rel="stylesheet" href="css/stars.css" type="text/css" /> -->

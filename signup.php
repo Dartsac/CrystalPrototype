@@ -1,89 +1,69 @@
 <?php
   include 'header.php';
+  require_once 'includes/astrology.inc.php';
+
+  $old = $_SESSION["signup_old"] ?? [];
+  unset($_SESSION["signup_old"]);
+  $birthValues = $old;
+
+  $signupErrors = [
+    "emptyinput" => "Fill in all fields.",
+    "invalidusername" => "Choose a proper username. No special characters.",
+    "invalidemail" => "Choose a proper email.",
+    "passwordnotmatch" => "Passwords did not match.",
+    "invaliddate" => "Choose a real birth date between " . ASTRO_MIN_YEAR . " and today.",
+    "invalidtime" => "Choose your birth time.",
+    "placenotfound" => "We couldn't find that city. Try picking it from the suggestions, or add the state or country.",
+    "usernametaken" => "This username is taken.",
+    "stmtfailed" => "Something went wrong, try again!",
+  ];
+  $error = $_GET["error"] ?? null;
+
+  $showSiteLinks = true;
+  include 'nav.php';
 ?>
-<section>
 
-  <header class="header" id="nav-bar">
-      <a href="index.php"><img src="img/logo.png" class="logo"/></a>
-      <div id="nav">
-        <a href="#mission" style="margin-left:25px; text-decoration: none; color: #112637;">OUR MISSION</a>
-        <a href="#about" style="margin-left:25px; text-decoration: none; color: #112637;">ABOUT US</a>
-        <a href="#contact" style="margin-left:25px; text-decoration: none; color: #112637;">CONTACT</a>
-        <?php
-          if (isset($_SESSION["username"])) {
-            echo "<a href='profile.php' style='margin-left:25px; text-decoration: none;color: #112637;'> PROFILE</a>";
-            echo "<a href='includes/logout.inc.php' style='margin-left:25px; text-decoration: none;font-weight: 600; color: #112637;'> LOG OUT</a>";
-          } else {
-            echo "<a href='login.php' style='margin-left:25px; text-decoration: none;font-weight: 600; color: #112637;'> LOG IN</a>";
-          }
-        ?>
-      </div>
-  </header>
-
-  <div class="Aligner">
-    <div class="Aligner-item">
-
-  <h2> Sign Up</h2>
-  <form action="includes/signup.inc.php" method="post">
-      <p style="text-align:center;">Set a display name</p>
-      <input type="text" placeholder="Display Name..." name="Display_Name">
-      <br>
-      <input type="email" placeholder="Email..." name="Email">
-      <br>
-      <input type="password" placeholder="Password..." name="Password">
-      <br>
-      <input type="password" placeholder="Re-Enter Password..." name="Password_Repeat">
-      <br><br>
-      <div class="user-data info">
-        <p style="text-align:center;"> I was born in</p>
-        <div style="">
-          <input required="" type="text" placeholder="a city" name="Birth_Place" id="place" value="">
+<main class="auth">
+  <div class="auth-art" aria-hidden="true">
+    <blockquote>Your guide starts with the sky at the minute you were born.</blockquote>
+  </div>
+  <div class="auth-form">
+    <section class="auth-card">
+      <h2>Sign Up</h2>
+      <p>Create your account and get your individualized guide.</p>
+      <?php if ($error !== null && isset($signupErrors[$error])) { ?>
+        <p class="form-error" role="alert"><?php echo htmlspecialchars($signupErrors[$error], ENT_QUOTES); ?></p>
+      <?php } ?>
+      <form action="includes/signup.inc.php" method="post">
+        <div class="field">
+          <label for="displayName">Display name</label>
+          <input type="text" name="Display_Name" id="displayName" autocomplete="username" value="<?php echo htmlspecialchars($old["Display_Name"] ?? "", ENT_QUOTES); ?>">
         </div>
-        <p style="text-align:center;">on</p>
-        <input required="" type="date" placeholder="yyyy-mm-dd" pattern="\d\d\d\d-\d\d-\d\d" min="1500-01-01" max="2500-12-31" name="Birth_Date" value="">
-        <p>at </p>
-        <input type="time" placeholder="hh:mm AM" pattern="(\d?\d):(\d\d)( (AM|PM|am|pm))?" name="Birth_Time" id="birthTime" value="">
-      </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" name="Email" id="email" autocomplete="email" value="<?php echo htmlspecialchars($old["Email"] ?? "", ENT_QUOTES); ?>">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" name="Password" id="password" autocomplete="new-password">
+          </div>
+          <div class="field">
+            <label for="passwordRepeat">Re-enter password</label>
+            <input type="password" name="Password_Repeat" id="passwordRepeat" autocomplete="new-password">
+          </div>
+        </div>
 
-      <br><br>
-      <button type="submit" name="Submit">Sign Up</button>
-  </form>
+        <p class="fieldset-title">Your birth</p>
+        <?php include 'birth-fields.php'; ?>
 
-  <p style="text-align:center;">Already have an account? </p>
-  <div style="text-align:center;">
-    <a href="login.php">Log in</a>
+        <button type="submit" name="Submit" class="btn btn-primary btn-block">Sign Up</button>
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="login.php">Log in</a></p>
+    </section>
   </div>
-
-  </div>
-</div>
-
-  <!-- here is where we will handle error messages -->
-  <?php
-    if(isset($_GET["error"])) {
-      if ($_GET["error"] == "emptyinput") {
-        echo "<p>Fill in all fields.</p>";
-      }
-      elseif ($_GET["error"] == "invalidusername") {
-        echo "<p>Choose a proper username. No special characters.</p>";
-      }
-      elseif ($_GET["error"] == "invalidemail") {
-        echo "<p>Choose a proper email</p>";
-      }
-      elseif ($_GET["error"] == "passwordnotmatch") {
-        echo "<p>Passwords did not match.</p>";
-      }
-      elseif ($_GET["error"] == "usernametaken") {
-        echo "<p>This username is taken.</p>";
-      }
-      elseif ($_GET["error"] == "stmtfailed") {
-        echo "<p>Something went wrong, try again!</p>";
-      }
-      elseif ($_GET["error"] == "none") {
-        echo "<p>You have successfuly signed up to Crystal!</p>";
-      }
-    }
-   ?>
-</section
+</main>
 
 <?php
   include 'footer.php';

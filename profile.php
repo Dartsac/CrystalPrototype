@@ -1,248 +1,119 @@
 <?php
+  require 'includes/current-user.inc.php';
+  require_once 'includes/guide.inc.php';
+  require_once 'includes/crystals.inc.php';
+
   include 'header.php';
+  include 'nav.php';
+
+  $guide = $chart ? buildGuide($chart, (int) $user["usersId"], $today) : null;
+  $featured = $guide ? array_slice(recommendCrystals($chart, $guide["monthly"]["element"]), 0, 3) : [];
+
+  $banner = userImage($user, "banner.gif", "img/site/mission-guide.jpg");
+  $photo = userImage($user, "profile.png", null);
+
+  // three different decorative pictures for the guide cards
+  $ran_num = range(1, 10);
+  shuffle($ran_num);
+  [$a, $b, $c] = array_slice($ran_num, 0, 3);
 ?>
-<!--
-$_SESSION["userid"] = $userNameExists["usersId"];
-$_SESSION["username"] = $userNameExists["usersName"];
-$_SESSION["user-day"] = $userNameExists["usersBirthDate"];
-$_SESSION["user-time"] = $userNameExists["usersBirthTime"];
-$_SESSION["user-place"] = $userNameExists["usersPlace"];
--->
-<header class="header" id="nav-bar">
-    <a href="index.php"><img src="img/logo.png" class="logo"/></a>
-    <div id="nav">
-      <?php
-        if (isset($_SESSION["username"])) {
-          echo "<a href='profile.php' style='margin-left:25px; text-decoration: none;color: #112637;'> PROFILE</a>";
-          echo "<a href='includes/logout.inc.php' style='margin-left:25px; text-decoration: none;font-weight: 600; color: #112637;'> LOG OUT</a>";
-        } else {
-          echo "<a href='login.php' style='margin-left:25px; text-decoration: none;font-weight: 600; color: #112637;'> LOG IN</a>";
-        }
-      ?>
-    </div>
-</header>
 
-<!--cover area -->
-  <div style="width: 80%; margin:auto;">
-    <div style="text-align: center; position: relative;" >
-      <a href='about.php' id="about-guide"> How we chose your guide.</a>
-
-      <?php
-      if (isset($_SESSION["username"])) {
-        echo "<img class='stars' src='img/" . $_SESSION["username"] .  "/banner.gif'style='width: 100%;'/>";
-      }
-      ?>
-
-      <img class="twinkling" src="img/twinkling.png" style="width:100%;"/>
-      <img class="clouds" src="img/clouds.png" style="width:100%;"/>
-    </div>
-    <div style="text-align: center; position: relative;" >
-      <?php
-      if (isset($_SESSION["username"])) {
-        echo "<img src='img/" . $_SESSION["username"] .  "/profile.png'style='width: 11.5vw; height: 11.5vw; object-fit: cover; margin-top: -250px; border-radius: 50%; border: solid 4px white;'/>";
-      }
-      ?>
-    </div>
+  <!--cover area -->
+  <div class="profile-hero" style="background-image: url('<?php echo e($banner); ?>');">
+    <a href="about.php" id="about-guide" class="btn btn-ghost">How we chose your guide</a>
   </div>
-  <?php
-  echo "<p style='text-align: center; font-size: 1vw;'> Hello there " . $_SESSION["username"] . "!</p>";
-  ?>
-  <br>
-  <br>
 
-  <!--Monthly Goal-->
+  <div class="profile-head container">
+    <?php if ($photo !== null) { ?>
+      <img class="profile-photo" src="<?php echo e($photo); ?>" alt="<?php echo e($user["usersName"]); ?>"/>
+    <?php } else { ?>
+      <div class="profile-photo profile-initial" aria-hidden="true"><?php echo e(strtoupper(substr($user["usersName"], 0, 1))); ?></div>
+    <?php } ?>
+    <h1>Hello there <?php echo e($user["usersName"]); ?>!</h1>
+    <?php if ($chart) { ?>
+      <div class="big-three">
+        <?php foreach (["Sun", "Moon", "Ascendant"] as $body) {
+          if (!isset($chart["placements"][$body])) continue; ?>
+          <span class="chip" title="<?php echo e($body); ?>"><span class="glyph" aria-hidden="true"><?php echo e(textGlyph(BODY_INFO[$body]["glyph"])); ?></span><?php echo e($body . " in " . $chart["placements"][$body]["sign"]); ?></span>
+        <?php } ?>
+      </div>
+    <?php } ?>
+  </div>
+
   <main class="container">
-    <?php
-    if ($_SESSION["username"] === "SirFawkes") {
-    ?>
-    <div class="daily-guide">
-        <h2> This Month's Goal </h2>
-        <h3> Build deeper relationships with friends. </h3>
-        <p class="last"> Friendship and has shown to make up 70% of a person’s happiness.
-            Having strong social relationships can have effects on your overall health,
-            including building a stronger immune system, and living a longer,
-            more fulfilling life.
-        </p>
-    </div>
-  <?php }elseif ($_SESSION["username"] === "andiebeca") {
-   ?>
-   <div class="daily-guide">
-       <h2> This Month's Goal </h2>
-       <h3> Build a meditation and/or reflection habit. </h3>
-       <p class="last"> Only do 5 minutes a day. Meditation is a great way to consciously and unconsciously get in touch with your spiritual self. By sitting in a comfortable position and focusing on your breath you can allow your mind to step away from the troubles of the physical world and drift into a realm of relaxation.
-       </p>
-   </div>
-       <?php }
-       ?>
 
-    <?php
-    $ran_num = range(1,10);
-    shuffle($ran_num);
-    $array = array_slice($ran_num, 0, 3);
-    $a = $ran_num[0];
-    $b = $ran_num[1];
-    $c = $ran_num[2];
-     ?>
-    <!-- first random picture -->
-    <div style="margin-top: 60px; margin-bottom: 10px;">
-          <div class="row">
-            <div class="col-2">
-              <?php
-              if (isset($_SESSION["username"])) {
-                echo "<img src='img/stock/" . $a .  ".png'style='width: 9.5vw; height: 9.5vw; object-fit: cover; border-radius: 50%; border: solid 4px #fff; margin-left: ".rand(1,14)."vw;'/>";
-              }
-               ?>
-            </div>
-          </div>
-    </div>
-  <!-- This Week's Plan -->
-  <?php
-  if ($_SESSION["username"] === "SirFawkes") {
-  ?>
-    <div class="daily-guide">
-        <h2> The Week's Plan </h2>
-        <h3> Listen up. </h3>
-        <p>
-          Leos love being in charge which can lead them to seem smothering to friends.
-          It is natural for you to dominate a convorsation.
-        </p>
-        <p class="last">
-          Focus this week on noticing when you have interupted someone, and let that person finish their sentence.
-          True listening requires a setting aside of oneself and sometimes that means setting aside your personal opinion.
-        </p>
+    <?php if (!$chart) { ?>
+      <div class="notice">
+        <p>We couldn't read your birth details, so we can't build your guide yet.
+          <a href="birth-details.php">Add your birth date, time, and city</a> to get started.</p>
+      </div>
+    <?php } elseif (!$chart["timeKnown"] || !$chart["placeKnown"]) { ?>
+      <div class="notice">
+        <p>Your guide is missing your <?php echo !$chart["timeKnown"] && !$chart["placeKnown"] ? "birth time and city" : (!$chart["timeKnown"] ? "birth time" : "birth city"); ?>,
+          so we can't place your Ascendant<?php echo $chart["placements"]["Moon"]["uncertain"] ? " or be sure of your Moon sign" : ""; ?>.
+          <a href="birth-details.php">Update your birth details</a> for a complete guide.</p>
+      </div>
+    <?php } ?>
+
+    <?php if ($guide) { $monthly = $guide["monthly"]; $weekly = $guide["weekly"]; $daily = $guide["daily"]; ?>
+    <div class="guide">
+
+      <!--Monthly Goal-->
+      <section class="card guide-card guide-card-wide">
+        <img class="guide-art" src="img/stock/<?php echo $a; ?>.png" alt="" />
+        <div>
+          <span class="eyebrow">This Month's Goal &middot; <?php echo e($today->format("F")); ?></span>
+          <h2><?php echo e($monthly["title"]); ?></h2>
+          <p><?php echo e($monthly["body"]); ?></p>
+          <p class="note"><?php echo e($monthly["why"]); ?></p>
+        </div>
+      </section>
+
+      <!-- This Week's Plan -->
+      <section class="card guide-card">
+        <img class="guide-art guide-art-small" src="img/stock/<?php echo $b; ?>.png" alt="" />
+        <div class="card-head">
+          <span class="eyebrow">The Week's Plan</span>
+          <h3><?php echo e($weekly["title"]); ?></h3>
+        </div>
+        <p class="note"><?php echo e($weekly["source"]); ?></p>
+        <p><?php echo e($weekly["insight"]); ?></p>
+        <p><?php echo e($weekly["practice"]); ?></p>
+      </section>
+
+      <!--daily guide-->
+      <section class="card guide-card">
+        <img class="guide-art guide-art-small" src="img/stock/<?php echo $c; ?>.png" alt="" />
+        <div class="card-head">
+          <span class="eyebrow">Today's Guide &middot; <?php echo e($today->format("l")); ?></span>
+          <h3><?php echo e($daily["body"] . " in " . $daily["sign"]); ?></h3>
+        </div>
+        <p class="note"><?php echo e($daily["moonText"]); ?></p>
+        <p><?php echo e($daily["text"]); ?></p>
+        <ul class="ideas" aria-label="Ideas">
+          <?php foreach ($daily["ideas"] as $idea) { ?><li><?php echo e($idea); ?></li><?php } ?>
+        </ul>
+      </section>
 
     </div>
-  <?php } elseif ($_SESSION["username"] === "andiebeca") {
-   ?>
-   <div class="daily-guide">
-       <h2> The Week's Plan </h2>
-       <h3> Let go. </h3>
-       <p>
-        It's not that Aquarians hold grudges, exactly, but they do remember a lot of disagreements and hurt feelings. Learn to let go!
-       </p>
-       <p class="last">
-         Notice when you are frustrated and remind yourself that it is just a feeling. Holding a grude can do damage to your presence of mind in the long run.
+    <?php } ?>
 
-       </p>
-       <?php }
-       ?>
-
-    <!-- second random picture -->
-    <div style="margin-top: 60px; margin-bottom: 10px;">
-          <div class="row">
-            <div class="col-2">
-              <?php
-              if (isset($_SESSION["username"])) {
-                echo "<img src='img/stock/" . $b .  ".png'style='width: 9.5vw; height: 9.5vw; object-fit: cover; border-radius: 50%; border: solid 4px #fff; margin-left: ".rand(31,44)."vw;'/>";
-              }
-               ?>
-            </div>
-          </div>
-    </div>
-
-  <!--daily guide-->
-  <?php
-  if ($_SESSION["username"] === "SirFawkes") {
-  ?>
-    <div class="daily-guide">
-        <h2> Today's Guide </h2>
-        <p> Your Mars is in libra. This means you are gifted by an ability to give without strings attached.
-          It’s not a fleeting attention, it’s your long-held cogenality. Today, use your ability to do a nice geasture
-          for a stranger.</p>
-        <h4> Ideas: </h4>
-        <p style="margin-top:0"> Pay for the person behind you in line.
-          <br>Offer up your seat.
-          <br>Volunteer.
-    </div>
-  <?php } elseif ($_SESSION["username"] === "andiebeca") {
-   ?>
-   <div class="daily-guide">
-       <h2> Today's Guide </h2>
-       <p> Your Uranus is in Aquarius. This means people in your generation are redefining nonconformity. You are full of brilliant ideas on how to make connections. For today, Don't let society pressure you to second-guess yourself.</p>
-       <h4> Ideas: </h4>
-       <p style="margin-top:0"> Notice when you had a great laugh with someone else and appreciate it.
-         <br>If you feel like hugging someone, do it.
-         <br> Ask that one person out.
-   </div>
-<?php }
-?>
-
-    <!-- third random picture -->
-    <div style="margin-top: 60px; margin-bottom: 10px;">
-          <div class="row">
-            <div class="col-2">
-              <?php
-              if (isset($_SESSION["username"])) {
-                echo "<img src='img/stock/" . $c .  ".png'style='width: 9.5vw; height: 9.5vw; object-fit: cover; border-radius: 50%; border: solid 4px #fff; margin-left: ".rand(16,29)."vw;'/>";
-              }
-               ?>
-            </div>
-          </div>
-    </div>
+    <?php if ($featured) { ?>
+    <!-- featured crystals -->
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">Featured Crystal Shop</span>
+        <h2>Crystals for you this month</h2>
+      </div>
+      <div class="product-grid product-grid-3">
+        <?php foreach ($featured as $item) { echo crystalCardHtml($item, false); } ?>
+      </div>
+      <div class="section-actions"><a class="btn btn-outline" href="shop.php">Visit your crystal shop</a></div>
+    </section>
+    <?php } ?>
 
   </main>
 
-
-  <!-- featured crytals -->
-  <div class="categories">
-    <div class="daily-guide">
-      <h2 class="title">Featured Crystal Shop</h2>
-      <div class="row" style="justify-content: center; padding: 40px 40px;">
-        <div class="col-3">
-          <?php
-          if (isset($_SESSION["username"])) {
-            echo "<img src='img/" . $_SESSION["username"] .  "/crystal1.png'/>";
-          }
-          if ($_SESSION["username"] === "SirFawkes") {
-            echo "<br>
-            <h4>Yellow Topaz</h4>
-            <p>for building joy. <br> $1".rand(4,9).".99</p>";
-          } elseif ($_SESSION["username"] === "andiebeca") {
-            echo "<br>
-            <h4>Selenite</h4>
-            <p>to help a meditator connect to a higher consciousness. <br> $1".rand(4,9).".99</p>";
-          }
-          ?>
-        </div>
-
-        <div class="col-3">
-          <?php
-          if (isset($_SESSION["username"])) {
-            echo "<img src='img/" . $_SESSION["username"] .  "/crystal2.png'/>";
-          }
-          if ($_SESSION["username"] === "SirFawkes") {
-            echo "<br>
-            <h4>Lapis Lazuli</h4>
-            <p>for communication and connection. <br> $1".rand(4,9).".99</p>";
-          } elseif ($_SESSION["username"] === "andiebeca") {
-            echo "<br>
-            <h4>Sodalite</h4>
-            <p>for order and calmness in mind. <br> $1".rand(4,9).".99</p>";
-          }
-          ?>
-        </div>
-
-        <div class="col-3">
-          <?php
-          if (isset($_SESSION["username"])) {
-            echo "<img src='img/" . $_SESSION["username"] .  "/crystal3.png'/>";
-          }
-          if ($_SESSION["username"] === "SirFawkes") {
-            echo "<br>
-            <h4>Peridot</h4>
-            <p>for celebrating friendship. <br> $1".rand(4,9).".99</p>";
-          }elseif ($_SESSION["username"] === "andiebeca") {
-            echo "<br>
-            <h4>Tiger’s Eye</h4>
-            <p>to find clarity in your intentions. <br> $1".rand(4,9).".99</p>";
-          }
-          ?>
-        </div>
-    </div>
-    </div>
-
-  </div>
-
-
-</body>
-</html>
+<?php
+  include 'footer.php';
+?>

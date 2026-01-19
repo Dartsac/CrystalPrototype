@@ -1,5 +1,7 @@
 # Crystal
 
+[![Tests](https://github.com/Dartsac/CrystalPrototype/actions/workflows/tests.yml/badge.svg)](https://github.com/Dartsac/CrystalPrototype/actions/workflows/tests.yml)
+
 Bringing you closer to yourself through spirituality. Crystal builds an
 astrological understanding of each user from the minute and place they were
 born, then turns it into an individualized spiritual guide and crystal shop.

@@ -352,12 +352,32 @@ function astroCuspNeighbor(float $longitude): ?string {
 }
 
 /*
+ * The earliest moment showing the same local clock time as $local. When the
+ * clocks go back, a local time happens twice and PHP picks one by a rule of
+ * its own; this always gives the first. Other moments are returned unchanged.
+ */
+function astroFirstOccurrence(DateTimeImmutable $local): DateTimeImmutable {
+	$clock = $local->format('Y-m-d H:i:s');
+	$clockAsUtc = (new DateTimeImmutable($clock, new DateTimeZone('UTC')))->getTimestamp();
+	$around = $local->getTimestamp();
+	$first = $local;
+	foreach ($local->getTimezone()->getTransitions($around - 86400, $around + 86400) ?: [] as $transition) {
+		$candidate = $local->setTimestamp($clockAsUtc - $transition['offset']);
+		if ($candidate < $first && $candidate->format('Y-m-d H:i:s') === $clock) $first = $candidate;
+	}
+	return $first;
+}
+
+/*
  * Build a natal chart.
  *
  * $birthDate  'YYYY-MM-DD'
  * $birthTime  'HH:MM' or 'HH:MM:SS' local time, or null when unknown
  * $lat/$lng   birth place coordinates, or null when unknown
  * $timezone   IANA zone of the birth place (e.g. 'America/New_York'), or null
+ *
+ * A birth time skipped when the clocks go forward moves forward by the gap;
+ * one repeated when they go back is read as its first occurrence.
  *
  * When the time or place is unknown the chart is computed for the middle of
  * the possible window, and any body whose sign could differ inside that
@@ -383,7 +403,7 @@ function astroBuildChart(string $birthDate, ?string $birthTime, ?float $lat, ?fl
 
 	try {
 		if ($timeKnown) {
-			$local = new DateTimeImmutable($birthDate . ' ' . $birthTime, $zone);
+			$local = astroFirstOccurrence(new DateTimeImmutable($birthDate . ' ' . $birthTime, $zone));
 			$start = $end = $local;
 		} else {
 			$start = new DateTimeImmutable($birthDate . ' 00:00:00', $zone);

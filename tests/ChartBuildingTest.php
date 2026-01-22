@@ -180,22 +180,37 @@ final class ChartBuildingTest extends TestCase {
 		$this->assertEquals(self::utc($expectedUtc), $chart['momentUtc']);
 	}
 
-	public static function daylightSavingChanges(): array {
+	public static function skippedTimes(): array {
 		return [
 			// Clocks went 02:00 → 03:00 EST→EDT. 02:30 doesn't exist and moves forward to 03:30 EDT (UTC−4).
-			'New York, skipped hour'  => ['2021-03-14', '02:30', 'America/New_York', '2021-03-14 07:30:00'],
-			// Clocks went 02:00 → 01:00 EDT→EST. 01:30 happens twice; the first, EDT (UTC−4), is used.
-			'New York, repeated hour' => ['2021-11-07', '01:30', 'America/New_York', '2021-11-07 05:30:00'],
+			'New York, skipped hour' => ['2021-03-14', '02:30', 'America/New_York', '2021-03-14 07:30:00'],
 			// Clocks went 02:00 → 03:00 AEST→AEDT. 02:30 doesn't exist and moves forward to 03:30 AEDT (UTC+11).
-			'Sydney, skipped hour'    => ['2021-10-03', '02:30', 'Australia/Sydney', '2021-10-02 16:30:00'],
-			// Clocks went 03:00 → 02:00 AEDT→AEST. 02:30 happens twice. Unlike New York, PHP uses the
-			// second occurrence, AEST (UTC+10); the first would be 15:30 UTC. Pinned as it behaves today.
-			'Sydney, repeated hour'   => ['2021-04-04', '02:30', 'Australia/Sydney', '2021-04-03 16:30:00'],
+			'Sydney, skipped hour'   => ['2021-10-03', '02:30', 'Australia/Sydney', '2021-10-02 16:30:00'],
 		];
 	}
 
-	#[DataProvider('daylightSavingChanges')]
-	public function testABirthTimeAtADaylightSavingChangeResolvesAsItDoesToday(string $date, string $time, string $zone, string $expectedUtc): void {
+	#[DataProvider('skippedTimes')]
+	public function testABirthTimeSkippedByADaylightSavingChangeMovesForward(string $date, string $time, string $zone, string $expectedUtc): void {
+		$chart = astroBuildChart($date, $time, self::LONDON_LAT, self::LONDON_LNG, $zone);
+
+		$this->assertEquals(self::utc($expectedUtc), $chart['momentUtc']);
+	}
+
+	public static function repeatedTimes(): array {
+		return [
+			// Clocks went 02:00 → 01:00 EDT→EST. 01:30 happens twice; the first, EDT (UTC−4), is used.
+			'New York, repeated hour' => ['2021-11-07', '01:30', 'America/New_York', '2021-11-07 05:30:00'],
+			// Clocks went 03:00 → 02:00 AEDT→AEST. 02:30 happens twice; the first, AEDT (UTC+11), is used.
+			'Sydney, repeated hour'   => ['2021-04-04', '02:30', 'Australia/Sydney', '2021-04-03 15:30:00'],
+			// Clocks went 02:00 → 01:00 BST→GMT. 01:30 happens twice; the first, BST (UTC+1), is used.
+			'London, repeated hour'   => ['2021-10-31', '01:30', 'Europe/London', '2021-10-31 00:30:00'],
+			// Clocks went 02:00 → 01:30 (UTC+11 → UTC+10:30). 01:45 happens twice; the first, UTC+11, is used.
+			'Lord Howe Island, repeated half hour' => ['2021-04-04', '01:45', 'Australia/Lord_Howe', '2021-04-03 14:45:00'],
+		];
+	}
+
+	#[DataProvider('repeatedTimes')]
+	public function testABirthTimeRepeatedByADaylightSavingChangeUsesTheFirstOccurrence(string $date, string $time, string $zone, string $expectedUtc): void {
 		$chart = astroBuildChart($date, $time, self::LONDON_LAT, self::LONDON_LNG, $zone);
 
 		$this->assertEquals(self::utc($expectedUtc), $chart['momentUtc']);

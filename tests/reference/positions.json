@@ -4,7 +4,7 @@
   "pyephem_version": "4.2.1",
   "tzdata_version": "2026f",
   "seed": 20251122,
-  "generated_at": "2026-11-22T19:58:01Z",
+  "generated_at": "2026-11-22T20:20:45Z",
   "longitudes": "apparent geocentric ecliptic longitude, true equinox of date, degrees",
   "ascendant_max_latitude": 60.0
  },
@@ -5190,6 +5190,526 @@
      "Neptune": 201.70476,
      "Pluto": 140.641161,
      "Ascendant": 109.615091
+    }
+   }
+  },
+  {
+   "name": "hand-picked: first supported day",
+   "input": {
+    "date": "1800-01-01",
+    "time": "00:00",
+    "timezone": "Europe/London",
+    "latitude": 51.5083,
+    "longitude": -0.1253
+   },
+   "expected": {
+    "utc": "1800-01-01T00:01:15Z",
+    "longitudes": {
+     "Sun": 280.430129,
+     "Moon": 348.477774,
+     "Mercury": 268.342737,
+     "Venus": 233.627962,
+     "Mars": 244.336289,
+     "Jupiter": 84.526519,
+     "Saturn": 128.798824,
+     "Uranus": 177.126785,
+     "Neptune": 226.620649,
+     "Pluto": 331.417488,
+     "Ascendant": 187.463083
+    }
+   }
+  },
+  {
+   "name": "hand-picked: first supported day",
+   "input": {
+    "date": "1800-01-01",
+    "time": "12:00",
+    "timezone": "Australia/Sydney",
+    "latitude": -33.8667,
+    "longitude": 151.2167
+   },
+   "expected": {
+    "utc": "1800-01-01T01:55:08Z",
+    "longitudes": {
+     "Sun": 280.510766,
+     "Moon": 349.46943,
+     "Mercury": 268.276402,
+     "Venus": 233.710627,
+     "Mars": 244.391196,
+     "Jupiter": 84.516571,
+     "Saturn": 128.79355,
+     "Uranus": 177.126812,
+     "Neptune": 226.622628,
+     "Pluto": 331.418994,
+     "Ascendant": 8.83991
+    }
+   }
+  },
+  {
+   "name": "hand-picked: last supported day",
+   "input": {
+    "date": "2050-12-31",
+    "time": "18:00",
+    "timezone": "America/Sao_Paulo",
+    "latitude": -23.5333,
+    "longitude": -46.6167
+   },
+   "expected": {
+    "utc": "2050-12-31T21:00:00Z",
+    "longitudes": {
+     "Sun": 280.370639,
+     "Moon": 143.280156,
+     "Mercury": 257.986198,
+     "Venus": 233.582723,
+     "Mars": 5.389892,
+     "Jupiter": 155.693947,
+     "Saturn": 307.772015,
+     "Uranus": 175.545095,
+     "Neptune": 55.900286,
+     "Pluto": 338.800774,
+     "Ascendant": 88.162834
+    }
+   }
+  },
+  {
+   "name": "hand-picked: last supported day",
+   "input": {
+    "date": "2050-12-31",
+    "time": "23:59",
+    "timezone": "Europe/London",
+    "latitude": 51.5083,
+    "longitude": -0.1253
+   },
+   "expected": {
+    "utc": "2050-12-31T23:59:00Z",
+    "longitudes": {
+     "Sun": 280.497294,
+     "Moon": 144.803982,
+     "Mercury": 258.117274,
+     "Venus": 233.712883,
+     "Mars": 5.469273,
+     "Jupiter": 155.689772,
+     "Saturn": 307.785783,
+     "Uranus": 175.544958,
+     "Neptune": 55.898008,
+     "Pluto": 338.802788,
+     "Ascendant": 187.21728
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Sun enters Aries, 10 s before",
+   "input": {
+    "date": "1820-03-20",
+    "time": "16:32:48",
+    "timezone": "Europe/Paris",
+    "latitude": 48.8667,
+    "longitude": 2.3333
+   },
+   "expected": {
+    "utc": "1820-03-20T16:23:27Z",
+    "longitudes": {
+     "Sun": 359.999886,
+     "Moon": 79.502939,
+     "Mercury": 17.513544,
+     "Venus": 37.607717,
+     "Mars": 109.791809,
+     "Jupiter": 336.955827,
+     "Saturn": 3.093526,
+     "Uranus": 268.767639,
+     "Neptune": 270.832997,
+     "Pluto": 357.161972,
+     "Ascendant": 162.769842
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Sun enters Aries, 10 s after",
+   "input": {
+    "date": "1820-03-20",
+    "time": "16:33:08",
+    "timezone": "Europe/Paris",
+    "latitude": 48.8667,
+    "longitude": 2.3333
+   },
+   "expected": {
+    "utc": "1820-03-20T16:23:47Z",
+    "longitudes": {
+     "Sun": 0.000116,
+     "Moon": 79.505886,
+     "Mercury": 17.513882,
+     "Venus": 37.607991,
+     "Mars": 109.791866,
+     "Jupiter": 336.95588,
+     "Saturn": 3.093555,
+     "Uranus": 268.767642,
+     "Neptune": 270.832998,
+     "Pluto": 357.161978,
+     "Ascendant": 162.830433
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Sun enters Cancer, 10 s before",
+   "input": {
+    "date": "2045-06-21",
+    "time": "07:33:25",
+    "timezone": "Asia/Tokyo",
+    "latitude": 35.6544,
+    "longitude": 139.7447
+   },
+   "expected": {
+    "utc": "2045-06-20T22:33:25Z",
+    "longitudes": {
+     "Sun": 89.99989,
+     "Moon": 169.248554,
+     "Mercury": 113.821841,
+     "Venus": 114.356145,
+     "Mars": 77.775329,
+     "Jupiter": 342.14307,
+     "Saturn": 246.893273,
+     "Uranus": 143.910525,
+     "Neptune": 46.180017,
+     "Pluto": 334.01186,
+     "Ascendant": 128.749531
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Sun enters Cancer, 10 s after",
+   "input": {
+    "date": "2045-06-21",
+    "time": "07:33:45",
+    "timezone": "Asia/Tokyo",
+    "latitude": 35.6544,
+    "longitude": 139.7447
+   },
+   "expected": {
+    "utc": "2045-06-20T22:33:45Z",
+    "longitudes": {
+     "Sun": 90.000111,
+     "Moon": 169.251802,
+     "Mercury": 113.822156,
+     "Venus": 114.356426,
+     "Mars": 77.775489,
+     "Jupiter": 342.143078,
+     "Saturn": 246.893258,
+     "Uranus": 143.910535,
+     "Neptune": 46.180024,
+     "Pluto": 334.011858,
+     "Ascendant": 128.817524
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Moon enters Aries, 10 s before",
+   "input": {
+    "date": "1955-01-01",
+    "time": "02:55:50",
+    "timezone": "Africa/Lagos",
+    "latitude": 6.45,
+    "longitude": 3.4
+   },
+   "expected": {
+    "utc": "1955-01-01T01:55:50Z",
+    "longitudes": {
+     "Sun": 279.87583,
+     "Moon": 359.998399,
+     "Mercury": 283.73761,
+     "Venus": 235.896817,
+     "Mars": 349.869057,
+     "Jupiter": 116.840432,
+     "Saturn": 228.348066,
+     "Uranus": 116.325726,
+     "Neptune": 208.005728,
+     "Pluto": 146.537802,
+     "Ascendant": 222.937187
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Moon enters Aries, 10 s after",
+   "input": {
+    "date": "1955-01-01",
+    "time": "02:56:10",
+    "timezone": "Africa/Lagos",
+    "latitude": 6.45,
+    "longitude": 3.4
+   },
+   "expected": {
+    "utc": "1955-01-01T01:56:10Z",
+    "longitudes": {
+     "Sun": 279.876066,
+     "Moon": 0.001569,
+     "Mercury": 283.737985,
+     "Venus": 235.89699,
+     "Mars": 349.869224,
+     "Jupiter": 116.840404,
+     "Saturn": 228.348086,
+     "Uranus": 116.325717,
+     "Neptune": 208.005731,
+     "Pluto": 146.537799,
+     "Ascendant": 223.018534
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Moon enters Scorpio, 10 s before",
+   "input": {
+    "date": "2031-01-16",
+    "time": "16:31:29",
+    "timezone": "America/Sao_Paulo",
+    "latitude": -23.5333,
+    "longitude": -46.6167
+   },
+   "expected": {
+    "utc": "2031-01-16T19:31:29Z",
+    "longitudes": {
+     "Sun": 296.466632,
+     "Moon": 209.998487,
+     "Mercury": 276.172838,
+     "Venus": 317.829688,
+     "Mars": 210.41634,
+     "Jupiter": 258.658313,
+     "Saturn": 62.243471,
+     "Uranus": 79.500648,
+     "Neptune": 10.768613,
+     "Pluto": 311.178527,
+     "Ascendant": 82.226078
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Moon enters Scorpio, 10 s after",
+   "input": {
+    "date": "2031-01-16",
+    "time": "16:31:49",
+    "timezone": "America/Sao_Paulo",
+    "latitude": -23.5333,
+    "longitude": -46.6167
+   },
+   "expected": {
+    "utc": "2031-01-16T19:31:49Z",
+    "longitudes": {
+     "Sun": 296.466868,
+     "Moon": 210.001645,
+     "Mercury": 276.173157,
+     "Venus": 317.829976,
+     "Mars": 210.416451,
+     "Jupiter": 258.658359,
+     "Saturn": 62.243464,
+     "Uranus": 79.500641,
+     "Neptune": 10.768616,
+     "Pluto": 311.178534,
+     "Ascendant": 82.300902
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Ascendant enters Aries, 10 s before",
+   "input": {
+    "date": "1890-05-10",
+    "time": "02:48:40",
+    "timezone": "Europe/Tallinn",
+    "latitude": 59.4167,
+    "longitude": 24.75
+   },
+   "expected": {
+    "utc": "1890-05-10T01:09:40Z",
+    "longitudes": {
+     "Sun": 49.306471,
+     "Moon": 297.662914,
+     "Mercury": 69.981485,
+     "Venus": 69.587392,
+     "Mars": 251.50619,
+     "Jupiter": 311.482998,
+     "Saturn": 147.12813,
+     "Uranus": 203.647981,
+     "Neptune": 63.676022,
+     "Pluto": 65.999592,
+     "Ascendant": 359.827529
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Ascendant enters Aries, 10 s after",
+   "input": {
+    "date": "1890-05-10",
+    "time": "02:49",
+    "timezone": "Europe/Tallinn",
+    "latitude": 59.4167,
+    "longitude": 24.75
+   },
+   "expected": {
+    "utc": "1890-05-10T01:10:00Z",
+    "longitudes": {
+     "Sun": 49.306694,
+     "Moon": 297.66622,
+     "Mercury": 69.981645,
+     "Venus": 69.587675,
+     "Mars": 251.506142,
+     "Jupiter": 311.483013,
+     "Saturn": 147.128135,
+     "Uranus": 203.647973,
+     "Neptune": 63.676031,
+     "Pluto": 65.999597,
+     "Ascendant": 0.170079
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Ascendant enters Libra, 10 s before",
+   "input": {
+    "date": "2012-08-02",
+    "time": "09:11:07",
+    "timezone": "Australia/Sydney",
+    "latitude": -33.8667,
+    "longitude": 151.2167
+   },
+   "expected": {
+    "utc": "2012-08-01T23:11:07Z",
+    "longitudes": {
+     "Sun": 130.081159,
+     "Moon": 307.76441,
+     "Mercury": 123.372333,
+     "Venus": 85.165213,
+     "Mars": 196.593129,
+     "Jupiter": 70.434029,
+     "Saturn": 203.906294,
+     "Uranus": 8.388891,
+     "Neptune": 332.342226,
+     "Pluto": 277.473042,
+     "Ascendant": 179.931491
+    }
+   }
+  },
+  {
+   "name": "hand-picked: Ascendant enters Libra, 10 s after",
+   "input": {
+    "date": "2012-08-02",
+    "time": "09:11:27",
+    "timezone": "Australia/Sydney",
+    "latitude": -33.8667,
+    "longitude": 151.2167
+   },
+   "expected": {
+    "utc": "2012-08-01T23:11:27Z",
+    "longitudes": {
+     "Sun": 130.08138,
+     "Moon": 307.76765,
+     "Mercury": 123.3722,
+     "Venus": 85.165406,
+     "Mars": 196.593267,
+     "Jupiter": 70.434068,
+     "Saturn": 203.906307,
+     "Uranus": 8.388887,
+     "Neptune": 332.34222,
+     "Pluto": 277.473037,
+     "Ascendant": 180.059934
+    }
+   }
+  },
+  {
+   "name": "hand-picked: daylight saving, skipped hour",
+   "input": {
+    "date": "1995-04-02",
+    "time": "02:30",
+    "timezone": "America/New_York",
+    "latitude": 40.7142,
+    "longitude": -74.0064
+   },
+   "expected": {
+    "utc": "1995-04-02T07:30:00Z",
+    "longitudes": {
+     "Sun": 12.098314,
+     "Moon": 37.374328,
+     "Mercury": 0.000884,
+     "Venus": 336.106015,
+     "Mars": 133.601209,
+     "Jupiter": 255.38246,
+     "Saturn": 348.296384,
+     "Uranus": 300.021979,
+     "Neptune": 295.369823,
+     "Pluto": 240.367006,
+     "Ascendant": 297.70104
+    }
+   }
+  },
+  {
+   "name": "hand-picked: daylight saving, repeated hour",
+   "input": {
+    "date": "1995-10-29",
+    "time": "01:30",
+    "timezone": "America/New_York",
+    "latitude": 40.7142,
+    "longitude": -74.0064
+   },
+   "expected": {
+    "utc": "1995-10-29T05:30:00Z",
+    "longitudes": {
+     "Sun": 215.319493,
+     "Moon": 283.417678,
+     "Mercury": 200.150957,
+     "Venus": 233.528958,
+     "Mars": 246.013125,
+     "Jupiter": 255.464627,
+     "Saturn": 348.47603,
+     "Uranus": 296.744654,
+     "Neptune": 292.935607,
+     "Pluto": 239.51973,
+     "Ascendant": 144.943758
+    }
+   }
+  },
+  {
+   "name": "hand-picked: daylight saving, skipped hour",
+   "input": {
+    "date": "2008-10-05",
+    "time": "02:30",
+    "timezone": "Australia/Sydney",
+    "latitude": -33.8667,
+    "longitude": 151.2167
+   },
+   "expected": {
+    "utc": "2008-10-04T16:30:00Z",
+    "longitudes": {
+     "Sun": 191.817376,
+     "Moon": 252.573262,
+     "Mercury": 196.501358,
+     "Venus": 222.883391,
+     "Mars": 210.336076,
+     "Jupiter": 283.634095,
+     "Saturn": 165.690742,
+     "Uranus": 349.837834,
+     "Neptune": 321.690544,
+     "Pluto": 268.665801,
+     "Ascendant": 127.071184
+    }
+   }
+  },
+  {
+   "name": "hand-picked: daylight saving, repeated hour",
+   "input": {
+    "date": "2008-04-06",
+    "time": "02:30",
+    "timezone": "Australia/Sydney",
+    "latitude": -33.8667,
+    "longitude": 151.2167
+   },
+   "expected": {
+    "utc": "2008-04-05T15:30:00Z",
+    "longitudes": {
+     "Sun": 16.220303,
+     "Moon": 9.113375,
+     "Mercury": 5.363628,
+     "Venus": 359.275193,
+     "Mars": 102.825223,
+     "Jupiter": 290.6199,
+     "Saturn": 152.330487,
+     "Uranus": 350.193321,
+     "Neptune": 323.565573,
+     "Pluto": 271.144692,
+     "Ascendant": 316.567076
     }
    }
   }

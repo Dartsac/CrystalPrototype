@@ -39,6 +39,12 @@ Places and time zones. Each case is a zone from tzdata's zone1970.tab at the
 coordinates of its principal city. Those zones are canonical, so their
 history doesn't depend on whether a time zone database includes backzone.
 Local times inside a daylight-saving gap or overlap are redrawn.
+
+Hand-picked cases. After the random cases come cases named "hand-picked: ..."
+where errors matter most: the first and last supported days, moments just
+before and just after a Sign change for the Sun, the Moon and the Ascendant,
+and birth times skipped or repeated at a daylight-saving change, in New York
+and Sydney. Their expected UTC moments follow Crystal's rule; see DST_CASES.
 """
 
 import json
@@ -57,6 +63,41 @@ CASE_COUNT = 200
 FIRST_DAY = date(1800, 1, 1)
 LAST_DAY = date(2050, 12, 31)
 ASCENDANT_MAX_LATITUDE = 60.0
+SIGNS = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
+         "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
+
+# (label, zone, local date and time) on the first and last supported days.
+RANGE_END_CASES = [
+    ("first supported day", "Europe/London", "1800-01-01 00:00"),
+    ("first supported day", "Australia/Sydney", "1800-01-01 12:00"),
+    ("last supported day", "America/Sao_Paulo", "2050-12-31 18:00"),
+    ("last supported day", "Europe/London", "2050-12-31 23:59"),
+]
+
+# (Body, Sign it enters, zone, UTC moment to search forward from). Each gives a
+# case SIGN_CHANGE_OFFSET before and one after the moment the Reference
+# ephemeris puts the Body on the Sign boundary. Ascendant zones are within ±60°.
+SIGN_CHANGE_CASES = [
+    ("Sun", "Aries", "Europe/Paris", "1820-03-01 00:00"),
+    ("Sun", "Cancer", "Asia/Tokyo", "2045-06-01 00:00"),
+    ("Moon", "Aries", "Africa/Lagos", "1955-01-01 00:00"),
+    ("Moon", "Scorpio", "America/Sao_Paulo", "2031-01-01 00:00"),
+    ("Ascendant", "Aries", "Europe/Tallinn", "1890-05-10 00:00"),
+    ("Ascendant", "Libra", "Australia/Sydney", "2012-08-01 12:00"),
+]
+SIGN_CHANGE_OFFSET = timedelta(seconds=10)
+SIGN_CHANGE_STEP = {"Sun": timedelta(days=1), "Moon": timedelta(hours=1), "Ascendant": timedelta(minutes=1)}
+
+# (label, zone, local date and time) for a birth time skipped or repeated at a
+# daylight-saving change. Crystal moves a skipped time forward by the gap and
+# reads a repeated time as its first occurrence, as Python's default fold=0 does.
+DST_CASES = [
+    ("skipped hour", "America/New_York", "1995-04-02 02:30"),
+    ("repeated hour", "America/New_York", "1995-10-29 01:30"),
+    ("skipped hour", "Australia/Sydney", "2008-10-05 02:30"),
+    ("repeated hour", "Australia/Sydney", "2008-04-06 02:30"),
+]
+
 OUTPUT = Path(__file__).with_name("positions.json")
 
 EPHEMERIS_BODIES = {
@@ -168,7 +209,7 @@ def zone1970_places():
         sign = -1 if text[0] == "-" else 1
         digits = text[1:]
         d, m, s = int(digits[:width]), int(digits[width:width + 2]), int(digits[width + 2:] or 0)
-        return sign * (d + m / 60 + s / 3600)
+        return round(sign * (d + m / 60 + s / 3600), 4)
 
     places = []
     table = resources.files("tzdata.zoneinfo").joinpath("zone1970.tab").read_text()
@@ -181,6 +222,17 @@ def zone1970_places():
     return sorted(places)
 
 
+def to_utc(local, zone):
+    """UTC moment of a local time; one skipped or repeated at a daylight-saving change uses fold=0."""
+    return local.replace(tzinfo=zoneinfo.ZoneInfo(zone)).astimezone(timezone.utc)
+
+
+def is_gap_or_overlap(local, zone):
+    """Whether a local time falls in a daylight-saving gap or overlap."""
+    tz = zoneinfo.ZoneInfo(zone)
+    return local.replace(tzinfo=tz, fold=0).utcoffset() != local.replace(tzinfo=tz, fold=1).utcoffset()
+
+
 def random_case(rng, places):
     """A birth at a real place and a local time that exists exactly once."""
     while True:
@@ -188,14 +240,81 @@ def random_case(rng, places):
         day = FIRST_DAY + timedelta(days=rng.randrange((LAST_DAY - FIRST_DAY).days + 1))
         local = datetime(day.year, day.month, day.day, *divmod(rng.randrange(24 * 60), 60))
 
-        tz = zoneinfo.ZoneInfo(zone)
-        first, second = local.replace(tzinfo=tz, fold=0), local.replace(tzinfo=tz, fold=1)
-        if first.utcoffset() != second.utcoffset():
-            continue  # in a daylight-saving gap or overlap
-        utc = first.astimezone(timezone.utc)
+        if is_gap_or_overlap(local, zone):
+            continue
+        utc = to_utc(local, zone)
         if not FIRST_DAY.year <= utc.year <= LAST_DAY.year:
             continue
-        return zone, round(latitude, 4), round(longitude, 4), local, utc
+        return zone, latitude, longitude, local, utc
+
+
+def reference_longitude(body, utc, latitude, longitude):
+    moment = ephem.Date(utc.replace(tzinfo=None))
+    if body == "Ascendant":
+        return ascendant(moment, latitude, longitude)
+    return body_longitude(body, moment)
+
+
+def sign_of(longitude):
+    return SIGNS[int(longitude // 30.0) % 12]
+
+
+def sign_change(body, sign, latitude, longitude, search_from):
+    """First UTC moment (to the second) after search_from that body is in sign."""
+    def in_sign(utc):
+        return sign_of(reference_longitude(body, utc, latitude, longitude)) == sign
+
+    before = search_from
+    if in_sign(before):
+        raise SystemExit(f"{body} is already in {sign} at {search_from}")
+    while not in_sign(before + SIGN_CHANGE_STEP[body]):
+        before += SIGN_CHANGE_STEP[body]
+    after = before + SIGN_CHANGE_STEP[body]
+    while after - before > timedelta(seconds=1):
+        middle = before + (after - before) / 2
+        before, after = (before, middle) if in_sign(middle) else (middle, after)
+    return after.replace(microsecond=0)
+
+
+def hand_picked_cases(places):
+    """Cases at the range ends, either side of Sign changes, and at daylight-saving changes."""
+    place = {zone: (latitude, longitude) for zone, latitude, longitude in places}
+    cases = []
+
+    for label, zone, text in RANGE_END_CASES:
+        local = datetime.fromisoformat(text)
+        if is_gap_or_overlap(local, zone):
+            raise SystemExit(f"{label} {zone} {text} is at a daylight-saving change")
+        utc = to_utc(local, zone)
+        if not FIRST_DAY <= utc.date() <= LAST_DAY:
+            raise SystemExit(f"{label} {zone} {text} is {utc} UTC, outside the supported range")
+        cases.append(build_case(f"hand-picked: {label}", zone, *place[zone], local, utc))
+
+    for body, sign, zone, text in SIGN_CHANGE_CASES:
+        latitude, longitude = place[zone]
+        if body == "Ascendant" and abs(latitude) > ASCENDANT_MAX_LATITUDE:
+            raise SystemExit(f"{zone} is beyond the Ascendant's latitude limit")
+        boundary = sign_change(body, sign, latitude, longitude,
+                               datetime.fromisoformat(text).replace(tzinfo=timezone.utc))
+        previous = SIGNS[SIGNS.index(sign) - 1]
+        for when, utc, expected_sign in (("before", boundary - SIGN_CHANGE_OFFSET, previous),
+                                         ("after", boundary + SIGN_CHANGE_OFFSET, sign)):
+            if sign_of(reference_longitude(body, utc, latitude, longitude)) != expected_sign:
+                raise SystemExit(f"{body} is not in {expected_sign} {when} entering {sign} at {utc}")
+            local = utc.astimezone(zoneinfo.ZoneInfo(zone)).replace(tzinfo=None)
+            if is_gap_or_overlap(local, zone):
+                raise SystemExit(f"{body} enters {sign} at a daylight-saving change in {zone}")
+            name = f"hand-picked: {body} enters {sign}, {SIGN_CHANGE_OFFSET.seconds} s {when}"
+            cases.append(build_case(name, zone, latitude, longitude, local, utc))
+
+    for label, zone, text in DST_CASES:
+        local = datetime.fromisoformat(text)
+        if not is_gap_or_overlap(local, zone):
+            raise SystemExit(f"{zone} {text} is not at a daylight-saving change")
+        utc = to_utc(local, zone)
+        cases.append(build_case(f"hand-picked: daylight saving, {label}", zone, *place[zone], local, utc))
+
+    return cases
 
 
 def build_case(name, zone, latitude, longitude, local, utc):
@@ -207,7 +326,7 @@ def build_case(name, zone, latitude, longitude, local, utc):
         "name": name,
         "input": {
             "date": local.strftime("%Y-%m-%d"),
-            "time": local.strftime("%H:%M"),
+            "time": local.strftime("%H:%M:%S" if local.second else "%H:%M"),
             "timezone": zone,
             "latitude": latitude,
             "longitude": longitude,
@@ -225,6 +344,7 @@ def main():
     rng = random.Random(SEED)
     places = zone1970_places()
     cases = [build_case(f"random {i:03d}", *random_case(rng, places)) for i in range(1, CASE_COUNT + 1)]
+    cases += hand_picked_cases(places)
 
     fixture = {
         "metadata": {

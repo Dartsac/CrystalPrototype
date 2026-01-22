@@ -1,0 +1,5197 @@
+{
+ "metadata": {
+  "generator": "tests/reference/generate_positions.py",
+  "pyephem_version": "4.2.1",
+  "tzdata_version": "2026f",
+  "seed": 20251122,
+  "generated_at": "2026-11-22T19:58:01Z",
+  "longitudes": "apparent geocentric ecliptic longitude, true equinox of date, degrees",
+  "ascendant_max_latitude": 60.0
+ },
+ "cases": [
+  {
+   "name": "random 001",
+   "input": {
+    "date": "1938-12-23",
+    "time": "08:54",
+    "timezone": "Africa/Sao_Tome",
+    "latitude": 0.3333,
+    "longitude": 6.7333
+   },
+   "expected": {
+    "utc": "1938-12-23T08:54:00Z",
+    "longitudes": {
+     "Sun": 270.878004,
+     "Moon": 288.574125,
+     "Mercury": 253.568604,
+     "Venus": 232.514692,
+     "Mars": 217.121185,
+     "Jupiter": 328.815948,
+     "Saturn": 11.294793,
+     "Uranus": 44.21698,
+     "Neptune": 173.33437,
+     "Pluto": 120.991856,
+     "Ascendant": 318.95798
+    }
+   }
+  },
+  {
+   "name": "random 002",
+   "input": {
+    "date": "1922-12-26",
+    "time": "09:35",
+    "timezone": "America/Chihuahua",
+    "latitude": 28.6333,
+    "longitude": -106.0833
+   },
+   "expected": {
+    "utc": "1922-12-26T16:35:00Z",
+    "longitudes": {
+     "Sun": 274.145467,
+     "Moon": 8.949049,
+     "Mercury": 285.406973,
+     "Venus": 236.775443,
+     "Mars": 341.12249,
+     "Jupiter": 222.328225,
+     "Saturn": 199.093821,
+     "Uranus": 340.249226,
+     "Neptune": 137.841523,
+     "Pluto": 100.27923,
+     "Ascendant": 315.461314
+    }
+   }
+  },
+  {
+   "name": "random 003",
+   "input": {
+    "date": "2005-07-21",
+    "time": "11:36",
+    "timezone": "Europe/Vienna",
+    "latitude": 48.2167,
+    "longitude": 16.3333
+   },
+   "expected": {
+    "utc": "2005-07-21T09:36:00Z",
+    "longitudes": {
+     "Sun": 118.724346,
+     "Moon": 297.884308,
+     "Mercury": 140.347638,
+     "Venus": 148.022457,
+     "Mars": 25.928013,
+     "Jupiter": 191.905178,
+     "Saturn": 120.629684,
+     "Uranus": 340.257999,
+     "Neptune": 316.690953,
+     "Pluto": 262.278592,
+     "Ascendant": 187.033872
+    }
+   }
+  },
+  {
+   "name": "random 004",
+   "input": {
+    "date": "1911-09-27",
+    "time": "11:47",
+    "timezone": "Asia/Tehran",
+    "latitude": 35.6667,
+    "longitude": 51.4333
+   },
+   "expected": {
+    "utc": "1911-09-27T08:21:16Z",
+    "longitudes": {
+     "Sun": 183.107972,
+     "Moon": 238.994515,
+     "Mercury": 165.475873,
+     "Venus": 165.192253,
+     "Mars": 67.988067,
+     "Jupiter": 224.129225,
+     "Saturn": 49.700483,
+     "Uranus": 295.435062,
+     "Neptune": 113.533466,
+     "Pluto": 89.006243,
+     "Ascendant": 255.554551
+    }
+   }
+  },
+  {
+   "name": "random 005",
+   "input": {
+    "date": "1905-05-02",
+    "time": "09:13",
+    "timezone": "Asia/Macau",
+    "latitude": 22.1972,
+    "longitude": 113.5417
+   },
+   "expected": {
+    "utc": "1905-05-02T01:13:00Z",
+    "longitudes": {
+     "Sun": 40.961081,
+     "Moon": 12.366527,
+     "Mercury": 28.24448,
+     "Venus": 33.601889,
+     "Mars": 229.907893,
+     "Jupiter": 42.577881,
+     "Saturn": 331.447275,
+     "Uranus": 274.017039,
+     "Neptune": 95.944714,
+     "Pluto": 80.284707,
+     "Ascendant": 91.165722
+    }
+   }
+  },
+  {
+   "name": "random 006",
+   "input": {
+    "date": "1964-07-16",
+    "time": "16:04",
+    "timezone": "Pacific/Fakaofo",
+    "latitude": -9.3667,
+    "longitude": -171.2333
+   },
+   "expected": {
+    "utc": "1964-07-17T03:04:00Z",
+    "longitudes": {
+     "Sun": 114.560221,
+     "Moon": 211.80089,
+     "Mercury": 134.514098,
+     "Venus": 80.933581,
+     "Mars": 80.751246,
+     "Jupiter": 50.818784,
+     "Saturn": 334.231893,
+     "Uranus": 157.652851,
+     "Neptune": 225.087736,
+     "Pluto": 162.338832,
+     "Ascendant": 264.322344
+    }
+   }
+  },
+  {
+   "name": "random 007",
+   "input": {
+    "date": "1882-09-17",
+    "time": "01:08",
+    "timezone": "Pacific/Guadalcanal",
+    "latitude": -9.5333,
+    "longitude": 160.2
+   },
+   "expected": {
+    "utc": "1882-09-16T14:28:12Z",
+    "longitudes": {
+     "Sun": 173.595406,
+     "Moon": 217.95961,
+     "Mercury": 196.839335,
+     "Venus": 219.800017,
+     "Mars": 198.895759,
+     "Jupiter": 89.671695,
+     "Saturn": 56.109573,
+     "Uranus": 169.258233,
+     "Neptune": 48.670426,
+     "Pluto": 60.215554,
+     "Ascendant": 97.85401
+    }
+   }
+  },
+  {
+   "name": "random 008",
+   "input": {
+    "date": "1914-12-19",
+    "time": "17:40",
+    "timezone": "Indian/Mauritius",
+    "latitude": -20.1667,
+    "longitude": 57.5
+   },
+   "expected": {
+    "utc": "1914-12-19T13:40:00Z",
+    "longitudes": {
+     "Sun": 266.828982,
+     "Moon": 299.928979,
+     "Mercury": 257.284031,
+     "Venus": 237.014329,
+     "Mars": 268.04982,
+     "Jupiter": 319.911428,
+     "Saturn": 89.006189,
+     "Uranus": 309.243485,
+     "Neptune": 119.897656,
+     "Pluto": 91.277705,
+     "Ascendant": 72.598486
+    }
+   }
+  },
+  {
+   "name": "random 009",
+   "input": {
+    "date": "2042-11-08",
+    "time": "12:07",
+    "timezone": "Africa/Johannesburg",
+    "latitude": -26.25,
+    "longitude": 28.0
+   },
+   "expected": {
+    "utc": "2042-11-08T10:07:00Z",
+    "longitudes": {
+     "Sun": 226.12912,
+     "Moon": 178.220748,
+     "Mercury": 229.250668,
+     "Venus": 198.088594,
+     "Mars": 251.528495,
+     "Jupiter": 247.03214,
+     "Saturn": 220.191763,
+     "Uranus": 137.35363,
+     "Neptune": 38.738808,
+     "Pluto": 327.659432,
+     "Ascendant": 322.23813
+    }
+   }
+  },
+  {
+   "name": "random 010",
+   "input": {
+    "date": "1945-12-04",
+    "time": "06:42",
+    "timezone": "Europe/London",
+    "latitude": 51.5083,
+    "longitude": -0.1253
+   },
+   "expected": {
+    "utc": "1945-12-04T06:42:00Z",
+    "longitudes": {
+     "Sun": 251.765934,
+     "Moon": 246.559132,
+     "Mercury": 259.085422,
+     "Venus": 237.556678,
+     "Mars": 123.226404,
+     "Jupiter": 200.751175,
+     "Saturn": 114.200141,
+     "Uranus": 75.576016,
+     "Neptune": 188.237422,
+     "Pluto": 131.705117,
+     "Ascendant": 238.401324
+    }
+   }
+  },
+  {
+   "name": "random 011",
+   "input": {
+    "date": "1908-02-04",
+    "time": "02:57",
+    "timezone": "America/Indiana/Winamac",
+    "latitude": 41.0514,
+    "longitude": -86.6031
+   },
+   "expected": {
+    "utc": "1908-02-04T08:57:00Z",
+    "longitudes": {
+     "Sun": 314.161683,
+     "Moon": 342.569571,
+     "Mercury": 328.662841,
+     "Venus": 348.154614,
+     "Mars": 16.952055,
+     "Jupiter": 127.873624,
+     "Saturn": 354.802411,
+     "Uranus": 284.594325,
+     "Neptune": 102.682615,
+     "Pluto": 82.955716,
+     "Ascendant": 251.526831
+    }
+   }
+  },
+  {
+   "name": "random 012",
+   "input": {
+    "date": "1853-04-22",
+    "time": "00:47",
+    "timezone": "America/New_York",
+    "latitude": 40.7142,
+    "longitude": -74.0064
+   },
+   "expected": {
+    "utc": "1853-04-22T05:43:02Z",
+    "longitudes": {
+     "Sun": 31.993698,
+     "Moon": 192.354977,
+     "Mercury": 14.852869,
+     "Venus": 26.247183,
+     "Mars": 13.756489,
+     "Jupiter": 264.260258,
+     "Saturn": 48.692958,
+     "Uranus": 38.058453,
+     "Neptune": 342.93636,
+     "Pluto": 31.278053,
+     "Ascendant": 289.99723
+    }
+   }
+  },
+  {
+   "name": "random 013",
+   "input": {
+    "date": "1882-08-09",
+    "time": "01:06",
+    "timezone": "America/Argentina/Mendoza",
+    "latitude": -32.8833,
+    "longitude": -68.8167
+   },
+   "expected": {
+    "utc": "1882-08-09T05:41:16Z",
+    "longitudes": {
+     "Sun": 136.488329,
+     "Moon": 83.726558,
+     "Mercury": 130.241623,
+     "Venus": 177.638763,
+     "Mars": 174.118347,
+     "Jupiter": 84.104581,
+     "Saturn": 55.396485,
+     "Uranus": 166.915424,
+     "Neptune": 48.795278,
+     "Pluto": 60.188045,
+     "Ascendant": 53.829467
+    }
+   }
+  },
+  {
+   "name": "random 014",
+   "input": {
+    "date": "1912-12-20",
+    "time": "06:59",
+    "timezone": "Asia/Chita",
+    "latitude": 52.05,
+    "longitude": 113.4667
+   },
+   "expected": {
+    "utc": "1912-12-19T23:25:08Z",
+    "longitudes": {
+     "Sun": 267.73738,
+     "Moon": 33.48343,
+     "Mercury": 248.467179,
+     "Venus": 308.450968,
+     "Mars": 254.135297,
+     "Jupiter": 266.841216,
+     "Saturn": 58.567068,
+     "Uranus": 301.529715,
+     "Neptune": 115.335506,
+     "Pluto": 89.067121,
+     "Ascendant": 252.62427
+    }
+   }
+  },
+  {
+   "name": "random 015",
+   "input": {
+    "date": "2010-01-26",
+    "time": "23:05",
+    "timezone": "America/Fortaleza",
+    "latitude": -3.7167,
+    "longitude": -38.5
+   },
+   "expected": {
+    "utc": "2010-01-27T02:05:00Z",
+    "longitudes": {
+     "Sun": 307.019014,
+     "Moon": 82.776359,
+     "Mercury": 282.289977,
+     "Venus": 310.655867,
+     "Mars": 130.89029,
+     "Jupiter": 332.03774,
+     "Saturn": 184.489413,
+     "Uranus": 353.992346,
+     "Neptune": 325.451641,
+     "Pluto": 274.203805,
+     "Ascendant": 211.979702
+    }
+   }
+  },
+  {
+   "name": "random 016",
+   "input": {
+    "date": "2022-06-29",
+    "time": "10:49",
+    "timezone": "America/New_York",
+    "latitude": 40.7142,
+    "longitude": -74.0064
+   },
+   "expected": {
+    "utc": "2022-06-29T14:49:00Z",
+    "longitudes": {
+     "Sun": 97.854868,
+     "Moon": 103.268358,
+     "Mercury": 79.685786,
+     "Venus": 67.86156,
+     "Mars": 26.025202,
+     "Jupiter": 7.357941,
+     "Saturn": 324.767703,
+     "Uranus": 47.687049,
+     "Neptune": 355.442602,
+     "Pluto": 297.83025,
+     "Ascendant": 160.917131
+    }
+   }
+  },
+  {
+   "name": "random 017",
+   "input": {
+    "date": "1938-05-27",
+    "time": "16:18",
+    "timezone": "Pacific/Rarotonga",
+    "latitude": -21.2333,
+    "longitude": -159.7667
+   },
+   "expected": {
+    "utc": "1938-05-28T02:57:04Z",
+    "longitudes": {
+     "Sun": 66.128863,
+     "Moon": 45.953337,
+     "Mercury": 42.526234,
+     "Venus": 94.174693,
+     "Mars": 83.368816,
+     "Jupiter": 331.307199,
+     "Saturn": 14.816143,
+     "Uranus": 45.013355,
+     "Neptune": 168.36266,
+     "Pluto": 118.30203,
+     "Ascendant": 228.977894
+    }
+   }
+  },
+  {
+   "name": "random 018",
+   "input": {
+    "date": "1832-08-30",
+    "time": "03:41",
+    "timezone": "Asia/Baku",
+    "latitude": 40.3833,
+    "longitude": 49.85
+   },
+   "expected": {
+    "utc": "1832-08-30T00:21:36Z",
+    "longitudes": {
+     "Sun": 156.584373,
+     "Moon": 210.770335,
+     "Mercury": 174.196853,
+     "Venus": 165.821694,
+     "Mars": 55.423801,
+     "Jupiter": 355.90615,
+     "Saturn": 166.839429,
+     "Uranus": 315.761408,
+     "Neptune": 294.776359,
+     "Pluto": 11.331965,
+     "Ascendant": 135.336671
+    }
+   }
+  },
+  {
+   "name": "random 019",
+   "input": {
+    "date": "1939-09-01",
+    "time": "13:23",
+    "timezone": "America/Mexico_City",
+    "latitude": 19.4,
+    "longitude": -99.15
+   },
+   "expected": {
+    "utc": "1939-09-01T19:23:00Z",
+    "longitudes": {
+     "Sun": 158.443703,
+     "Moon": 10.060128,
+     "Mercury": 141.261464,
+     "Venus": 157.332952,
+     "Mars": 294.447606,
+     "Jupiter": 6.968803,
+     "Saturn": 30.966621,
+     "Uranus": 51.96041,
+     "Neptune": 172.512496,
+     "Pluto": 122.099796,
+     "Ascendant": 254.560945
+    }
+   }
+  },
+  {
+   "name": "random 020",
+   "input": {
+    "date": "1965-03-16",
+    "time": "03:38",
+    "timezone": "America/Rio_Branco",
+    "latitude": -9.9667,
+    "longitude": -67.8
+   },
+   "expected": {
+    "utc": "1965-03-16T07:38:00Z",
+    "longitudes": {
+     "Sun": 355.508909,
+     "Moon": 160.089169,
+     "Mercury": 12.504408,
+     "Venus": 348.686085,
+     "Mars": 166.074422,
+     "Jupiter": 52.482194,
+     "Saturn": 339.760124,
+     "Uranus": 162.252379,
+     "Neptune": 229.847424,
+     "Pluto": 164.754654,
+     "Ascendant": 311.094161
+    }
+   }
+  },
+  {
+   "name": "random 021",
+   "input": {
+    "date": "1885-05-17",
+    "time": "03:27",
+    "timezone": "America/Managua",
+    "latitude": 12.15,
+    "longitude": -86.2833
+   },
+   "expected": {
+    "utc": "1885-05-17T09:12:08Z",
+    "longitudes": {
+     "Sun": 56.584841,
+     "Moon": 94.849572,
+     "Mercury": 33.829459,
+     "Venus": 59.954593,
+     "Mars": 36.438461,
+     "Jupiter": 146.808694,
+     "Saturn": 83.645075,
+     "Uranus": 178.959477,
+     "Neptune": 53.161094,
+     "Pluto": 61.514136,
+     "Ascendant": 20.251296
+    }
+   }
+  },
+  {
+   "name": "random 022",
+   "input": {
+    "date": "1955-10-16",
+    "time": "21:58",
+    "timezone": "Asia/Amman",
+    "latitude": 31.95,
+    "longitude": 35.9333
+   },
+   "expected": {
+    "utc": "1955-10-16T19:58:00Z",
+    "longitudes": {
+     "Sun": 202.677283,
+     "Moon": 214.465642,
+     "Mercury": 196.376856,
+     "Venus": 214.744881,
+     "Mars": 182.152045,
+     "Jupiter": 145.913471,
+     "Saturn": 230.183478,
+     "Uranus": 122.105006,
+     "Neptune": 207.778641,
+     "Pluto": 148.115056,
+     "Ascendant": 103.928068
+    }
+   }
+  },
+  {
+   "name": "random 023",
+   "input": {
+    "date": "1816-12-23",
+    "time": "21:25",
+    "timezone": "Europe/Minsk",
+    "latitude": 53.9,
+    "longitude": 27.5667
+   },
+   "expected": {
+    "utc": "1816-12-23T19:34:44Z",
+    "longitudes": {
+     "Sun": 271.957092,
+     "Moon": 331.369996,
+     "Mercury": 273.230959,
+     "Venus": 307.709865,
+     "Mars": 247.327354,
+     "Jupiter": 239.458683,
+     "Saturn": 320.53535,
+     "Uranus": 252.805378,
+     "Neptune": 262.205708,
+     "Pluto": 352.110522,
+     "Ascendant": 155.109562
+    }
+   }
+  },
+  {
+   "name": "random 024",
+   "input": {
+    "date": "1967-01-29",
+    "time": "14:49",
+    "timezone": "Pacific/Efate",
+    "latitude": -17.6667,
+    "longitude": 168.4167
+   },
+   "expected": {
+    "utc": "1967-01-29T03:49:00Z",
+    "longitudes": {
+     "Sun": 308.542877,
+     "Moon": 167.955052,
+     "Mercury": 316.251333,
+     "Venus": 327.968335,
+     "Mars": 205.722673,
+     "Jupiter": 118.268352,
+     "Saturn": 356.261704,
+     "Uranus": 174.021103,
+     "Neptune": 234.151621,
+     "Pluto": 170.298892,
+     "Ascendant": 76.826331
+    }
+   }
+  },
+  {
+   "name": "random 025",
+   "input": {
+    "date": "1801-12-09",
+    "time": "18:51",
+    "timezone": "America/Fortaleza",
+    "latitude": -3.7167,
+    "longitude": -38.5
+   },
+   "expected": {
+    "utc": "1801-12-09T21:25:00Z",
+    "longitudes": {
+     "Sun": 257.419743,
+     "Moon": 312.716588,
+     "Mercury": 236.679103,
+     "Venus": 233.908413,
+     "Mars": 242.594598,
+     "Jupiter": 155.482934,
+     "Saturn": 157.447592,
+     "Uranus": 186.193571,
+     "Neptune": 230.162655,
+     "Pluto": 333.694822,
+     "Ascendant": 89.327696
+    }
+   }
+  },
+  {
+   "name": "random 026",
+   "input": {
+    "date": "1868-05-01",
+    "time": "16:39",
+    "timezone": "Asia/Hebron",
+    "latitude": 31.5333,
+    "longitude": 35.095
+   },
+   "expected": {
+    "utc": "1868-05-01T14:18:37Z",
+    "longitudes": {
+     "Sun": 41.45059,
+     "Moon": 155.486387,
+     "Mercury": 26.620394,
+     "Venus": 86.753042,
+     "Mars": 15.057275,
+     "Jupiter": 2.476206,
+     "Saturn": 243.96353,
+     "Uranus": 99.698353,
+     "Neptune": 15.754527,
+     "Pluto": 45.471313,
+     "Ascendant": 196.782301
+    }
+   }
+  },
+  {
+   "name": "random 027",
+   "input": {
+    "date": "1902-08-21",
+    "time": "11:52",
+    "timezone": "Australia/Hobart",
+    "latitude": -42.8833,
+    "longitude": 147.3167
+   },
+   "expected": {
+    "utc": "1902-08-21T01:52:00Z",
+    "longitudes": {
+     "Sun": 147.068606,
+     "Moon": 348.948571,
+     "Mercury": 156.365016,
+     "Venus": 121.587176,
+     "Mars": 110.693881,
+     "Jupiter": 310.377534,
+     "Saturn": 292.212587,
+     "Uranus": 257.288551,
+     "Neptune": 93.110046,
+     "Pluto": 79.534299,
+     "Ascendant": 257.922288
+    }
+   }
+  },
+  {
+   "name": "random 028",
+   "input": {
+    "date": "1952-08-19",
+    "time": "20:10",
+    "timezone": "Asia/Colombo",
+    "latitude": 6.9333,
+    "longitude": 79.85
+   },
+   "expected": {
+    "utc": "1952-08-19T14:40:00Z",
+    "longitudes": {
+     "Sun": 146.531708,
+     "Moon": 135.397554,
+     "Mercury": 135.475641,
+     "Venus": 161.846341,
+     "Mars": 235.237994,
+     "Jupiter": 50.25757,
+     "Saturn": 191.942131,
+     "Uranus": 106.730487,
+     "Neptune": 199.586335,
+     "Pluto": 141.367501,
+     "Ascendant": 357.397643
+    }
+   }
+  },
+  {
+   "name": "random 029",
+   "input": {
+    "date": "1884-10-10",
+    "time": "20:15",
+    "timezone": "America/Manaus",
+    "latitude": -3.1333,
+    "longitude": -60.0167
+   },
+   "expected": {
+    "utc": "1884-10-11T00:15:04Z",
+    "longitudes": {
+     "Sun": 198.091765,
+     "Moon": 100.316947,
+     "Mercury": 181.839888,
+     "Venus": 153.101117,
+     "Mars": 229.353823,
+     "Jupiter": 148.767844,
+     "Saturn": 84.215864,
+     "Uranus": 179.782879,
+     "Neptune": 52.810991,
+     "Pluto": 61.898345,
+     "Ascendant": 55.01627
+    }
+   }
+  },
+  {
+   "name": "random 030",
+   "input": {
+    "date": "1967-12-18",
+    "time": "17:13",
+    "timezone": "America/Asuncion",
+    "latitude": -25.2667,
+    "longitude": -57.6667
+   },
+   "expected": {
+    "utc": "1967-12-18T21:13:00Z",
+    "longitudes": {
+     "Sun": 266.264927,
+     "Moon": 108.217234,
+     "Mercury": 260.618603,
+     "Venus": 223.33255,
+     "Mars": 313.213539,
+     "Jupiter": 155.820877,
+     "Saturn": 5.727831,
+     "Uranus": 179.090796,
+     "Neptune": 235.230101,
+     "Pluto": 172.84638,
+     "Ascendant": 68.300642
+    }
+   }
+  },
+  {
+   "name": "random 031",
+   "input": {
+    "date": "1946-10-28",
+    "time": "08:41",
+    "timezone": "America/Bahia_Banderas",
+    "latitude": 20.8,
+    "longitude": -105.25
+   },
+   "expected": {
+    "utc": "1946-10-28T15:41:00Z",
+    "longitudes": {
+     "Sun": 214.619667,
+     "Moon": 255.131653,
+     "Mercury": 238.031863,
+     "Venus": 242.492745,
+     "Mars": 233.49619,
+     "Jupiter": 217.085577,
+     "Saturn": 128.399419,
+     "Uranus": 81.401723,
+     "Neptune": 189.322511,
+     "Pluto": 133.299741,
+     "Ascendant": 249.301736
+    }
+   }
+  },
+  {
+   "name": "random 032",
+   "input": {
+    "date": "1901-05-16",
+    "time": "18:53",
+    "timezone": "Asia/Irkutsk",
+    "latitude": 52.2667,
+    "longitude": 104.3333
+   },
+   "expected": {
+    "utc": "1901-05-16T11:55:55Z",
+    "longitudes": {
+     "Sun": 54.89973,
+     "Moon": 30.411366,
+     "Mercury": 57.066368,
+     "Venus": 58.993192,
+     "Mars": 151.844254,
+     "Jupiter": 282.677784,
+     "Saturn": 286.063965,
+     "Uranus": 255.736792,
+     "Neptune": 87.685747,
+     "Pluto": 76.643757,
+     "Ascendant": 226.395998
+    }
+   }
+  },
+  {
+   "name": "random 033",
+   "input": {
+    "date": "1954-01-20",
+    "time": "09:54",
+    "timezone": "Pacific/Chatham",
+    "latitude": -43.95,
+    "longitude": -176.55
+   },
+   "expected": {
+    "utc": "1954-01-19T21:09:00Z",
+    "longitudes": {
+     "Sun": 299.278002,
+     "Moon": 128.452726,
+     "Mercury": 302.636513,
+     "Venus": 296.848242,
+     "Mars": 228.060209,
+     "Jupiter": 77.191362,
+     "Saturn": 218.657563,
+     "Uranus": 110.71391,
+     "Neptune": 206.047531,
+     "Pluto": 144.36795,
+     "Ascendant": 351.871631
+    }
+   }
+  },
+  {
+   "name": "random 034",
+   "input": {
+    "date": "1850-03-22",
+    "time": "06:41",
+    "timezone": "Africa/Tunis",
+    "latitude": 36.8,
+    "longitude": 10.1833
+   },
+   "expected": {
+    "utc": "1850-03-22T06:00:16Z",
+    "longitudes": {
+     "Sun": 1.279665,
+     "Moon": 105.568458,
+     "Mercury": 338.795588,
+     "Venus": 6.062905,
+     "Mars": 92.853134,
+     "Jupiter": 166.467198,
+     "Saturn": 9.63924,
+     "Uranus": 24.818771,
+     "Neptune": 335.486982,
+     "Pluto": 27.733768,
+     "Ascendant": 15.428507
+    }
+   }
+  },
+  {
+   "name": "random 035",
+   "input": {
+    "date": "2035-04-14",
+    "time": "07:06",
+    "timezone": "Pacific/Honolulu",
+    "latitude": 21.3069,
+    "longitude": -157.8583
+   },
+   "expected": {
+    "utc": "2035-04-14T17:06:00Z",
+    "longitudes": {
+     "Sun": 24.591178,
+     "Moon": 109.260215,
+     "Mercury": 34.3573,
+     "Venus": 353.99979,
+     "Mars": 301.227773,
+     "Jupiter": 26.378891,
+     "Saturn": 118.635619,
+     "Uranus": 96.904932,
+     "Neptune": 22.138591,
+     "Pluto": 319.532862,
+     "Ascendant": 39.616092
+    }
+   }
+  },
+  {
+   "name": "random 036",
+   "input": {
+    "date": "1835-07-15",
+    "time": "01:31",
+    "timezone": "America/Santiago",
+    "latitude": -33.45,
+    "longitude": -70.6667
+   },
+   "expected": {
+    "utc": "1835-07-15T06:13:45Z",
+    "longitudes": {
+     "Sun": 111.98294,
+     "Moon": 354.879927,
+     "Mercury": 115.542865,
+     "Venus": 90.161335,
+     "Mars": 160.250093,
+     "Jupiter": 90.566435,
+     "Saturn": 196.936618,
+     "Uranus": 329.943782,
+     "Neptune": 302.700152,
+     "Pluto": 14.861826,
+     "Ascendant": 37.925845
+    }
+   }
+  },
+  {
+   "name": "random 037",
+   "input": {
+    "date": "1895-08-23",
+    "time": "02:58",
+    "timezone": "America/Glace_Bay",
+    "latitude": 46.2,
+    "longitude": -59.95
+   },
+   "expected": {
+    "utc": "1895-08-23T06:57:48Z",
+    "longitudes": {
+     "Sun": 149.869609,
+     "Moon": 188.610191,
+     "Mercury": 155.297454,
+     "Venus": 183.362765,
+     "Mars": 165.916571,
+     "Jupiter": 117.517231,
+     "Saturn": 212.510837,
+     "Uranus": 226.22647,
+     "Neptune": 77.832339,
+     "Pluto": 72.688192,
+     "Ascendant": 124.658265
+    }
+   }
+  },
+  {
+   "name": "random 038",
+   "input": {
+    "date": "1955-05-03",
+    "time": "00:40",
+    "timezone": "Asia/Amman",
+    "latitude": 31.95,
+    "longitude": 35.9333
+   },
+   "expected": {
+    "utc": "1955-05-02T22:40:00Z",
+    "longitudes": {
+     "Sun": 41.745324,
+     "Moon": 176.994798,
+     "Mercury": 52.915738,
+     "Venus": 9.977355,
+     "Mars": 74.755463,
+     "Jupiter": 113.172177,
+     "Saturn": 228.351072,
+     "Uranus": 114.029995,
+     "Neptune": 206.465367,
+     "Pluto": 144.303943,
+     "Ascendant": 312.502177
+    }
+   }
+  },
+  {
+   "name": "random 039",
+   "input": {
+    "date": "1884-07-28",
+    "time": "05:07",
+    "timezone": "Europe/Moscow",
+    "latitude": 55.7558,
+    "longitude": 37.6178
+   },
+   "expected": {
+    "utc": "1884-07-28T02:36:43Z",
+    "longitudes": {
+     "Sun": 125.366616,
+     "Moon": 195.118325,
+     "Mercury": 140.715615,
+     "Venus": 102.413852,
+     "Mars": 180.115968,
+     "Jupiter": 133.23634,
+     "Saturn": 80.192129,
+     "Uranus": 175.396692,
+     "Neptune": 53.113386,
+     "Pluto": 61.960457,
+     "Ascendant": 135.672503
+    }
+   }
+  },
+  {
+   "name": "random 040",
+   "input": {
+    "date": "2028-06-30",
+    "time": "16:19",
+    "timezone": "America/Punta_Arenas",
+    "latitude": -53.15,
+    "longitude": -70.9167
+   },
+   "expected": {
+    "utc": "2028-06-30T19:19:00Z",
+    "longitudes": {
+     "Sun": 99.511825,
+     "Moon": 206.453171,
+     "Mercury": 77.961404,
+     "Venus": 64.31012,
+     "Mars": 76.259925,
+     "Jupiter": 170.765238,
+     "Saturn": 38.966894,
+     "Uranus": 71.792915,
+     "Neptune": 8.869032,
+     "Pluto": 308.256623,
+     "Ascendant": 263.826482
+    }
+   }
+  },
+  {
+   "name": "random 041",
+   "input": {
+    "date": "2049-02-16",
+    "time": "08:14",
+    "timezone": "Europe/Tallinn",
+    "latitude": 59.4167,
+    "longitude": 24.75
+   },
+   "expected": {
+    "utc": "2049-02-16T06:14:00Z",
+    "longitudes": {
+     "Sun": 328.004743,
+     "Moon": 129.987058,
+     "Mercury": 305.051489,
+     "Venus": 3.023394,
+     "Mars": 18.142728,
+     "Jupiter": 80.968913,
+     "Saturn": 292.795093,
+     "Uranus": 164.594389,
+     "Neptune": 51.145817,
+     "Pluto": 337.331197,
+     "Ascendant": 339.886635
+    }
+   }
+  },
+  {
+   "name": "random 042",
+   "input": {
+    "date": "1974-03-28",
+    "time": "06:28",
+    "timezone": "Europe/Moscow",
+    "latitude": 55.7558,
+    "longitude": 37.6178
+   },
+   "expected": {
+    "utc": "1974-03-28T03:28:00Z",
+    "longitudes": {
+     "Sun": 7.079691,
+     "Moon": 59.385442,
+     "Mercury": 339.746142,
+     "Venus": 320.868342,
+     "Mars": 76.332093,
+     "Jupiter": 334.493241,
+     "Saturn": 88.519644,
+     "Uranus": 206.54486,
+     "Neptune": 249.546762,
+     "Pluto": 185.42803,
+     "Ascendant": 14.208411
+    }
+   }
+  },
+  {
+   "name": "random 043",
+   "input": {
+    "date": "1905-09-14",
+    "time": "06:58",
+    "timezone": "Europe/Kaliningrad",
+    "latitude": 54.7167,
+    "longitude": 20.5
+   },
+   "expected": {
+    "utc": "1905-09-14T05:58:00Z",
+    "longitudes": {
+     "Sun": 170.738787,
+     "Moon": 356.190273,
+     "Mercury": 152.939919,
+     "Venus": 134.559744,
+     "Mars": 254.073393,
+     "Jupiter": 66.283865,
+     "Saturn": 327.935678,
+     "Uranus": 270.25262,
+     "Neptune": 100.166872,
+     "Pluto": 82.727817,
+     "Ascendant": 188.473563
+    }
+   }
+  },
+  {
+   "name": "random 044",
+   "input": {
+    "date": "1829-10-21",
+    "time": "04:56",
+    "timezone": "Atlantic/South_Georgia",
+    "latitude": -54.2667,
+    "longitude": -36.5333
+   },
+   "expected": {
+    "utc": "1829-10-21T07:22:08Z",
+    "longitudes": {
+     "Sun": 207.640988,
+     "Moon": 136.895762,
+     "Mercury": 223.213298,
+     "Venus": 246.652948,
+     "Mars": 186.196675,
+     "Jupiter": 253.922305,
+     "Saturn": 136.783777,
+     "Uranus": 302.495642,
+     "Neptune": 287.938093,
+     "Pluto": 7.140708,
+     "Ascendant": 214.519428
+    }
+   }
+  },
+  {
+   "name": "random 045",
+   "input": {
+    "date": "1904-02-17",
+    "time": "12:06",
+    "timezone": "Asia/Magadan",
+    "latitude": 59.5667,
+    "longitude": 150.8
+   },
+   "expected": {
+    "utc": "1904-02-17T02:02:48Z",
+    "longitudes": {
+     "Sun": 326.999687,
+     "Moon": 333.737389,
+     "Mercury": 301.988137,
+     "Venus": 291.420548,
+     "Mars": 352.224496,
+     "Jupiter": 356.985859,
+     "Saturn": 313.523445,
+     "Uranus": 269.009117,
+     "Neptune": 93.333334,
+     "Pluto": 78.725637,
+     "Ascendant": 102.06687
+    }
+   }
+  },
+  {
+   "name": "random 046",
+   "input": {
+    "date": "1953-06-20",
+    "time": "14:36",
+    "timezone": "America/El_Salvador",
+    "latitude": 13.7,
+    "longitude": -89.2
+   },
+   "expected": {
+    "utc": "1953-06-20T20:36:00Z",
+    "longitudes": {
+     "Sun": 89.188999,
+     "Moon": 194.104293,
+     "Mercury": 113.482931,
+     "Venus": 43.505421,
+     "Mars": 94.469614,
+     "Jupiter": 69.832852,
+     "Saturn": 200.558472,
+     "Uranus": 107.535626,
+     "Neptune": 201.146157,
+     "Pluto": 141.341684,
+     "Ascendant": 217.425577
+    }
+   }
+  },
+  {
+   "name": "random 047",
+   "input": {
+    "date": "2012-08-31",
+    "time": "12:52",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "latitude": 10.75,
+    "longitude": 106.6667
+   },
+   "expected": {
+    "utc": "2012-08-31T05:52:00Z",
+    "longitudes": {
+     "Sun": 158.235093,
+     "Moon": 334.08649,
+     "Mercury": 148.334998,
+     "Venus": 113.210528,
+     "Mars": 214.904966,
+     "Jupiter": 74.508463,
+     "Saturn": 206.173776,
+     "Uranus": 7.655231,
+     "Neptune": 331.560874,
+     "Pluto": 277.033577,
+     "Ascendant": 260.660565
+    }
+   }
+  },
+  {
+   "name": "random 048",
+   "input": {
+    "date": "1998-06-21",
+    "time": "06:41",
+    "timezone": "America/Boise",
+    "latitude": 43.6136,
+    "longitude": -116.2025
+   },
+   "expected": {
+    "utc": "1998-06-21T12:41:00Z",
+    "longitudes": {
+     "Sun": 89.945842,
+     "Moon": 54.708392,
+     "Mercury": 102.994457,
+     "Venus": 56.457817,
+     "Mars": 79.865291,
+     "Jupiter": 356.942092,
+     "Saturn": 31.128397,
+     "Uranus": 312.268953,
+     "Neptune": 301.591162,
+     "Pluto": 246.053849,
+     "Ascendant": 97.08692
+    }
+   }
+  },
+  {
+   "name": "random 049",
+   "input": {
+    "date": "1879-03-27",
+    "time": "19:01",
+    "timezone": "America/Jamaica",
+    "latitude": 17.9681,
+    "longitude": -76.7933
+   },
+   "expected": {
+    "utc": "1879-03-28T00:08:10Z",
+    "longitudes": {
+     "Sun": 6.959571,
+     "Moon": 62.897531,
+     "Mercury": 25.613619,
+     "Venus": 33.618516,
+     "Mars": 306.816531,
+     "Jupiter": 330.489546,
+     "Saturn": 5.878099,
+     "Uranus": 150.795127,
+     "Neptune": 38.292786,
+     "Pluto": 54.917058,
+     "Ascendant": 199.314356
+    }
+   }
+  },
+  {
+   "name": "random 050",
+   "input": {
+    "date": "1864-09-16",
+    "time": "04:23",
+    "timezone": "America/Argentina/Buenos_Aires",
+    "latitude": -34.6,
+    "longitude": -58.45
+   },
+   "expected": {
+    "utc": "1864-09-16T08:16:48Z",
+    "longitudes": {
+     "Sun": 173.684497,
+     "Moon": 0.282901,
+     "Mercury": 188.536541,
+     "Venus": 189.986931,
+     "Mars": 70.210478,
+     "Jupiter": 233.228475,
+     "Saturn": 197.701977,
+     "Uranus": 89.33253,
+     "Neptune": 7.300372,
+     "Pluto": 43.082241,
+     "Ascendant": 137.80245
+    }
+   }
+  },
+  {
+   "name": "random 051",
+   "input": {
+    "date": "1864-02-27",
+    "time": "00:42",
+    "timezone": "Pacific/Kanton",
+    "latitude": -2.7833,
+    "longitude": -171.7167
+   },
+   "expected": {
+    "utc": "1864-02-27T00:42:00Z",
+    "longitudes": {
+     "Sun": 337.725643,
+     "Moon": 205.875597,
+     "Mercury": 312.421026,
+     "Venus": 301.84671,
+     "Mars": 291.996179,
+     "Jupiter": 237.230686,
+     "Saturn": 197.271313,
+     "Uranus": 81.011575,
+     "Neptune": 4.740571,
+     "Pluto": 40.568888,
+     "Ascendant": 84.219807
+    }
+   }
+  },
+  {
+   "name": "random 052",
+   "input": {
+    "date": "1970-10-03",
+    "time": "22:47",
+    "timezone": "America/Panama",
+    "latitude": 8.9667,
+    "longitude": -79.5333
+   },
+   "expected": {
+    "utc": "1970-10-04T03:47:00Z",
+    "longitudes": {
+     "Sun": 190.510007,
+     "Moon": 231.058663,
+     "Mercury": 174.29295,
+     "Venus": 230.499009,
+     "Mars": 169.656893,
+     "Jupiter": 218.702804,
+     "Saturn": 51.861735,
+     "Uranus": 189.271558,
+     "Neptune": 238.909597,
+     "Pluto": 177.727576,
+     "Ascendant": 84.070397
+    }
+   }
+  },
+  {
+   "name": "random 053",
+   "input": {
+    "date": "1930-05-03",
+    "time": "12:24",
+    "timezone": "Africa/Bissau",
+    "latitude": 11.85,
+    "longitude": -15.5833
+   },
+   "expected": {
+    "utc": "1930-05-03T13:24:00Z",
+    "longitudes": {
+     "Sun": 42.374094,
+     "Moon": 103.898137,
+     "Mercury": 61.340011,
+     "Venus": 63.708047,
+     "Mars": 6.812371,
+     "Jupiter": 77.84461,
+     "Saturn": 281.766522,
+     "Uranus": 13.088564,
+     "Neptune": 150.813207,
+     "Pluto": 107.651685,
+     "Ascendant": 137.069882
+    }
+   }
+  },
+  {
+   "name": "random 054",
+   "input": {
+    "date": "1918-12-10",
+    "time": "04:58",
+    "timezone": "America/North_Dakota/Center",
+    "latitude": 47.1164,
+    "longitude": -101.2992
+   },
+   "expected": {
+    "utc": "1918-12-10T11:58:00Z",
+    "longitudes": {
+     "Sun": 257.633439,
+     "Moon": 339.825272,
+     "Mercury": 273.670152,
+     "Venus": 261.637937,
+     "Mars": 292.291702,
+     "Jupiter": 103.656683,
+     "Saturn": 148.250478,
+     "Uranus": 324.358801,
+     "Neptune": 129.110244,
+     "Pluto": 95.955796,
+     "Ascendant": 229.179298
+    }
+   }
+  },
+  {
+   "name": "random 055",
+   "input": {
+    "date": "1909-05-26",
+    "time": "13:58",
+    "timezone": "Asia/Jerusalem",
+    "latitude": 31.7806,
+    "longitude": 35.2239
+   },
+   "expected": {
+    "utc": "1909-05-26T11:37:20Z",
+    "longitudes": {
+     "Sun": 64.558557,
+     "Moon": 148.190277,
+     "Mercury": 85.69948,
+     "Venus": 71.945504,
+     "Mars": 330.330522,
+     "Jupiter": 155.447366,
+     "Saturn": 19.289921,
+     "Uranus": 290.704881,
+     "Neptune": 105.292367,
+     "Pluto": 84.827169,
+     "Ascendant": 182.539121
+    }
+   }
+  },
+  {
+   "name": "random 056",
+   "input": {
+    "date": "2038-05-26",
+    "time": "11:57",
+    "timezone": "Asia/Bangkok",
+    "latitude": 13.75,
+    "longitude": 100.5167
+   },
+   "expected": {
+    "utc": "2038-05-26T04:57:00Z",
+    "longitudes": {
+     "Sun": 65.069731,
+     "Moon": 338.94246,
+     "Mercury": 57.041391,
+     "Venus": 28.256477,
+     "Mars": 118.133506,
+     "Jupiter": 116.764078,
+     "Saturn": 159.57896,
+     "Uranus": 111.546423,
+     "Neptune": 30.138186,
+     "Pluto": 324.249732,
+     "Ascendant": 149.421343
+    }
+   }
+  },
+  {
+   "name": "random 057",
+   "input": {
+    "date": "1967-08-14",
+    "time": "18:39",
+    "timezone": "Asia/Beirut",
+    "latitude": 33.8833,
+    "longitude": 35.5
+   },
+   "expected": {
+    "utc": "1967-08-14T16:39:00Z",
+    "longitudes": {
+     "Sun": 141.200182,
+     "Moon": 254.851011,
+     "Mercury": 130.773187,
+     "Venus": 163.175295,
+     "Mars": 223.661659,
+     "Jupiter": 136.827127,
+     "Saturn": 12.107726,
+     "Uranus": 172.712233,
+     "Neptune": 231.613872,
+     "Pluto": 169.3813,
+     "Ascendant": 326.827416
+    }
+   }
+  },
+  {
+   "name": "random 058",
+   "input": {
+    "date": "1997-06-12",
+    "time": "00:56",
+    "timezone": "America/Merida",
+    "latitude": 20.9667,
+    "longitude": -89.6167
+   },
+   "expected": {
+    "utc": "1997-06-12T05:56:00Z",
+    "longitudes": {
+     "Sun": 81.313047,
+     "Moon": 160.944673,
+     "Mercury": 65.938901,
+     "Venus": 99.86227,
+     "Mars": 177.038595,
+     "Jupiter": 321.932807,
+     "Saturn": 18.281259,
+     "Uranus": 308.317317,
+     "Neptune": 299.526588,
+     "Pluto": 243.750363,
+     "Ascendant": 346.964183
+    }
+   }
+  },
+  {
+   "name": "random 059",
+   "input": {
+    "date": "1994-11-07",
+    "time": "20:33",
+    "timezone": "Asia/Damascus",
+    "latitude": 33.5,
+    "longitude": 36.3
+   },
+   "expected": {
+    "utc": "1994-11-07T18:33:00Z",
+    "longitudes": {
+     "Sun": 225.123739,
+     "Moon": 283.539334,
+     "Mercury": 206.53664,
+     "Venus": 217.448457,
+     "Mars": 137.58402,
+     "Jupiter": 233.01422,
+     "Saturn": 335.681411,
+     "Uranus": 292.955523,
+     "Neptune": 290.933218,
+     "Pluto": 237.463129,
+     "Ascendant": 105.845641
+    }
+   }
+  },
+  {
+   "name": "random 060",
+   "input": {
+    "date": "1963-12-18",
+    "time": "14:57",
+    "timezone": "Antarctica/Palmer",
+    "latitude": -64.8,
+    "longitude": -64.1
+   },
+   "expected": {
+    "utc": "1963-12-18T14:57:00Z",
+    "longitudes": {
+     "Sun": 265.965209,
+     "Moon": 294.076711,
+     "Mercury": 286.213175,
+     "Venus": 293.595993,
+     "Mars": 280.104584,
+     "Jupiter": 9.83863,
+     "Saturn": 319.15291,
+     "Uranus": 160.068184,
+     "Neptune": 226.806013,
+     "Pluto": 164.228066
+    }
+   }
+  },
+  {
+   "name": "random 061",
+   "input": {
+    "date": "1999-01-09",
+    "time": "20:07",
+    "timezone": "Antarctica/Mawson",
+    "latitude": -67.6,
+    "longitude": 62.8833
+   },
+   "expected": {
+    "utc": "1999-01-09T14:07:00Z",
+    "longitudes": {
+     "Sun": 288.856608,
+     "Moon": 198.745636,
+     "Mercury": 273.703868,
+     "Venus": 306.142579,
+     "Mars": 202.535222,
+     "Jupiter": 353.280562,
+     "Saturn": 26.878406,
+     "Uranus": 311.417146,
+     "Neptune": 301.373891,
+     "Pluto": 249.401229
+    }
+   }
+  },
+  {
+   "name": "random 062",
+   "input": {
+    "date": "1819-08-13",
+    "time": "23:52",
+    "timezone": "America/Guayaquil",
+    "latitude": -2.1667,
+    "longitude": -79.8333
+   },
+   "expected": {
+    "utc": "1819-08-14T05:11:20Z",
+    "longitudes": {
+     "Sun": 140.52484,
+     "Moon": 67.250289,
+     "Mercury": 167.588954,
+     "Venus": 125.410197,
+     "Mars": 75.814049,
+     "Jupiter": 311.134942,
+     "Saturn": 359.909298,
+     "Uranus": 260.631805,
+     "Neptune": 266.079784,
+     "Pluto": 357.227003,
+     "Ascendant": 51.509268
+    }
+   }
+  },
+  {
+   "name": "random 063",
+   "input": {
+    "date": "1983-07-13",
+    "time": "14:07",
+    "timezone": "Europe/Dublin",
+    "latitude": 53.3333,
+    "longitude": -6.25
+   },
+   "expected": {
+    "utc": "1983-07-13T13:07:00Z",
+    "longitudes": {
+     "Sun": 110.580042,
+     "Moon": 153.346764,
+     "Mercury": 115.172986,
+     "Venus": 152.163939,
+     "Mars": 99.560437,
+     "Jupiter": 241.444305,
+     "Saturn": 207.842212,
+     "Uranus": 245.481914,
+     "Neptune": 267.236783,
+     "Pluto": 206.720816,
+     "Ascendant": 201.541388
+    }
+   }
+  },
+  {
+   "name": "random 064",
+   "input": {
+    "date": "1887-03-14",
+    "time": "11:17",
+    "timezone": "America/Monterrey",
+    "latitude": 25.6667,
+    "longitude": -100.3167
+   },
+   "expected": {
+    "utc": "1887-03-14T17:58:16Z",
+    "longitudes": {
+     "Sun": 353.855393,
+     "Moon": 241.22317,
+     "Mercury": 6.047305,
+     "Venus": 17.989588,
+     "Mars": 3.161265,
+     "Jupiter": 215.056052,
+     "Saturn": 105.577415,
+     "Uranus": 191.166735,
+     "Neptune": 55.440222,
+     "Pluto": 62.231495,
+     "Ascendant": 83.784727
+    }
+   }
+  },
+  {
+   "name": "random 065",
+   "input": {
+    "date": "1994-10-24",
+    "time": "15:55",
+    "timezone": "America/Mexico_City",
+    "latitude": 19.4,
+    "longitude": -99.15
+   },
+   "expected": {
+    "utc": "1994-10-24T21:55:00Z",
+    "longitudes": {
+     "Sun": 211.258119,
+     "Moon": 89.831548,
+     "Mercury": 203.398981,
+     "Venus": 225.304993,
+     "Mars": 130.897032,
+     "Jupiter": 229.995738,
+     "Saturn": 335.885747,
+     "Uranus": 292.610407,
+     "Neptune": 290.711394,
+     "Pluto": 236.93426,
+     "Ascendant": 350.589622
+    }
+   }
+  },
+  {
+   "name": "random 066",
+   "input": {
+    "date": "1826-05-25",
+    "time": "05:24",
+    "timezone": "Asia/Amman",
+    "latitude": 31.95,
+    "longitude": 35.9333
+   },
+   "expected": {
+    "utc": "1826-05-25T03:00:16Z",
+    "longitudes": {
+     "Sun": 63.319012,
+     "Moon": 291.043318,
+     "Mercury": 38.523959,
+     "Venus": 82.753577,
+     "Mars": 217.587188,
+     "Jupiter": 155.301162,
+     "Saturn": 82.516332,
+     "Uranus": 293.827822,
+     "Neptune": 283.617342,
+     "Pluto": 5.050045,
+     "Ascendant": 69.351169
+    }
+   }
+  },
+  {
+   "name": "random 067",
+   "input": {
+    "date": "1933-06-08",
+    "time": "23:21",
+    "timezone": "America/Indiana/Marengo",
+    "latitude": 38.3756,
+    "longitude": -86.3447
+   },
+   "expected": {
+    "utc": "1933-06-09T05:21:00Z",
+    "longitudes": {
+     "Sun": 77.910339,
+     "Moon": 272.415947,
+     "Mercury": 91.251273,
+     "Venus": 90.83398,
+     "Mars": 166.247949,
+     "Jupiter": 164.588062,
+     "Saturn": 316.239856,
+     "Uranus": 26.257793,
+     "Neptune": 157.520064,
+     "Pluto": 112.058856,
+     "Ascendant": 329.535626
+    }
+   }
+  },
+  {
+   "name": "random 068",
+   "input": {
+    "date": "1881-03-08",
+    "time": "11:56",
+    "timezone": "Europe/Saratov",
+    "latitude": 51.5667,
+    "longitude": 46.0333
+   },
+   "expected": {
+    "utc": "1881-03-08T08:51:42Z",
+    "longitudes": {
+     "Sun": 347.956716,
+     "Moon": 83.792518,
+     "Mercury": 353.676141,
+     "Venus": 33.489382,
+     "Mars": 309.940743,
+     "Jupiter": 21.992127,
+     "Saturn": 26.622114,
+     "Uranus": 161.470285,
+     "Neptune": 42.11158,
+     "Pluto": 56.537228,
+     "Ascendant": 105.4171
+    }
+   }
+  },
+  {
+   "name": "random 069",
+   "input": {
+    "date": "1824-08-30",
+    "time": "08:49",
+    "timezone": "America/Cuiaba",
+    "latitude": -15.5833,
+    "longitude": -56.0833
+   },
+   "expected": {
+    "utc": "1824-08-30T12:33:20Z",
+    "longitudes": {
+     "Sun": 157.02097,
+     "Moon": 236.916961,
+     "Mercury": 182.777341,
+     "Venus": 165.780901,
+     "Mars": 224.167664,
+     "Jupiter": 122.644007,
+     "Saturn": 67.469205,
+     "Uranus": 282.015057,
+     "Neptune": 276.949275,
+     "Pluto": 2.627806,
+     "Ascendant": 205.554881
+    }
+   }
+  },
+  {
+   "name": "random 070",
+   "input": {
+    "date": "1903-05-18",
+    "time": "12:10",
+    "timezone": "Australia/Hobart",
+    "latitude": -42.8833,
+    "longitude": 147.3167
+   },
+   "expected": {
+    "utc": "1903-05-18T02:10:00Z",
+    "longitudes": {
+     "Sun": 55.967166,
+     "Moon": 308.951274,
+     "Mercury": 75.199967,
+     "Venus": 95.101965,
+     "Mars": 177.87221,
+     "Jupiter": 348.478744,
+     "Saturn": 309.31786,
+     "Uranus": 264.75908,
+     "Neptune": 92.038005,
+     "Pluto": 78.621078,
+     "Ascendant": 122.895219
+    }
+   }
+  },
+  {
+   "name": "random 071",
+   "input": {
+    "date": "1831-08-12",
+    "time": "05:45",
+    "timezone": "Africa/Ndjamena",
+    "latitude": 12.1167,
+    "longitude": 15.05
+   },
+   "expected": {
+    "utc": "1831-08-12T04:44:48Z",
+    "longitudes": {
+     "Sun": 138.682154,
+     "Moon": 192.059689,
+     "Mercury": 159.559504,
+     "Venus": 183.717478,
+     "Mars": 152.967689,
+     "Jupiter": 317.212643,
+     "Saturn": 153.010276,
+     "Uranus": 312.279378,
+     "Neptune": 292.920312,
+     "Pluto": 10.51102,
+     "Ascendant": 137.149386
+    }
+   }
+  },
+  {
+   "name": "random 072",
+   "input": {
+    "date": "1862-05-27",
+    "time": "18:44",
+    "timezone": "America/Yakutat",
+    "latitude": 59.5469,
+    "longitude": -139.7272
+   },
+   "expected": {
+    "utc": "1862-05-27T04:02:55Z",
+    "longitudes": {
+     "Sun": 65.570314,
+     "Moon": 49.581671,
+     "Mercury": 86.224534,
+     "Venus": 20.701109,
+     "Mars": 335.787996,
+     "Jupiter": 167.73094,
+     "Saturn": 165.919085,
+     "Uranus": 75.787178,
+     "Neptune": 3.426356,
+     "Pluto": 40.496099,
+     "Ascendant": 226.852361
+    }
+   }
+  },
+  {
+   "name": "random 073",
+   "input": {
+    "date": "1982-10-07",
+    "time": "09:02",
+    "timezone": "Pacific/Kwajalein",
+    "latitude": 9.0833,
+    "longitude": 167.3333
+   },
+   "expected": {
+    "utc": "1982-10-07T21:02:00Z",
+    "longitudes": {
+     "Sun": 194.259579,
+     "Moon": 76.687003,
+     "Mercury": 183.42257,
+     "Venus": 187.251825,
+     "Mars": 252.434061,
+     "Jupiter": 222.958635,
+     "Saturn": 203.832069,
+     "Uranus": 242.032644,
+     "Neptune": 264.55097,
+     "Pluto": 206.352118,
+     "Ascendant": 228.603335
+    }
+   }
+  },
+  {
+   "name": "random 074",
+   "input": {
+    "date": "1887-11-18",
+    "time": "16:16",
+    "timezone": "Asia/Jayapura",
+    "latitude": -2.5333,
+    "longitude": 140.7
+   },
+   "expected": {
+    "utc": "1887-11-18T06:53:12Z",
+    "longitudes": {
+     "Sun": 235.649382,
+     "Moon": 275.703793,
+     "Mercury": 234.479549,
+     "Venus": 189.663372,
+     "Mars": 170.199934,
+     "Jupiter": 228.404192,
+     "Saturn": 126.535258,
+     "Uranus": 195.423447,
+     "Neptune": 58.750841,
+     "Pluto": 64.183608,
+     "Ascendant": 32.646758
+    }
+   }
+  },
+  {
+   "name": "random 075",
+   "input": {
+    "date": "1979-10-12",
+    "time": "21:22",
+    "timezone": "America/Indiana/Vincennes",
+    "latitude": 38.6772,
+    "longitude": -87.5286
+   },
+   "expected": {
+    "utc": "1979-10-13T02:22:00Z",
+    "longitudes": {
+     "Sun": 199.154284,
+     "Moon": 111.488512,
+     "Mercury": 218.660705,
+     "Venus": 212.105172,
+     "Mars": 130.592815,
+     "Jupiter": 152.579633,
+     "Saturn": 171.230684,
+     "Uranus": 229.368774,
+     "Neptune": 258.231476,
+     "Pluto": 199.137222,
+     "Ascendant": 79.835929
+    }
+   }
+  },
+  {
+   "name": "random 076",
+   "input": {
+    "date": "1868-02-14",
+    "time": "09:13",
+    "timezone": "Asia/Atyrau",
+    "latitude": 47.1167,
+    "longitude": 51.9333
+   },
+   "expected": {
+    "utc": "1868-02-14T05:45:16Z",
+    "longitudes": {
+     "Sun": 324.862128,
+     "Moon": 221.466638,
+     "Mercury": 340.421056,
+     "Venus": 358.428517,
+     "Mars": 314.62469,
+     "Jupiter": 344.292186,
+     "Saturn": 244.974936,
+     "Uranus": 99.221705,
+     "Neptune": 13.030192,
+     "Pluto": 44.19251,
+     "Ascendant": 23.522097
+    }
+   }
+  },
+  {
+   "name": "random 077",
+   "input": {
+    "date": "2045-03-23",
+    "time": "06:47",
+    "timezone": "Australia/Sydney",
+    "latitude": -33.8667,
+    "longitude": 151.2167
+   },
+   "expected": {
+    "utc": "2045-03-22T19:47:00Z",
+    "longitudes": {
+     "Sun": 2.593843,
+     "Moon": 51.653713,
+     "Mercury": 357.289086,
+     "Venus": 3.572059,
+     "Mars": 11.895997,
+     "Jupiter": 329.263748,
+     "Saturn": 251.780972,
+     "Uranus": 143.359682,
+     "Neptune": 43.031128,
+     "Pluto": 333.057261,
+     "Ascendant": 358.891161
+    }
+   }
+  },
+  {
+   "name": "random 078",
+   "input": {
+    "date": "1898-05-07",
+    "time": "06:45",
+    "timezone": "Asia/Qyzylorda",
+    "latitude": 44.8,
+    "longitude": 65.4667
+   },
+   "expected": {
+    "utc": "1898-05-07T02:23:08Z",
+    "longitudes": {
+     "Sun": 46.526752,
+     "Moon": 238.042012,
+     "Mercury": 37.649888,
+     "Venus": 66.648172,
+     "Mars": 6.349492,
+     "Jupiter": 180.972317,
+     "Saturn": 250.639577,
+     "Uranus": 242.185688,
+     "Neptune": 80.922588,
+     "Pluto": 73.559507,
+     "Ascendant": 82.118413
+    }
+   }
+  },
+  {
+   "name": "random 079",
+   "input": {
+    "date": "1876-09-07",
+    "time": "14:42",
+    "timezone": "America/Asuncion",
+    "latitude": -25.2667,
+    "longitude": -57.6667
+   },
+   "expected": {
+    "utc": "1876-09-07T18:32:40Z",
+    "longitudes": {
+     "Sun": 165.42334,
+     "Moon": 31.900049,
+     "Mercury": 189.894824,
+     "Venus": 120.402132,
+     "Mars": 156.937348,
+     "Jupiter": 235.741991,
+     "Saturn": 333.871436,
+     "Uranus": 141.916755,
+     "Neptune": 35.070305,
+     "Pluto": 54.553068,
+     "Ascendant": 304.730934
+    }
+   }
+  },
+  {
+   "name": "random 080",
+   "input": {
+    "date": "1831-02-11",
+    "time": "10:53",
+    "timezone": "Europe/Bucharest",
+    "latitude": 44.4333,
+    "longitude": 26.1
+   },
+   "expected": {
+    "utc": "1831-02-11T09:08:36Z",
+    "longitudes": {
+     "Sun": 321.955154,
+     "Moon": 305.57459,
+     "Mercury": 297.825412,
+     "Venus": 334.406796,
+     "Mars": 39.93682,
+     "Jupiter": 304.883891,
+     "Saturn": 148.86128,
+     "Uranus": 311.137681,
+     "Neptune": 293.550471,
+     "Pluto": 8.053907,
+     "Ascendant": 56.407084
+    }
+   }
+  },
+  {
+   "name": "random 081",
+   "input": {
+    "date": "1920-09-04",
+    "time": "21:57",
+    "timezone": "America/Guyana",
+    "latitude": 6.8,
+    "longitude": -58.1667
+   },
+   "expected": {
+    "utc": "1920-09-05T01:42:00Z",
+    "longitudes": {
+     "Sun": 162.178939,
+     "Moon": 62.747372,
+     "Mercury": 158.389666,
+     "Venus": 179.476316,
+     "Mars": 240.139332,
+     "Jupiter": 151.919825,
+     "Saturn": 164.644349,
+     "Uranus": 333.344257,
+     "Neptune": 132.417587,
+     "Pluto": 98.690128,
+     "Ascendant": 45.696457
+    }
+   }
+  },
+  {
+   "name": "random 082",
+   "input": {
+    "date": "2027-07-03",
+    "time": "06:08",
+    "timezone": "Pacific/Kanton",
+    "latitude": -2.7833,
+    "longitude": -171.7167
+   },
+   "expected": {
+    "utc": "2027-07-02T17:08:00Z",
+    "longitudes": {
+     "Sun": 100.609074,
+     "Moon": 80.780184,
+     "Mercury": 87.644532,
+     "Venus": 89.54632,
+     "Mars": 173.017373,
+     "Jupiter": 145.438312,
+     "Saturn": 26.660434,
+     "Uranus": 67.80978,
+     "Neptune": 6.645411,
+     "Pluto": 306.549749,
+     "Ascendant": 94.218608
+    }
+   }
+  },
+  {
+   "name": "random 083",
+   "input": {
+    "date": "1903-07-05",
+    "time": "15:33",
+    "timezone": "Africa/El_Aaiun",
+    "latitude": 27.15,
+    "longitude": -13.2
+   },
+   "expected": {
+    "utc": "1903-07-05T16:25:48Z",
+    "longitudes": {
+     "Sun": 102.451214,
+     "Moon": 237.392773,
+     "Mercury": 82.327279,
+     "Venus": 147.876482,
+     "Mars": 193.045173,
+     "Jupiter": 353.190935,
+     "Saturn": 307.731784,
+     "Uranus": 262.860712,
+     "Neptune": 93.768338,
+     "Pluto": 79.730736,
+     "Ascendant": 237.489174
+    }
+   }
+  },
+  {
+   "name": "random 084",
+   "input": {
+    "date": "2000-04-30",
+    "time": "04:12",
+    "timezone": "Asia/Khandyga",
+    "latitude": 62.6564,
+    "longitude": 135.5539
+   },
+   "expected": {
+    "utc": "2000-04-29T18:12:00Z",
+    "longitudes": {
+     "Sun": 39.718475,
+     "Moon": 343.222401,
+     "Mercury": 29.199755,
+     "Venus": 28.326595,
+     "Mars": 57.152206,
+     "Jupiter": 45.874185,
+     "Saturn": 49.017815,
+     "Uranus": 320.557366,
+     "Neptune": 306.552487,
+     "Pluto": 252.371672
+    }
+   }
+  },
+  {
+   "name": "random 085",
+   "input": {
+    "date": "1904-12-25",
+    "time": "16:10",
+    "timezone": "Asia/Anadyr",
+    "latitude": 64.75,
+    "longitude": 177.4833
+   },
+   "expected": {
+    "utc": "1904-12-25T04:20:04Z",
+    "longitudes": {
+     "Sun": 272.975066,
+     "Moon": 124.263446,
+     "Mercury": 286.398019,
+     "Venus": 314.150136,
+     "Mars": 199.7359,
+     "Jupiter": 20.39256,
+     "Saturn": 317.870421,
+     "Uranus": 270.278629,
+     "Neptune": 96.88611,
+     "Pluto": 80.473286
+    }
+   }
+  },
+  {
+   "name": "random 086",
+   "input": {
+    "date": "1834-08-17",
+    "time": "01:40",
+    "timezone": "Europe/London",
+    "latitude": 51.5083,
+    "longitude": -0.1253
+   },
+   "expected": {
+    "utc": "1834-08-17T01:41:15Z",
+    "longitudes": {
+     "Sun": 143.624728,
+     "Moon": 297.247503,
+     "Mercury": 127.421811,
+     "Venus": 183.762195,
+     "Mars": 71.041202,
+     "Jupiter": 68.60719,
+     "Saturn": 187.873896,
+     "Uranus": 324.621136,
+     "Neptune": 299.566158,
+     "Pluto": 13.630261,
+     "Ascendant": 109.232143
+    }
+   }
+  },
+  {
+   "name": "random 087",
+   "input": {
+    "date": "1839-03-21",
+    "time": "18:38",
+    "timezone": "Europe/Athens",
+    "latitude": 37.9667,
+    "longitude": 23.7167
+   },
+   "expected": {
+    "utc": "1839-03-21T17:03:08Z",
+    "longitudes": {
+     "Sun": 0.415898,
+     "Moon": 83.898294,
+     "Mercury": 8.569221,
+     "Venus": 22.673803,
+     "Mars": 167.386126,
+     "Jupiter": 195.5352,
+     "Saturn": 250.331567,
+     "Uranus": 343.426822,
+     "Neptune": 311.825371,
+     "Pluto": 16.991782,
+     "Ascendant": 186.535543
+    }
+   }
+  },
+  {
+   "name": "random 088",
+   "input": {
+    "date": "1899-01-23",
+    "time": "22:00",
+    "timezone": "America/Regina",
+    "latitude": 50.4,
+    "longitude": -104.65
+   },
+   "expected": {
+    "utc": "1899-01-24T04:58:36Z",
+    "longitudes": {
+     "Sun": 304.040222,
+     "Moon": 95.907944,
+     "Mercury": 283.004227,
+     "Venus": 258.636349,
+     "Mars": 116.660988,
+     "Jupiter": 218.760094,
+     "Saturn": 260.110773,
+     "Uranus": 247.032534,
+     "Neptune": 82.367507,
+     "Pluto": 73.907366,
+     "Ascendant": 182.360679
+    }
+   }
+  },
+  {
+   "name": "random 089",
+   "input": {
+    "date": "1860-07-28",
+    "time": "23:07",
+    "timezone": "Asia/Thimphu",
+    "latitude": 27.4667,
+    "longitude": 89.65
+   },
+   "expected": {
+    "utc": "1860-07-28T17:08:24Z",
+    "longitudes": {
+     "Sun": 125.755848,
+     "Moon": 259.209877,
+     "Mercury": 144.880925,
+     "Venus": 111.050017,
+     "Mars": 292.084161,
+     "Jupiter": 126.316116,
+     "Saturn": 146.42436,
+     "Uranus": 70.982648,
+     "Neptune": 359.217251,
+     "Pluto": 39.476878,
+     "Ascendant": 31.939409
+    }
+   }
+  },
+  {
+   "name": "random 090",
+   "input": {
+    "date": "1948-12-25",
+    "time": "03:23",
+    "timezone": "Europe/Kaliningrad",
+    "latitude": 54.7167,
+    "longitude": 20.5
+   },
+   "expected": {
+    "utc": "1948-12-25T00:23:00Z",
+    "longitudes": {
+     "Sun": 273.134249,
+     "Moon": 206.399278,
+     "Mercury": 280.08271,
+     "Venus": 245.852647,
+     "Mars": 291.613771,
+     "Jupiter": 278.755295,
+     "Saturn": 156.145472,
+     "Uranus": 88.348773,
+     "Neptune": 195.032696,
+     "Pluto": 136.251833,
+     "Ascendant": 200.012759
+    }
+   }
+  },
+  {
+   "name": "random 091",
+   "input": {
+    "date": "1939-07-15",
+    "time": "03:12",
+    "timezone": "America/Martinique",
+    "latitude": 14.6,
+    "longitude": -61.0833
+   },
+   "expected": {
+    "utc": "1939-07-15T07:12:00Z",
+    "longitudes": {
+     "Sun": 111.909729,
+     "Moon": 89.961246,
+     "Mercury": 138.366828,
+     "Venus": 97.572343,
+     "Mars": 301.713398,
+     "Jupiter": 8.447517,
+     "Saturn": 30.514145,
+     "Uranus": 51.173274,
+     "Neptune": 171.037622,
+     "Pluto": 120.801276,
+     "Ascendant": 76.594874
+    }
+   }
+  },
+  {
+   "name": "random 092",
+   "input": {
+    "date": "1883-12-06",
+    "time": "00:53",
+    "timezone": "Pacific/Apia",
+    "latitude": -13.8333,
+    "longitude": -171.7333
+   },
+   "expected": {
+    "utc": "1883-12-05T12:19:56Z",
+    "longitudes": {
+     "Sun": 253.067507,
+     "Moon": 318.687325,
+     "Mercury": 258.188508,
+     "Venus": 272.035145,
+     "Mars": 140.050676,
+     "Jupiter": 124.219686,
+     "Saturn": 66.127411,
+     "Uranus": 177.772452,
+     "Neptune": 49.045954,
+     "Pluto": 59.989493,
+     "Ascendant": 176.591957
+    }
+   }
+  },
+  {
+   "name": "random 093",
+   "input": {
+    "date": "1949-06-25",
+    "time": "15:09",
+    "timezone": "Europe/Kirov",
+    "latitude": 58.6,
+    "longitude": 49.65
+   },
+   "expected": {
+    "utc": "1949-06-25T11:09:00Z",
+    "longitudes": {
+     "Sun": 93.542399,
+     "Moon": 81.822796,
+     "Mercury": 72.093865,
+     "Venus": 112.03779,
+     "Mars": 70.909106,
+     "Jupiter": 300.23976,
+     "Saturn": 151.815972,
+     "Uranus": 90.911983,
+     "Neptune": 192.396169,
+     "Pluto": 134.920734,
+     "Ascendant": 205.484283
+    }
+   }
+  },
+  {
+   "name": "random 094",
+   "input": {
+    "date": "2027-02-27",
+    "time": "18:36",
+    "timezone": "America/Campo_Grande",
+    "latitude": -20.45,
+    "longitude": -54.6167
+   },
+   "expected": {
+    "utc": "2027-02-27T22:36:00Z",
+    "longitudes": {
+     "Sun": 339.102423,
+     "Moon": 245.996774,
+     "Mercury": 321.653526,
+     "Venus": 298.421739,
+     "Mars": 147.538398,
+     "Jupiter": 139.874666,
+     "Saturn": 12.95621,
+     "Uranus": 61.849398,
+     "Neptune": 3.158583,
+     "Pluto": 306.126387,
+     "Ascendant": 169.520985
+    }
+   }
+  },
+  {
+   "name": "random 095",
+   "input": {
+    "date": "1901-06-18",
+    "time": "02:15",
+    "timezone": "America/Argentina/Ushuaia",
+    "latitude": -54.8,
+    "longitude": -68.3
+   },
+   "expected": {
+    "utc": "1901-06-18T06:31:48Z",
+    "longitudes": {
+     "Sun": 86.304227,
+     "Moon": 109.097933,
+     "Mercury": 110.819441,
+     "Venus": 99.244114,
+     "Mars": 166.298089,
+     "Jupiter": 279.736374,
+     "Saturn": 284.355279,
+     "Uranus": 254.41937,
+     "Neptune": 88.848309,
+     "Pluto": 77.393288,
+     "Ascendant": 17.153619
+    }
+   }
+  },
+  {
+   "name": "random 096",
+   "input": {
+    "date": "1876-09-04",
+    "time": "23:53",
+    "timezone": "Australia/Melbourne",
+    "latitude": -37.8167,
+    "longitude": 144.9667
+   },
+   "expected": {
+    "utc": "1876-09-04T14:13:08Z",
+    "longitudes": {
+     "Sun": 162.336065,
+     "Moon": 350.555974,
+     "Mercury": 185.613942,
+     "Venus": 117.851046,
+     "Mars": 154.913331,
+     "Jupiter": 235.32521,
+     "Saturn": 334.107384,
+     "Uranus": 141.729587,
+     "Neptune": 35.118362,
+     "Pluto": 54.56738,
+     "Ascendant": 58.313046
+    }
+   }
+  },
+  {
+   "name": "random 097",
+   "input": {
+    "date": "1813-08-04",
+    "time": "08:45",
+    "timezone": "America/Paramaribo",
+    "latitude": 5.8333,
+    "longitude": -55.1667
+   },
+   "expected": {
+    "utc": "1813-08-04T12:25:40Z",
+    "longitudes": {
+     "Sun": 131.644212,
+     "Moon": 225.442494,
+     "Mercury": 158.33776,
+     "Venus": 151.030205,
+     "Mars": 306.462876,
+     "Jupiter": 138.101843,
+     "Saturn": 284.172576,
+     "Uranus": 233.891486,
+     "Neptune": 252.906481,
+     "Pluto": 350.326472,
+     "Ascendant": 173.662769
+    }
+   }
+  },
+  {
+   "name": "random 098",
+   "input": {
+    "date": "1893-12-07",
+    "time": "23:05",
+    "timezone": "America/Cuiaba",
+    "latitude": -15.5833,
+    "longitude": -56.0833
+   },
+   "expected": {
+    "utc": "1893-12-08T02:49:20Z",
+    "longitudes": {
+     "Sun": 256.290205,
+     "Moon": 254.09743,
+     "Mercury": 237.033764,
+     "Venus": 303.54799,
+     "Mars": 223.839214,
+     "Jupiter": 53.82976,
+     "Saturn": 202.495127,
+     "Uranus": 223.14764,
+     "Neptune": 72.035254,
+     "Pluto": 69.682312,
+     "Ascendant": 147.665272
+    }
+   }
+  },
+  {
+   "name": "random 099",
+   "input": {
+    "date": "1869-05-25",
+    "time": "07:29",
+    "timezone": "Europe/Helsinki",
+    "latitude": 60.1667,
+    "longitude": 24.9667
+   },
+   "expected": {
+    "utc": "1869-05-25T05:49:11Z",
+    "longitudes": {
+     "Sun": 64.01027,
+     "Moon": 238.80299,
+     "Mercury": 86.573786,
+     "Venus": 68.261818,
+     "Mars": 151.176845,
+     "Jupiter": 36.199913,
+     "Saturn": 254.628043,
+     "Uranus": 105.055162,
+     "Neptune": 18.67941,
+     "Pluto": 46.917595
+    }
+   }
+  },
+  {
+   "name": "random 100",
+   "input": {
+    "date": "1801-03-02",
+    "time": "22:40",
+    "timezone": "Asia/Hovd",
+    "latitude": 48.0167,
+    "longitude": 91.65
+   },
+   "expected": {
+    "utc": "1801-03-02T16:33:24Z",
+    "longitudes": {
+     "Sun": 341.668943,
+     "Moon": 186.25594,
+     "Mercury": 354.920653,
+     "Venus": 27.238229,
+     "Mars": 66.402135,
+     "Jupiter": 114.949989,
+     "Saturn": 138.971912,
+     "Uranus": 180.648095,
+     "Neptune": 229.380659,
+     "Pluto": 334.225801,
+     "Ascendant": 216.567357
+    }
+   }
+  },
+  {
+   "name": "random 101",
+   "input": {
+    "date": "1890-11-08",
+    "time": "08:03",
+    "timezone": "Pacific/Guadalcanal",
+    "latitude": -9.5333,
+    "longitude": 160.2
+   },
+   "expected": {
+    "utc": "1890-11-07T21:23:12Z",
+    "longitudes": {
+     "Sun": 225.44587,
+     "Moon": 170.610071,
+     "Mercury": 219.879766,
+     "Venus": 259.033292,
+     "Mars": 301.024566,
+     "Jupiter": 304.90073,
+     "Saturn": 165.020599,
+     "Uranus": 208.218766,
+     "Neptune": 65.946418,
+     "Pluto": 67.289189,
+     "Ascendant": 262.803809
+    }
+   }
+  },
+  {
+   "name": "random 102",
+   "input": {
+    "date": "1970-07-19",
+    "time": "07:39",
+    "timezone": "Asia/Damascus",
+    "latitude": 33.5,
+    "longitude": 36.3
+   },
+   "expected": {
+    "utc": "1970-07-19T04:39:00Z",
+    "longitudes": {
+     "Sun": 116.104796,
+     "Moon": 301.199064,
+     "Mercury": 129.491362,
+     "Venus": 157.606776,
+     "Mars": 120.588414,
+     "Jupiter": 207.044918,
+     "Saturn": 50.70953,
+     "Uranus": 185.2449,
+     "Neptune": 238.247452,
+     "Pluto": 175.185247,
+     "Ascendant": 140.240771
+    }
+   }
+  },
+  {
+   "name": "random 103",
+   "input": {
+    "date": "1878-05-29",
+    "time": "17:25",
+    "timezone": "America/Fort_Nelson",
+    "latitude": 58.8,
+    "longitude": -122.7
+   },
+   "expected": {
+    "utc": "1878-05-30T01:35:47Z",
+    "longitudes": {
+     "Sun": 68.477049,
+     "Moon": 44.769075,
+     "Mercury": 44.847593,
+     "Venus": 24.477395,
+     "Mars": 104.953767,
+     "Jupiter": 307.134087,
+     "Saturn": 1.224089,
+     "Uranus": 145.653621,
+     "Neptune": 38.416089,
+     "Pluto": 55.308699,
+     "Ascendant": 216.990452
+    }
+   }
+  },
+  {
+   "name": "random 104",
+   "input": {
+    "date": "1928-12-20",
+    "time": "15:18",
+    "timezone": "Asia/Ashgabat",
+    "latitude": 37.95,
+    "longitude": 58.3833
+   },
+   "expected": {
+    "utc": "1928-12-20T11:18:00Z",
+    "longitudes": {
+     "Sun": 268.355322,
+     "Moon": 2.259642,
+     "Mercury": 269.450253,
+     "Venus": 310.040947,
+     "Mars": 89.902226,
+     "Jupiter": 30.480156,
+     "Saturn": 262.354994,
+     "Uranus": 3.494356,
+     "Neptune": 151.308992,
+     "Pluto": 107.687805,
+     "Ascendant": 66.316045
+    }
+   }
+  },
+  {
+   "name": "random 105",
+   "input": {
+    "date": "2011-12-15",
+    "time": "10:42",
+    "timezone": "America/Goose_Bay",
+    "latitude": 53.3333,
+    "longitude": -60.4167
+   },
+   "expected": {
+    "utc": "2011-12-15T14:42:00Z",
+    "longitudes": {
+     "Sun": 263.264626,
+     "Moon": 142.538813,
+     "Mercury": 244.048878,
+     "Venus": 293.636261,
+     "Mars": 165.139578,
+     "Jupiter": 30.550439,
+     "Saturn": 207.072319,
+     "Uranus": 0.653943,
+     "Neptune": 328.500244,
+     "Pluto": 276.739547,
+     "Ascendant": 303.514097
+    }
+   }
+  },
+  {
+   "name": "random 106",
+   "input": {
+    "date": "2002-08-05",
+    "time": "12:46",
+    "timezone": "Africa/Maputo",
+    "latitude": -25.9667,
+    "longitude": 32.5833
+   },
+   "expected": {
+    "utc": "2002-08-05T10:46:00Z",
+    "longitudes": {
+     "Sun": 132.847851,
+     "Moon": 89.302643,
+     "Mercury": 148.316362,
+     "Venus": 177.974934,
+     "Mars": 134.605109,
+     "Jupiter": 120.823909,
+     "Saturn": 85.327818,
+     "Uranus": 327.429185,
+     "Neptune": 309.491195,
+     "Pluto": 255.015294,
+     "Ascendant": 250.868381
+    }
+   }
+  },
+  {
+   "name": "random 107",
+   "input": {
+    "date": "2025-02-14",
+    "time": "10:00",
+    "timezone": "Antarctica/Macquarie",
+    "latitude": -54.5,
+    "longitude": 158.95
+   },
+   "expected": {
+    "utc": "2025-02-13T23:00:00Z",
+    "longitudes": {
+     "Sun": 325.49541,
+     "Moon": 161.346472,
+     "Mercury": 329.002503,
+     "Venus": 6.196259,
+     "Mars": 107.671128,
+     "Jupiter": 71.432788,
+     "Saturn": 348.886346,
+     "Uranus": 53.351458,
+     "Neptune": 358.368929,
+     "Pluto": 302.454398,
+     "Ascendant": 12.311963
+    }
+   }
+  },
+  {
+   "name": "random 108",
+   "input": {
+    "date": "1941-07-21",
+    "time": "19:23",
+    "timezone": "America/Tegucigalpa",
+    "latitude": 14.1,
+    "longitude": -87.2167
+   },
+   "expected": {
+    "utc": "1941-07-22T01:23:00Z",
+    "longitudes": {
+     "Sun": 118.843576,
+     "Moon": 92.146428,
+     "Mercury": 99.218682,
+     "Venus": 143.786617,
+     "Mars": 10.673256,
+     "Jupiter": 72.46024,
+     "Saturn": 56.372703,
+     "Uranus": 59.503091,
+     "Neptune": 175.464221,
+     "Pluto": 123.759558,
+     "Ascendant": 316.374458
+    }
+   }
+  },
+  {
+   "name": "random 109",
+   "input": {
+    "date": "1854-01-01",
+    "time": "23:56",
+    "timezone": "Australia/Melbourne",
+    "latitude": -37.8167,
+    "longitude": 144.9667
+   },
+   "expected": {
+    "utc": "1854-01-01T14:16:08Z",
+    "longitudes": {
+     "Sun": 280.921804,
+     "Moon": 313.594577,
+     "Mercury": 260.31144,
+     "Venus": 327.443941,
+     "Mars": 165.892287,
+     "Jupiter": 277.019389,
+     "Saturn": 55.432597,
+     "Uranus": 38.672837,
+     "Neptune": 341.391639,
+     "Pluto": 30.814647,
+     "Ascendant": 196.132582
+    }
+   }
+  },
+  {
+   "name": "random 110",
+   "input": {
+    "date": "1879-07-10",
+    "time": "06:21",
+    "timezone": "Asia/Riyadh",
+    "latitude": 24.6333,
+    "longitude": 46.7167
+   },
+   "expected": {
+    "utc": "1879-07-10T03:14:08Z",
+    "longitudes": {
+     "Sun": 107.457367,
+     "Moon": 3.704865,
+     "Mercury": 128.55144,
+     "Venus": 152.887743,
+     "Mars": 21.337859,
+     "Jupiter": 342.617891,
+     "Saturn": 15.495451,
+     "Uranus": 151.750492,
+     "Neptune": 41.714771,
+     "Pluto": 57.025039,
+     "Ascendant": 120.380034
+    }
+   }
+  },
+  {
+   "name": "random 111",
+   "input": {
+    "date": "1860-01-08",
+    "time": "10:38",
+    "timezone": "Pacific/Palau",
+    "latitude": 7.3333,
+    "longitude": 134.4833
+   },
+   "expected": {
+    "utc": "1860-01-08T01:40:04Z",
+    "longitudes": {
+     "Sun": 287.059496,
+     "Moon": 99.196596,
+     "Mercury": 264.515723,
+     "Venus": 311.956197,
+     "Mars": 225.775647,
+     "Jupiter": 110.645979,
+     "Saturn": 145.17303,
+     "Uranus": 64.194974,
+     "Neptune": 354.670851,
+     "Pluto": 36.600394,
+     "Ascendant": 355.784283
+    }
+   }
+  },
+  {
+   "name": "random 112",
+   "input": {
+    "date": "1919-03-26",
+    "time": "10:05",
+    "timezone": "Asia/Hebron",
+    "latitude": 31.5333,
+    "longitude": 35.095
+   },
+   "expected": {
+    "utc": "1919-03-26T08:05:00Z",
+    "longitudes": {
+     "Sun": 4.616417,
+     "Moon": 291.800735,
+     "Mercury": 21.60005,
+     "Venus": 33.502379,
+     "Mars": 15.019966,
+     "Jupiter": 96.654716,
+     "Saturn": 142.060904,
+     "Uranus": 329.721854,
+     "Neptune": 126.667527,
+     "Pluto": 94.557074,
+     "Ascendant": 84.884487
+    }
+   }
+  },
+  {
+   "name": "random 113",
+   "input": {
+    "date": "2043-10-13",
+    "time": "05:12",
+    "timezone": "America/Barbados",
+    "latitude": 13.1,
+    "longitude": -59.6167
+   },
+   "expected": {
+    "utc": "2043-10-13T09:12:00Z",
+    "longitudes": {
+     "Sun": 199.930664,
+     "Moon": 313.957115,
+     "Mercury": 198.657823,
+     "Venus": 217.80676,
+     "Mars": 137.979242,
+     "Jupiter": 267.921822,
+     "Saturn": 227.535262,
+     "Uranus": 141.243156,
+     "Neptune": 41.772141,
+     "Pluto": 329.246627,
+     "Ascendant": 190.101737
+    }
+   }
+  },
+  {
+   "name": "random 114",
+   "input": {
+    "date": "1981-03-17",
+    "time": "04:45",
+    "timezone": "Australia/Darwin",
+    "latitude": -12.4667,
+    "longitude": 130.8333
+   },
+   "expected": {
+    "utc": "1981-03-16T19:15:00Z",
+    "longitudes": {
+     "Sun": 356.115464,
+     "Moon": 131.972798,
+     "Mercury": 328.526442,
+     "Venus": 350.643532,
+     "Mars": 359.759766,
+     "Jupiter": 186.693924,
+     "Saturn": 187.240219,
+     "Uranus": 240.050543,
+     "Neptune": 264.827896,
+     "Pluto": 203.693274,
+     "Ascendant": 324.576326
+    }
+   }
+  },
+  {
+   "name": "random 115",
+   "input": {
+    "date": "1910-08-02",
+    "time": "16:45",
+    "timezone": "Asia/Hovd",
+    "latitude": 48.0167,
+    "longitude": 91.65
+   },
+   "expected": {
+    "utc": "1910-08-02T10:45:00Z",
+    "longitudes": {
+     "Sun": 129.242104,
+     "Moon": 92.687394,
+     "Mercury": 143.418273,
+     "Venus": 99.741459,
+     "Mars": 147.73346,
+     "Jupiter": 189.715817,
+     "Saturn": 36.328603,
+     "Uranus": 292.584638,
+     "Neptune": 109.829196,
+     "Pluto": 87.374682,
+     "Ascendant": 264.840172
+    }
+   }
+  },
+  {
+   "name": "random 116",
+   "input": {
+    "date": "1843-01-27",
+    "time": "05:32",
+    "timezone": "Asia/Nicosia",
+    "latitude": 35.1667,
+    "longitude": 33.3667
+   },
+   "expected": {
+    "utc": "1843-01-27T03:18:32Z",
+    "longitudes": {
+     "Sun": 306.601021,
+     "Moon": 267.530556,
+     "Mercury": 324.409378,
+     "Venus": 265.378393,
+     "Mars": 226.731997,
+     "Jupiter": 305.182485,
+     "Saturn": 289.060803,
+     "Uranus": 355.577348,
+     "Neptune": 318.497729,
+     "Pluto": 20.055603,
+     "Ascendant": 280.398348
+    }
+   }
+  },
+  {
+   "name": "random 117",
+   "input": {
+    "date": "1992-10-29",
+    "time": "03:55",
+    "timezone": "America/Mexico_City",
+    "latitude": 19.4,
+    "longitude": -99.15
+   },
+   "expected": {
+    "utc": "1992-10-29T09:55:00Z",
+    "longitudes": {
+     "Sun": 216.235607,
+     "Moon": 261.252287,
+     "Mercury": 239.676031,
+     "Venus": 251.742488,
+     "Mars": 112.108966,
+     "Jupiter": 183.876453,
+     "Saturn": 311.970373,
+     "Uranus": 284.603348,
+     "Neptune": 286.457812,
+     "Pluto": 232.206769,
+     "Ascendant": 177.71466
+    }
+   }
+  },
+  {
+   "name": "random 118",
+   "input": {
+    "date": "1875-08-14",
+    "time": "21:33",
+    "timezone": "America/New_York",
+    "latitude": 40.7142,
+    "longitude": -74.0064
+   },
+   "expected": {
+    "utc": "1875-08-15T02:29:02Z",
+    "longitudes": {
+     "Sun": 141.821799,
+     "Moon": 298.285406,
+     "Mercury": 134.319829,
+     "Venus": 131.215226,
+     "Mars": 264.17845,
+     "Jupiter": 206.209319,
+     "Saturn": 322.795065,
+     "Uranus": 136.000591,
+     "Neptune": 33.052913,
+     "Pluto": 53.635434,
+     "Ascendant": 27.630613
+    }
+   }
+  },
+  {
+   "name": "random 119",
+   "input": {
+    "date": "1877-10-06",
+    "time": "05:25",
+    "timezone": "Atlantic/Bermuda",
+    "latitude": 32.2833,
+    "longitude": -64.7667
+   },
+   "expected": {
+    "utc": "1877-10-06T09:44:18Z",
+    "longitudes": {
+     "Sun": 193.235042,
+     "Moon": 186.20612,
+     "Mercury": 177.761085,
+     "Venus": 232.099114,
+     "Mars": 338.500581,
+     "Jupiter": 267.024352,
+     "Saturn": 345.014284,
+     "Uranus": 147.933645,
+     "Neptune": 36.77277,
+     "Pluto": 55.239264,
+     "Ascendant": 185.530944
+    }
+   }
+  },
+  {
+   "name": "random 120",
+   "input": {
+    "date": "1999-12-04",
+    "time": "18:47",
+    "timezone": "Australia/Darwin",
+    "latitude": -12.4667,
+    "longitude": 130.8333
+   },
+   "expected": {
+    "utc": "1999-12-04T09:17:00Z",
+    "longitudes": {
+     "Sun": 251.76356,
+     "Moon": 212.884588,
+     "Mercury": 231.574707,
+     "Venus": 208.190801,
+     "Mars": 306.210809,
+     "Jupiter": 25.467299,
+     "Saturn": 41.613128,
+     "Uranus": 313.603371,
+     "Neptune": 302.303945,
+     "Pluto": 250.395486,
+     "Ascendant": 69.418003
+    }
+   }
+  },
+  {
+   "name": "random 121",
+   "input": {
+    "date": "1803-10-19",
+    "time": "03:41",
+    "timezone": "Antarctica/Macquarie",
+    "latitude": -54.5,
+    "longitude": 158.95
+   },
+   "expected": {
+    "utc": "1803-10-19T03:41:00Z",
+    "longitudes": {
+     "Sun": 204.812891,
+     "Moon": 242.437574,
+     "Mercury": 216.263743,
+     "Venus": 205.989345,
+     "Mars": 219.393262,
+     "Jupiter": 198.116701,
+     "Saturn": 177.752535,
+     "Uranus": 192.669008,
+     "Neptune": 232.461386,
+     "Pluto": 336.398891,
+     "Ascendant": 340.294092
+    }
+   }
+  },
+  {
+   "name": "random 122",
+   "input": {
+    "date": "1894-10-06",
+    "time": "17:08",
+    "timezone": "America/Fortaleza",
+    "latitude": -3.7167,
+    "longitude": -38.5
+   },
+   "expected": {
+    "utc": "1894-10-06T19:42:00Z",
+    "longitudes": {
+     "Sun": 193.536415,
+     "Moon": 283.847848,
+     "Mercury": 215.274369,
+     "Venus": 179.716362,
+     "Mars": 31.984146,
+     "Jupiter": 95.821456,
+     "Saturn": 206.265974,
+     "Uranus": 223.717171,
+     "Neptune": 75.72432,
+     "Pluto": 71.665125,
+     "Ascendant": 2.596438
+    }
+   }
+  },
+  {
+   "name": "random 123",
+   "input": {
+    "date": "1964-06-02",
+    "time": "16:20",
+    "timezone": "Asia/Hebron",
+    "latitude": 31.5333,
+    "longitude": 35.095
+   },
+   "expected": {
+    "utc": "1964-06-02T13:20:00Z",
+    "longitudes": {
+     "Sun": 72.013369,
+     "Moon": 331.221128,
+     "Mercury": 48.998607,
+     "Venus": 96.537009,
+     "Mars": 49.218278,
+     "Jupiter": 42.058426,
+     "Saturn": 334.907922,
+     "Uranus": 156.094355,
+     "Neptune": 225.778939,
+     "Pluto": 161.619339,
+     "Ascendant": 210.903699
+    }
+   }
+  },
+  {
+   "name": "random 124",
+   "input": {
+    "date": "2025-10-28",
+    "time": "08:15",
+    "timezone": "America/Martinique",
+    "latitude": 14.6,
+    "longitude": -61.0833
+   },
+   "expected": {
+    "utc": "2025-10-28T12:15:00Z",
+    "longitudes": {
+     "Sun": 215.334999,
+     "Moon": 291.908267,
+     "Mercury": 239.013648,
+     "Venus": 198.205221,
+     "Mars": 234.987563,
+     "Jupiter": 114.82381,
+     "Saturn": 355.963406,
+     "Uranus": 60.407974,
+     "Neptune": 359.864253,
+     "Pluto": 301.414072,
+     "Ascendant": 245.836888
+    }
+   }
+  },
+  {
+   "name": "random 125",
+   "input": {
+    "date": "1831-11-09",
+    "time": "15:04",
+    "timezone": "Asia/Qatar",
+    "latitude": 25.2833,
+    "longitude": 51.5333
+   },
+   "expected": {
+    "utc": "1831-11-09T11:37:52Z",
+    "longitudes": {
+     "Sun": 226.35699,
+     "Moon": 280.238914,
+     "Mercury": 224.004017,
+     "Venus": 188.742373,
+     "Mars": 211.057346,
+     "Jupiter": 314.060835,
+     "Saturn": 163.149557,
+     "Uranus": 310.73957,
+     "Neptune": 292.56244,
+     "Pluto": 8.986319,
+     "Ascendant": 5.337712
+    }
+   }
+  },
+  {
+   "name": "random 126",
+   "input": {
+    "date": "1911-03-06",
+    "time": "08:04",
+    "timezone": "Pacific/Galapagos",
+    "latitude": -0.9,
+    "longitude": -89.6
+   },
+   "expected": {
+    "utc": "1911-03-06T14:02:24Z",
+    "longitudes": {
+     "Sun": 344.891228,
+     "Moon": 56.857361,
+     "Mercury": 332.905587,
+     "Venus": 8.635419,
+     "Mars": 294.530597,
+     "Jupiter": 224.509602,
+     "Saturn": 33.132429,
+     "Uranus": 297.948552,
+     "Neptune": 108.930091,
+     "Pluto": 85.896575,
+     "Ascendant": 15.300927
+    }
+   }
+  },
+  {
+   "name": "random 127",
+   "input": {
+    "date": "2034-06-12",
+    "time": "07:48",
+    "timezone": "Asia/Ust-Nera",
+    "latitude": 64.5603,
+    "longitude": 143.2267
+   },
+   "expected": {
+    "utc": "2034-06-11T21:48:00Z",
+    "longitudes": {
+     "Sun": 81.045774,
+     "Moon": 18.237691,
+     "Mercury": 84.898234,
+     "Venus": 118.739208,
+     "Mars": 102.57799,
+     "Jupiter": 9.830129,
+     "Saturn": 110.441316,
+     "Uranus": 95.324631,
+     "Neptune": 21.855058,
+     "Pluto": 318.184434
+    }
+   }
+  },
+  {
+   "name": "random 128",
+   "input": {
+    "date": "2018-05-03",
+    "time": "05:25",
+    "timezone": "Asia/Dhaka",
+    "latitude": 23.7167,
+    "longitude": 90.4167
+   },
+   "expected": {
+    "utc": "2018-05-02T23:25:00Z",
+    "longitudes": {
+     "Sun": 42.495969,
+     "Moon": 256.543108,
+     "Mercury": 15.876003,
+     "Venus": 70.049663,
+     "Mars": 294.351344,
+     "Jupiter": 229.124337,
+     "Saturn": 278.969494,
+     "Uranus": 29.304617,
+     "Neptune": 345.905564,
+     "Pluto": 291.258874,
+     "Ascendant": 41.872088
+    }
+   }
+  },
+  {
+   "name": "random 129",
+   "input": {
+    "date": "1989-03-07",
+    "time": "15:12",
+    "timezone": "America/Miquelon",
+    "latitude": 47.05,
+    "longitude": -56.3333
+   },
+   "expected": {
+    "utc": "1989-03-07T18:12:00Z",
+    "longitudes": {
+     "Sun": 347.153945,
+     "Moon": 347.088377,
+     "Mercury": 325.446421,
+     "Venus": 340.05102,
+     "Mars": 57.807261,
+     "Jupiter": 59.519839,
+     "Saturn": 282.230372,
+     "Uranus": 274.878138,
+     "Neptune": 282.004719,
+     "Pluto": 225.079206,
+     "Ascendant": 129.82575
+    }
+   }
+  },
+  {
+   "name": "random 130",
+   "input": {
+    "date": "1965-05-04",
+    "time": "16:22",
+    "timezone": "Europe/Gibraltar",
+    "latitude": 36.1333,
+    "longitude": -5.35
+   },
+   "expected": {
+    "utc": "1965-05-04T15:22:00Z",
+    "longitudes": {
+     "Sun": 43.937159,
+     "Moon": 85.635253,
+     "Mercury": 17.609489,
+     "Venus": 49.800475,
+     "Mars": 159.976864,
+     "Jupiter": 62.705914,
+     "Saturn": 344.87363,
+     "Uranus": 160.781253,
+     "Neptune": 228.7731,
+     "Pluto": 163.786386,
+     "Ascendant": 177.887958
+    }
+   }
+  },
+  {
+   "name": "random 131",
+   "input": {
+    "date": "1975-12-14",
+    "time": "17:14",
+    "timezone": "Australia/Darwin",
+    "latitude": -12.4667,
+    "longitude": 130.8333
+   },
+   "expected": {
+    "utc": "1975-12-14T07:44:00Z",
+    "longitudes": {
+     "Sun": 261.689159,
+     "Moon": 32.050269,
+     "Mercury": 270.234123,
+     "Venus": 218.450971,
+     "Mars": 83.461705,
+     "Jupiter": 14.771787,
+     "Saturn": 122.183475,
+     "Uranus": 215.63136,
+     "Neptune": 251.88928,
+     "Pluto": 191.426563,
+     "Ascendant": 56.999739
+    }
+   }
+  },
+  {
+   "name": "random 132",
+   "input": {
+    "date": "1886-03-11",
+    "time": "11:09",
+    "timezone": "Asia/Manila",
+    "latitude": 14.5867,
+    "longitude": 120.9678
+   },
+   "expected": {
+    "utc": "1886-03-11T03:05:08Z",
+    "longitudes": {
+     "Sun": 350.493128,
+     "Moon": 50.342506,
+     "Mercury": 3.609808,
+     "Venus": 322.272803,
+     "Mars": 164.07488,
+     "Jupiter": 182.455458,
+     "Saturn": 91.497799,
+     "Uranus": 186.334832,
+     "Neptune": 53.171924,
+     "Pluto": 61.259559,
+     "Ascendant": 73.516563
+    }
+   }
+  },
+  {
+   "name": "random 133",
+   "input": {
+    "date": "2036-11-24",
+    "time": "13:49",
+    "timezone": "Pacific/Pago_Pago",
+    "latitude": -14.2667,
+    "longitude": -170.7
+   },
+   "expected": {
+    "utc": "2036-11-25T00:49:00Z",
+    "longitudes": {
+     "Sun": 243.330443,
+     "Moon": 323.601418,
+     "Mercury": 261.387148,
+     "Venus": 215.572631,
+     "Mars": 222.420785,
+     "Jupiter": 83.461137,
+     "Saturn": 152.58448,
+     "Uranus": 109.200582,
+     "Neptune": 24.492577,
+     "Pluto": 319.103398,
+     "Ascendant": 356.174997
+    }
+   }
+  },
+  {
+   "name": "random 134",
+   "input": {
+    "date": "1946-10-12",
+    "time": "22:42",
+    "timezone": "America/Maceio",
+    "latitude": -9.6667,
+    "longitude": -35.7167
+   },
+   "expected": {
+    "utc": "1946-10-13T01:42:00Z",
+    "longitudes": {
+     "Sun": 199.119955,
+     "Moon": 49.0892,
+     "Mercury": 217.652582,
+     "Venus": 238.485929,
+     "Mars": 222.568439,
+     "Jupiter": 213.701425,
+     "Saturn": 127.542017,
+     "Uranus": 81.700474,
+     "Neptune": 188.765329,
+     "Pluto": 133.121886,
+     "Ascendant": 96.054118
+    }
+   }
+  },
+  {
+   "name": "random 135",
+   "input": {
+    "date": "1984-11-06",
+    "time": "16:27",
+    "timezone": "Europe/Lisbon",
+    "latitude": 38.7167,
+    "longitude": -9.1333
+   },
+   "expected": {
+    "utc": "1984-11-06T16:27:00Z",
+    "longitudes": {
+     "Sun": 224.443659,
+     "Moon": 21.813904,
+     "Mercury": 240.262891,
+     "Venus": 261.176126,
+     "Mars": 293.251445,
+     "Jupiter": 279.811328,
+     "Saturn": 228.519176,
+     "Uranus": 252.064282,
+     "Neptune": 269.534721,
+     "Pluto": 212.566823,
+     "Ascendant": 22.450284
+    }
+   }
+  },
+  {
+   "name": "random 136",
+   "input": {
+    "date": "1873-01-30",
+    "time": "10:38",
+    "timezone": "Asia/Tokyo",
+    "latitude": 35.6544,
+    "longitude": 139.7447
+   },
+   "expected": {
+    "utc": "1873-01-30T01:19:01Z",
+    "longitudes": {
+     "Sun": 310.285424,
+     "Moon": 329.290186,
+     "Mercury": 295.027083,
+     "Venus": 355.288012,
+     "Mars": 213.187141,
+     "Jupiter": 148.565802,
+     "Saturn": 295.558286,
+     "Uranus": 123.56026,
+     "Neptune": 23.720979,
+     "Pluto": 48.861332,
+     "Ascendant": 29.009462
+    }
+   }
+  },
+  {
+   "name": "random 137",
+   "input": {
+    "date": "1880-10-29",
+    "time": "09:59",
+    "timezone": "Europe/Madrid",
+    "latitude": 40.4,
+    "longitude": -3.6833
+   },
+   "expected": {
+    "utc": "1880-10-29T10:13:44Z",
+    "longitudes": {
+     "Sun": 216.392741,
+     "Moon": 162.132098,
+     "Mercury": 239.193787,
+     "Venus": 244.516221,
+     "Mars": 215.246964,
+     "Jupiter": 11.723969,
+     "Saturn": 24.632974,
+     "Uranus": 162.642824,
+     "Neptune": 43.091958,
+     "Pluto": 57.759112,
+     "Ascendant": 257.856915
+    }
+   }
+  },
+  {
+   "name": "random 138",
+   "input": {
+    "date": "1892-05-05",
+    "time": "15:05",
+    "timezone": "Asia/Bangkok",
+    "latitude": 13.75,
+    "longitude": 100.5167
+   },
+   "expected": {
+    "utc": "1892-05-05T08:22:56Z",
+    "longitudes": {
+     "Sun": 45.272344,
+     "Moon": 153.016428,
+     "Mercury": 24.250482,
+     "Venus": 90.655664,
+     "Mars": 299.222125,
+     "Jupiter": 11.64012,
+     "Saturn": 173.665862,
+     "Uranus": 213.571468,
+     "Neptune": 67.85671,
+     "Pluto": 67.793741,
+     "Ascendant": 179.920226
+    }
+   }
+  },
+  {
+   "name": "random 139",
+   "input": {
+    "date": "1953-11-30",
+    "time": "18:41",
+    "timezone": "America/Argentina/Ushuaia",
+    "latitude": -54.8,
+    "longitude": -68.3
+   },
+   "expected": {
+    "utc": "1953-11-30T21:41:00Z",
+    "longitudes": {
+     "Sun": 248.405351,
+     "Moon": 186.212836,
+     "Mercury": 228.225089,
+     "Venus": 233.994593,
+     "Mars": 198.09292,
+     "Jupiter": 83.108845,
+     "Saturn": 214.584811,
+     "Uranus": 112.648928,
+     "Neptune": 205.165809,
+     "Pluto": 145.015725,
+     "Ascendant": 37.859649
+    }
+   }
+  },
+  {
+   "name": "random 140",
+   "input": {
+    "date": "2026-06-24",
+    "time": "07:09",
+    "timezone": "Pacific/Guam",
+    "latitude": 13.4667,
+    "longitude": 144.75
+   },
+   "expected": {
+    "utc": "2026-06-23T21:09:00Z",
+    "longitudes": {
+     "Sun": 92.414897,
+     "Moon": 205.131299,
+     "Mercury": 114.951001,
+     "Venus": 132.069568,
+     "Mars": 56.469488,
+     "Jupiter": 118.651393,
+     "Saturn": 13.841637,
+     "Uranus": 63.341016,
+     "Neptune": 4.368025,
+     "Pluto": 305.013698,
+     "Ascendant": 108.14732
+    }
+   }
+  },
+  {
+   "name": "random 141",
+   "input": {
+    "date": "2020-05-30",
+    "time": "06:49",
+    "timezone": "America/Noronha",
+    "latitude": -3.85,
+    "longitude": -32.4167
+   },
+   "expected": {
+    "utc": "2020-05-30T08:49:00Z",
+    "longitudes": {
+     "Sun": 69.406774,
+     "Moon": 162.309569,
+     "Mercury": 92.120045,
+     "Venus": 76.289043,
+     "Mars": 341.612981,
+     "Jupiter": 296.849088,
+     "Saturn": 301.661449,
+     "Uranus": 38.476353,
+     "Neptune": 350.806849,
+     "Pluto": 294.715591,
+     "Ascendant": 77.609176
+    }
+   }
+  },
+  {
+   "name": "random 142",
+   "input": {
+    "date": "1974-06-16",
+    "time": "22:37",
+    "timezone": "Asia/Bangkok",
+    "latitude": 13.75,
+    "longitude": 100.5167
+   },
+   "expected": {
+    "utc": "1974-06-16T15:37:00Z",
+    "longitudes": {
+     "Sun": 85.105672,
+     "Moon": 37.75998,
+     "Mercury": 103.582671,
+     "Venus": 49.01647,
+     "Mars": 124.657979,
+     "Jupiter": 347.163644,
+     "Saturn": 96.531203,
+     "Uranus": 203.761154,
+     "Neptune": 247.780262,
+     "Pluto": 184.06461,
+     "Ascendant": 323.551426
+    }
+   }
+  },
+  {
+   "name": "random 143",
+   "input": {
+    "date": "2048-03-29",
+    "time": "21:51",
+    "timezone": "Europe/Moscow",
+    "latitude": 55.7558,
+    "longitude": 37.6178
+   },
+   "expected": {
+    "utc": "2048-03-29T18:51:00Z",
+    "longitudes": {
+     "Sun": 9.756571,
+     "Moon": 185.704723,
+     "Mercury": 0.979445,
+     "Venus": 354.106272,
+     "Mars": 254.99884,
+     "Jupiter": 54.850412,
+     "Saturn": 285.455056,
+     "Uranus": 157.873815,
+     "Neptune": 49.807355,
+     "Pluto": 337.165452,
+     "Ascendant": 218.533656
+    }
+   }
+  },
+  {
+   "name": "random 144",
+   "input": {
+    "date": "1874-06-13",
+    "time": "06:11",
+    "timezone": "Europe/Athens",
+    "latitude": 37.9667,
+    "longitude": 23.7167
+   },
+   "expected": {
+    "utc": "1874-06-13T04:36:08Z",
+    "longitudes": {
+     "Sun": 81.944148,
+     "Moon": 67.419997,
+     "Mercury": 102.069007,
+     "Venus": 109.746214,
+     "Mars": 88.441851,
+     "Jupiter": 172.7626,
+     "Saturn": 314.01212,
+     "Uranus": 127.962701,
+     "Neptune": 30.121966,
+     "Pluto": 51.923565,
+     "Ascendant": 102.247621
+    }
+   }
+  },
+  {
+   "name": "random 145",
+   "input": {
+    "date": "2006-08-26",
+    "time": "21:58",
+    "timezone": "America/La_Paz",
+    "latitude": -16.5,
+    "longitude": -68.15
+   },
+   "expected": {
+    "utc": "2006-08-27T01:58:00Z",
+    "longitudes": {
+     "Sun": 153.681697,
+     "Moon": 189.291568,
+     "Mercury": 148.544768,
+     "Venus": 137.449175,
+     "Mars": 172.234798,
+     "Jupiter": 222.712005,
+     "Saturn": 137.341987,
+     "Uranus": 343.119842,
+     "Neptune": 317.990966,
+     "Pluto": 264.097108,
+     "Ascendant": 25.439389
+    }
+   }
+  },
+  {
+   "name": "random 146",
+   "input": {
+    "date": "1845-09-08",
+    "time": "20:56",
+    "timezone": "Africa/Johannesburg",
+    "latitude": -26.25,
+    "longitude": 28.0
+   },
+   "expected": {
+    "utc": "1845-09-08T19:04:00Z",
+    "longitudes": {
+     "Sun": 165.936465,
+     "Moon": 250.342355,
+     "Mercury": 172.276593,
+     "Venus": 196.629705,
+     "Mars": 321.004264,
+     "Jupiter": 40.697582,
+     "Saturn": 313.462884,
+     "Uranus": 9.137261,
+     "Neptune": 323.952365,
+     "Pluto": 24.618598,
+     "Ascendant": 28.276624
+    }
+   }
+  },
+  {
+   "name": "random 147",
+   "input": {
+    "date": "2025-05-24",
+    "time": "15:41",
+    "timezone": "Antarctica/Troll",
+    "latitude": -72.0114,
+    "longitude": 2.535
+   },
+   "expected": {
+    "utc": "2025-05-24T13:41:00Z",
+    "longitudes": {
+     "Sun": 63.637731,
+     "Moon": 27.544321,
+     "Mercury": 56.856136,
+     "Venus": 17.99936,
+     "Mars": 137.152393,
+     "Jupiter": 86.349222,
+     "Saturn": 359.956077,
+     "Uranus": 57.680152,
+     "Neptune": 1.71896,
+     "Pluto": 303.725627
+    }
+   }
+  },
+  {
+   "name": "random 148",
+   "input": {
+    "date": "1829-10-14",
+    "time": "16:26",
+    "timezone": "America/Vancouver",
+    "latitude": 49.2667,
+    "longitude": -123.1167
+   },
+   "expected": {
+    "utc": "1829-10-15T00:38:28Z",
+    "longitudes": {
+     "Sun": 201.396611,
+     "Moon": 54.524253,
+     "Mercury": 223.794513,
+     "Venus": 239.14575,
+     "Mars": 182.154858,
+     "Jupiter": 252.767194,
+     "Saturn": 136.326894,
+     "Uranus": 302.465194,
+     "Neptune": 287.874349,
+     "Pluto": 7.257163,
+     "Ascendant": 359.524409
+    }
+   }
+  },
+  {
+   "name": "random 149",
+   "input": {
+    "date": "1887-06-28",
+    "time": "14:50",
+    "timezone": "America/Metlakatla",
+    "latitude": 55.1269,
+    "longitude": -131.5764
+   },
+   "expected": {
+    "utc": "1887-06-28T23:36:18Z",
+    "longitudes": {
+     "Sun": 96.881262,
+     "Moon": 194.376814,
+     "Mercury": 122.574236,
+     "Venus": 141.717568,
+     "Mars": 80.816794,
+     "Jupiter": 206.026902,
+     "Saturn": 113.527798,
+     "Uranus": 188.430801,
+     "Neptune": 58.970432,
+     "Pluto": 64.28997,
+     "Ascendant": 212.918838
+    }
+   }
+  },
+  {
+   "name": "random 150",
+   "input": {
+    "date": "2050-10-29",
+    "time": "09:42",
+    "timezone": "America/Los_Angeles",
+    "latitude": 34.0522,
+    "longitude": -118.2428
+   },
+   "expected": {
+    "utc": "2050-10-29T16:42:00Z",
+    "longitudes": {
+     "Sun": 216.45841,
+     "Moon": 30.424416,
+     "Mercury": 230.551679,
+     "Venus": 197.051551,
+     "Mars": 328.97813,
+     "Jupiter": 151.730376,
+     "Saturn": 302.719677,
+     "Uranus": 173.847617,
+     "Neptune": 57.524981,
+     "Pluto": 338.578244,
+     "Ascendant": 246.900917
+    }
+   }
+  },
+  {
+   "name": "random 151",
+   "input": {
+    "date": "1943-11-20",
+    "time": "07:22",
+    "timezone": "America/Resolute",
+    "latitude": 74.6956,
+    "longitude": -94.8292
+   },
+   "expected": {
+    "utc": "1943-11-20T07:22:00Z",
+    "longitudes": {
+     "Sun": 237.095914,
+     "Moon": 150.990256,
+     "Mercury": 242.716968,
+     "Venus": 190.494246,
+     "Mars": 78.413005,
+     "Jupiter": 146.172859,
+     "Saturn": 85.130956,
+     "Uranus": 67.22729,
+     "Neptune": 183.635643,
+     "Pluto": 128.72943
+    }
+   }
+  },
+  {
+   "name": "random 152",
+   "input": {
+    "date": "1858-07-07",
+    "time": "17:51",
+    "timezone": "Pacific/Pago_Pago",
+    "latitude": -14.2667,
+    "longitude": -170.7
+   },
+   "expected": {
+    "utc": "1858-07-07T05:13:48Z",
+    "longitudes": {
+     "Sun": 104.737125,
+     "Moon": 52.960265,
+     "Mercury": 102.84867,
+     "Venus": 137.343037,
+     "Mars": 227.182486,
+     "Jupiter": 69.614227,
+     "Saturn": 119.64313,
+     "Uranus": 61.864129,
+     "Neptune": 354.902671,
+     "Pluto": 37.418305,
+     "Ascendant": 287.191791
+    }
+   }
+  },
+  {
+   "name": "random 153",
+   "input": {
+    "date": "1891-01-01",
+    "time": "07:43",
+    "timezone": "Asia/Makassar",
+    "latitude": -5.1167,
+    "longitude": 119.4
+   },
+   "expected": {
+    "utc": "1890-12-31T23:45:24Z",
+    "longitudes": {
+     "Sun": 280.316602,
+     "Moon": 163.610593,
+     "Mercury": 299.270676,
+     "Venus": 245.438948,
+     "Mars": 341.184872,
+     "Jupiter": 314.486858,
+     "Saturn": 167.169901,
+     "Uranus": 210.856705,
+     "Neptune": 64.505091,
+     "Pluto": 66.312914,
+     "Ascendant": 305.488712
+    }
+   }
+  },
+  {
+   "name": "random 154",
+   "input": {
+    "date": "2033-08-16",
+    "time": "21:27",
+    "timezone": "Europe/Sofia",
+    "latitude": 42.6833,
+    "longitude": 23.3167
+   },
+   "expected": {
+    "utc": "2033-08-16T18:27:00Z",
+    "longitudes": {
+     "Sun": 144.201467,
+     "Moon": 45.94835,
+     "Mercury": 140.312432,
+     "Venus": 109.987009,
+     "Mars": 271.362835,
+     "Jupiter": 333.46117,
+     "Saturn": 106.401604,
+     "Uranus": 94.802783,
+     "Neptune": 19.962634,
+     "Pluto": 315.380136,
+     "Ascendant": 351.903664
+    }
+   }
+  },
+  {
+   "name": "random 155",
+   "input": {
+    "date": "1899-07-11",
+    "time": "04:09",
+    "timezone": "Asia/Ust-Nera",
+    "latitude": 64.5603,
+    "longitude": 143.2267
+   },
+   "expected": {
+    "utc": "1899-07-10T18:36:06Z",
+    "longitudes": {
+     "Sun": 108.228495,
+     "Moon": 140.12005,
+     "Mercury": 132.209812,
+     "Venus": 89.954432,
+     "Mars": 164.105159,
+     "Jupiter": 210.575478,
+     "Saturn": 258.392326,
+     "Uranus": 244.438377,
+     "Neptune": 85.391453,
+     "Pluto": 75.954795
+    }
+   }
+  },
+  {
+   "name": "random 156",
+   "input": {
+    "date": "1863-02-12",
+    "time": "05:57",
+    "timezone": "America/Mazatlan",
+    "latitude": 23.2167,
+    "longitude": -106.4167
+   },
+   "expected": {
+    "utc": "1863-02-12T13:02:40Z",
+    "longitudes": {
+     "Sun": 323.372096,
+     "Moon": 247.545009,
+     "Mercury": 318.65586,
+     "Venus": 338.545724,
+     "Mars": 45.455539,
+     "Jupiter": 207.358653,
+     "Saturn": 184.813392,
+     "Uranus": 76.696906,
+     "Neptune": 2.109565,
+     "Pluto": 39.497478,
+     "Ascendant": 311.125237
+    }
+   }
+  },
+  {
+   "name": "random 157",
+   "input": {
+    "date": "1980-01-08",
+    "time": "23:20",
+    "timezone": "America/North_Dakota/New_Salem",
+    "latitude": 46.845,
+    "longitude": -101.4108
+   },
+   "expected": {
+    "utc": "1980-01-09T06:20:00Z",
+    "longitudes": {
+     "Sun": 288.13579,
+     "Moon": 184.775507,
+     "Mercury": 280.780616,
+     "Venus": 321.564083,
+     "Mars": 165.044665,
+     "Jupiter": 159.945077,
+     "Saturn": 177.014541,
+     "Uranus": 234.42377,
+     "Neptune": 261.215542,
+     "Pluto": 201.703988,
+     "Ascendant": 188.60208
+    }
+   }
+  },
+  {
+   "name": "random 158",
+   "input": {
+    "date": "2032-07-19",
+    "time": "13:26",
+    "timezone": "America/Noronha",
+    "latitude": -3.85,
+    "longitude": -32.4167
+   },
+   "expected": {
+    "utc": "2032-07-19T15:26:00Z",
+    "longitudes": {
+     "Sun": 117.509383,
+     "Moon": 254.483469,
+     "Mercury": 124.20184,
+     "Venus": 130.461179,
+     "Mars": 114.971178,
+     "Jupiter": 297.199387,
+     "Saturn": 90.68027,
+     "Uranus": 89.225568,
+     "Neptune": 17.872234,
+     "Pluto": 314.410865,
+     "Ascendant": 230.746078
+    }
+   }
+  },
+  {
+   "name": "random 159",
+   "input": {
+    "date": "2002-03-06",
+    "time": "11:24",
+    "timezone": "Australia/Adelaide",
+    "latitude": -34.9167,
+    "longitude": 138.5833
+   },
+   "expected": {
+    "utc": "2002-03-06T00:54:00Z",
+    "longitudes": {
+     "Sun": 345.268804,
+     "Moon": 255.012011,
+     "Mercury": 321.345583,
+     "Venus": 357.468238,
+     "Mars": 33.119947,
+     "Jupiter": 95.655478,
+     "Saturn": 68.659868,
+     "Uranus": 325.978692,
+     "Neptune": 309.77728,
+     "Pluto": 257.56756,
+     "Ascendant": 37.905454
+    }
+   }
+  },
+  {
+   "name": "random 160",
+   "input": {
+    "date": "1842-02-06",
+    "time": "16:25",
+    "timezone": "America/Iqaluit",
+    "latitude": 63.7333,
+    "longitude": -68.4667
+   },
+   "expected": {
+    "utc": "1842-02-06T16:25:00Z",
+    "longitudes": {
+     "Sun": 317.548045,
+     "Moon": 276.263594,
+     "Mercury": 331.977516,
+     "Venus": 310.971416,
+     "Mars": 354.08525,
+     "Jupiter": 281.340069,
+     "Saturn": 280.11407,
+     "Uranus": 352.285026,
+     "Neptune": 316.76913,
+     "Pluto": 19.175066
+    }
+   }
+  },
+  {
+   "name": "random 161",
+   "input": {
+    "date": "1854-11-09",
+    "time": "02:56",
+    "timezone": "Asia/Barnaul",
+    "latitude": 53.3667,
+    "longitude": 83.75
+   },
+   "expected": {
+    "utc": "1854-11-08T21:21:00Z",
+    "longitudes": {
+     "Sun": 226.180643,
+     "Moon": 92.20946,
+     "Mercury": 245.230763,
+     "Venus": 217.699327,
+     "Mars": 261.280309,
+     "Jupiter": 292.351436,
+     "Saturn": 74.382953,
+     "Uranus": 44.602221,
+     "Neptune": 343.238932,
+     "Pluto": 32.481498,
+     "Ascendant": 181.192341
+    }
+   }
+  },
+  {
+   "name": "random 162",
+   "input": {
+    "date": "1929-10-27",
+    "time": "22:07",
+    "timezone": "America/Scoresbysund",
+    "latitude": 70.4833,
+    "longitude": -21.9667
+   },
+   "expected": {
+    "utc": "1929-10-28T00:07:00Z",
+    "longitudes": {
+     "Sun": 214.091283,
+     "Moon": 158.645569,
+     "Mercury": 196.654121,
+     "Venus": 189.637686,
+     "Mars": 224.765912,
+     "Jupiter": 75.558996,
+     "Saturn": 266.653257,
+     "Uranus": 8.430272,
+     "Neptune": 153.154032,
+     "Pluto": 109.620613
+    }
+   }
+  },
+  {
+   "name": "random 163",
+   "input": {
+    "date": "1923-11-19",
+    "time": "00:42",
+    "timezone": "America/Santiago",
+    "latitude": -33.45,
+    "longitude": -70.6667
+   },
+   "expected": {
+    "utc": "1923-11-19T05:24:45Z",
+    "longitudes": {
+     "Sun": 235.856464,
+     "Moon": 8.979924,
+     "Mercury": 237.701491,
+     "Venus": 253.739681,
+     "Mars": 200.473132,
+     "Jupiter": 238.775118,
+     "Saturn": 206.933284,
+     "Uranus": 343.643402,
+     "Neptune": 140.385007,
+     "Pluto": 102.13264,
+     "Ascendant": 147.130011
+    }
+   }
+  },
+  {
+   "name": "random 164",
+   "input": {
+    "date": "1907-03-15",
+    "time": "07:28",
+    "timezone": "America/Vancouver",
+    "latitude": 49.2667,
+    "longitude": -123.1167
+   },
+   "expected": {
+    "utc": "1907-03-15T15:28:00Z",
+    "longitudes": {
+     "Sun": 353.905241,
+     "Moon": 11.204454,
+     "Mercury": 358.929806,
+     "Venus": 309.913343,
+     "Mars": 261.364326,
+     "Jupiter": 91.509055,
+     "Saturn": 348.435497,
+     "Uranus": 282.243645,
+     "Neptune": 99.852458,
+     "Pluto": 81.74999,
+     "Ascendant": 23.448923
+    }
+   }
+  },
+  {
+   "name": "random 165",
+   "input": {
+    "date": "1947-11-26",
+    "time": "19:47",
+    "timezone": "America/Guatemala",
+    "latitude": 14.6333,
+    "longitude": -90.5167
+   },
+   "expected": {
+    "utc": "1947-11-27T01:47:00Z",
+    "longitudes": {
+     "Sun": 243.967213,
+     "Moon": 46.977879,
+     "Mercury": 225.092933,
+     "Venus": 265.504501,
+     "Mars": 148.36571,
+     "Jupiter": 247.38997,
+     "Saturn": 142.624867,
+     "Uranus": 84.963169,
+     "Neptune": 192.331532,
+     "Pluto": 134.930647,
+     "Ascendant": 97.176111
+    }
+   }
+  },
+  {
+   "name": "random 166",
+   "input": {
+    "date": "1807-08-14",
+    "time": "04:53",
+    "timezone": "Africa/Cairo",
+    "latitude": 30.05,
+    "longitude": 31.25
+   },
+   "expected": {
+    "utc": "1807-08-14T02:47:51Z",
+    "longitudes": {
+     "Sun": 140.340072,
+     "Moon": 273.502425,
+     "Mercury": 147.174405,
+     "Venus": 185.92999,
+     "Mars": 203.210839,
+     "Jupiter": 305.502755,
+     "Saturn": 214.853341,
+     "Uranus": 206.934921,
+     "Neptune": 239.73493,
+     "Pluto": 342.788169,
+     "Ascendant": 132.568651
+    }
+   }
+  },
+  {
+   "name": "random 167",
+   "input": {
+    "date": "1955-11-29",
+    "time": "06:52",
+    "timezone": "America/Indiana/Tell_City",
+    "latitude": 37.9531,
+    "longitude": -86.7614
+   },
+   "expected": {
+    "utc": "1955-11-29T12:52:00Z",
+    "longitudes": {
+     "Sun": 246.526943,
+     "Moon": 64.199394,
+     "Mercury": 243.701522,
+     "Venus": 269.23038,
+     "Mars": 210.305448,
+     "Jupiter": 150.948084,
+     "Saturn": 235.298231,
+     "Uranus": 122.135202,
+     "Neptune": 209.33377,
+     "Pluto": 148.612108,
+     "Ascendant": 247.678296
+    }
+   }
+  },
+  {
+   "name": "random 168",
+   "input": {
+    "date": "1921-12-22",
+    "time": "13:16",
+    "timezone": "America/Whitehorse",
+    "latitude": 60.7167,
+    "longitude": -135.05
+   },
+   "expected": {
+    "utc": "1921-12-22T22:16:00Z",
+    "longitudes": {
+     "Sun": 270.557915,
+     "Moon": 194.599651,
+     "Mercury": 267.861414,
+     "Venus": 258.980867,
+     "Mars": 207.904392,
+     "Jupiter": 196.245113,
+     "Saturn": 187.032126,
+     "Uranus": 336.302448,
+     "Neptune": 135.655913,
+     "Pluto": 99.176365
+    }
+   }
+  },
+  {
+   "name": "random 169",
+   "input": {
+    "date": "1893-07-09",
+    "time": "07:47",
+    "timezone": "Antarctica/Vostok",
+    "latitude": -78.4,
+    "longitude": 106.9
+   },
+   "expected": {
+    "utc": "1893-07-09T07:47:00Z",
+    "longitudes": {
+     "Sun": 107.26259,
+     "Moon": 48.736735,
+     "Mercury": 133.643687,
+     "Venus": 125.56951,
+     "Mars": 125.799529,
+     "Jupiter": 53.900126,
+     "Saturn": 186.82408,
+     "Uranus": 216.641621,
+     "Neptune": 72.353291,
+     "Pluto": 70.156771
+    }
+   }
+  },
+  {
+   "name": "random 170",
+   "input": {
+    "date": "1912-02-08",
+    "time": "04:56",
+    "timezone": "Asia/Anadyr",
+    "latitude": 64.75,
+    "longitude": 177.4833
+   },
+   "expected": {
+    "utc": "1912-02-07T17:06:04Z",
+    "longitudes": {
+     "Sun": 317.583624,
+     "Moon": 200.3237,
+     "Mercury": 300.934274,
+     "Venus": 280.602935,
+     "Mars": 62.69539,
+     "Jupiter": 251.204489,
+     "Saturn": 43.79304,
+     "Uranus": 300.447778,
+     "Neptune": 111.729808,
+     "Pluto": 87.145036
+    }
+   }
+  },
+  {
+   "name": "random 171",
+   "input": {
+    "date": "1824-05-07",
+    "time": "09:23",
+    "timezone": "Europe/Gibraltar",
+    "latitude": 36.1333,
+    "longitude": -5.35
+   },
+   "expected": {
+    "utc": "1824-05-07T09:44:24Z",
+    "longitudes": {
+     "Sun": 46.731923,
+     "Moon": 152.985769,
+     "Mercury": 67.974756,
+     "Venus": 24.430185,
+     "Mars": 174.491811,
+     "Jupiter": 98.257616,
+     "Saturn": 55.834593,
+     "Uranus": 285.672889,
+     "Neptune": 279.447835,
+     "Pluto": 2.620694,
+     "Ascendant": 111.183679
+    }
+   }
+  },
+  {
+   "name": "random 172",
+   "input": {
+    "date": "1930-10-19",
+    "time": "23:58",
+    "timezone": "Pacific/Kiritimati",
+    "latitude": 1.8667,
+    "longitude": -157.3333
+   },
+   "expected": {
+    "utc": "1930-10-20T10:38:00Z",
+    "longitudes": {
+     "Sun": 206.315756,
+     "Moon": 186.630204,
+     "Mercury": 194.532682,
+     "Venus": 244.458789,
+     "Mars": 119.918311,
+     "Jupiter": 109.946994,
+     "Saturn": 276.567186,
+     "Uranus": 12.861504,
+     "Neptune": 155.118621,
+     "Pluto": 110.889899,
+     "Ascendant": 118.890153
+    }
+   }
+  },
+  {
+   "name": "random 173",
+   "input": {
+    "date": "1803-10-16",
+    "time": "02:41",
+    "timezone": "Antarctica/Vostok",
+    "latitude": -78.4,
+    "longitude": 106.9
+   },
+   "expected": {
+    "utc": "1803-10-16T02:41:00Z",
+    "longitudes": {
+     "Sun": 201.788674,
+     "Moon": 206.094976,
+     "Mercury": 218.294559,
+     "Venus": 202.180398,
+     "Mars": 217.289168,
+     "Jupiter": 197.457663,
+     "Saturn": 177.398041,
+     "Uranus": 192.479432,
+     "Neptune": 232.358851,
+     "Pluto": 336.43885
+    }
+   }
+  },
+  {
+   "name": "random 174",
+   "input": {
+    "date": "1972-02-18",
+    "time": "16:36",
+    "timezone": "Asia/Novosibirsk",
+    "latitude": 55.0333,
+    "longitude": 82.9167
+   },
+   "expected": {
+    "utc": "1972-02-18T09:36:00Z",
+    "longitudes": {
+     "Sun": 328.840179,
+     "Moon": 14.477002,
+     "Mercury": 329.749984,
+     "Venus": 9.461787,
+     "Mars": 35.160199,
+     "Jupiter": 272.079679,
+     "Saturn": 59.882612,
+     "Uranus": 198.013868,
+     "Neptune": 245.166844,
+     "Pluto": 181.522987,
+     "Ascendant": 129.436888
+    }
+   }
+  },
+  {
+   "name": "random 175",
+   "input": {
+    "date": "1810-02-05",
+    "time": "00:42",
+    "timezone": "Pacific/Rarotonga",
+    "latitude": -21.2333,
+    "longitude": -159.7667
+   },
+   "expected": {
+    "utc": "1810-02-04T11:21:04Z",
+    "longitudes": {
+     "Sun": 315.064854,
+     "Moon": 320.267591,
+     "Mercury": 332.551795,
+     "Venus": 305.494819,
+     "Mars": 348.442125,
+     "Jupiter": 19.91114,
+     "Saturn": 253.38132,
+     "Uranus": 224.204336,
+     "Neptune": 248.693043,
+     "Pluto": 344.616834,
+     "Ascendant": 245.057597
+    }
+   }
+  },
+  {
+   "name": "random 176",
+   "input": {
+    "date": "1904-07-08",
+    "time": "17:07",
+    "timezone": "America/Sao_Paulo",
+    "latitude": -23.5333,
+    "longitude": -46.6167
+   },
+   "expected": {
+    "utc": "1904-07-08T20:13:28Z",
+    "longitudes": {
+     "Sun": 106.179674,
+     "Moon": 49.417802,
+     "Mercury": 104.806915,
+     "Venus": 106.317971,
+     "Mars": 95.515825,
+     "Jupiter": 27.415924,
+     "Saturn": 319.899487,
+     "Uranus": 267.20444,
+     "Neptune": 96.059562,
+     "Pluto": 80.804531,
+     "Ascendant": 282.581101
+    }
+   }
+  },
+  {
+   "name": "random 177",
+   "input": {
+    "date": "1920-05-06",
+    "time": "06:12",
+    "timezone": "Europe/Dublin",
+    "latitude": 53.3333,
+    "longitude": -6.25
+   },
+   "expected": {
+    "utc": "1920-05-06T05:12:00Z",
+    "longitudes": {
+     "Sun": 45.363184,
+     "Moon": 259.920816,
+     "Mercury": 25.209358,
+     "Venus": 29.605698,
+     "Mars": 205.592149,
+     "Jupiter": 129.659801,
+     "Saturn": 154.814806,
+     "Uranus": 335.18437,
+     "Neptune": 128.821514,
+     "Pluto": 96.085992,
+     "Ascendant": 55.726303
+    }
+   }
+  },
+  {
+   "name": "random 178",
+   "input": {
+    "date": "1870-03-17",
+    "time": "04:40",
+    "timezone": "Africa/Johannesburg",
+    "latitude": -26.25,
+    "longitude": 28.0
+   },
+   "expected": {
+    "utc": "1870-03-17T02:48:00Z",
+    "longitudes": {
+     "Sun": 356.329355,
+     "Moon": 169.816366,
+     "Mercury": 333.792367,
+     "Venus": 326.991326,
+     "Mars": 355.396953,
+     "Jupiter": 48.48262,
+     "Saturn": 268.172557,
+     "Uranus": 107.920514,
+     "Neptune": 18.387989,
+     "Pluto": 46.404673,
+     "Ascendant": 337.185674
+    }
+   }
+  },
+  {
+   "name": "random 179",
+   "input": {
+    "date": "1939-02-05",
+    "time": "06:57",
+    "timezone": "Asia/Samarkand",
+    "latitude": 39.6667,
+    "longitude": 66.8
+   },
+   "expected": {
+    "utc": "1939-02-05T01:57:00Z",
+    "longitudes": {
+     "Sun": 315.370628,
+     "Moon": 146.132983,
+     "Mercury": 305.369749,
+     "Venus": 268.62868,
+     "Mars": 244.05619,
+     "Jupiter": 338.004351,
+     "Saturn": 13.594638,
+     "Uranus": 43.914988,
+     "Neptune": 172.886992,
+     "Pluto": 120.052461,
+     "Ascendant": 300.570578
+    }
+   }
+  },
+  {
+   "name": "random 180",
+   "input": {
+    "date": "1909-07-27",
+    "time": "00:36",
+    "timezone": "America/Cancun",
+    "latitude": 21.0833,
+    "longitude": -86.7667
+   },
+   "expected": {
+    "utc": "1909-07-27T06:23:04Z",
+    "longitudes": {
+     "Sun": 123.557587,
+     "Moon": 233.454979,
+     "Mercury": 114.275428,
+     "Venus": 147.549709,
+     "Mars": 2.091017,
+     "Jupiter": 163.96298,
+     "Saturn": 23.155292,
+     "Uranus": 288.494219,
+     "Neptune": 107.470012,
+     "Pluto": 86.23109,
+     "Ascendant": 53.130836
+    }
+   }
+  },
+  {
+   "name": "random 181",
+   "input": {
+    "date": "2033-09-21",
+    "time": "17:30",
+    "timezone": "America/St_Johns",
+    "latitude": 47.5667,
+    "longitude": -52.7167
+   },
+   "expected": {
+    "utc": "2033-09-21T20:00:00Z",
+    "longitudes": {
+     "Sun": 179.14966,
+     "Moon": 160.179976,
+     "Mercury": 201.984802,
+     "Venus": 153.458573,
+     "Mars": 284.981914,
+     "Jupiter": 329.055213,
+     "Saturn": 109.782188,
+     "Uranus": 95.929525,
+     "Neptune": 19.239468,
+     "Pluto": 314.683932,
+     "Ascendant": 318.458916
+    }
+   }
+  },
+  {
+   "name": "random 182",
+   "input": {
+    "date": "1814-09-12",
+    "time": "17:53",
+    "timezone": "Europe/Kirov",
+    "latitude": 58.6,
+    "longitude": 49.65
+   },
+   "expected": {
+    "utc": "1814-09-12T14:34:12Z",
+    "longitudes": {
+     "Sun": 169.155821,
+     "Moon": 151.025633,
+     "Mercury": 160.944336,
+     "Venus": 143.191313,
+     "Mars": 165.723399,
+     "Jupiter": 170.297696,
+     "Saturn": 294.362057,
+     "Uranus": 238.955689,
+     "Neptune": 255.042327,
+     "Pluto": 350.806044,
+     "Ascendant": 322.911949
+    }
+   }
+  },
+  {
+   "name": "random 183",
+   "input": {
+    "date": "2038-07-02",
+    "time": "14:44",
+    "timezone": "Asia/Kathmandu",
+    "latitude": 27.7167,
+    "longitude": 85.3167
+   },
+   "expected": {
+    "utc": "2038-07-02T08:59:00Z",
+    "longitudes": {
+     "Sun": 100.606232,
+     "Moon": 98.357841,
+     "Mercury": 126.114969,
+     "Venus": 72.385127,
+     "Mars": 140.46014,
+     "Jupiter": 124.031903,
+     "Saturn": 161.615063,
+     "Uranus": 113.561069,
+     "Neptune": 31.084867,
+     "Pluto": 323.953338,
+     "Ascendant": 224.295693
+    }
+   }
+  },
+  {
+   "name": "random 184",
+   "input": {
+    "date": "2012-09-30",
+    "time": "08:54",
+    "timezone": "America/Maceio",
+    "latitude": -9.6667,
+    "longitude": -35.7167
+   },
+   "expected": {
+    "utc": "2012-09-30T11:54:00Z",
+    "longitudes": {
+     "Sun": 187.724927,
+     "Moon": 11.834342,
+     "Mercury": 202.471457,
+     "Venus": 146.760816,
+     "Mars": 235.33441,
+     "Jupiter": 76.354176,
+     "Saturn": 209.375853,
+     "Uranus": 6.504071,
+     "Neptune": 330.817536,
+     "Pluto": 276.991666,
+     "Ascendant": 248.057236
+    }
+   }
+  },
+  {
+   "name": "random 185",
+   "input": {
+    "date": "1844-08-21",
+    "time": "13:44",
+    "timezone": "America/Denver",
+    "latitude": 39.7392,
+    "longitude": -104.9842
+   },
+   "expected": {
+    "utc": "1844-08-21T20:43:56Z",
+    "longitudes": {
+     "Sun": 148.812528,
+     "Moon": 248.940438,
+     "Mercury": 173.437231,
+     "Venus": 113.598833,
+     "Mars": 143.241615,
+     "Jupiter": 2.630651,
+     "Saturn": 302.17189,
+     "Uranus": 5.599794,
+     "Neptune": 322.133298,
+     "Pluto": 23.823882,
+     "Ascendant": 248.616332
+    }
+   }
+  },
+  {
+   "name": "random 186",
+   "input": {
+    "date": "1805-07-06",
+    "time": "15:13",
+    "timezone": "America/Sitka",
+    "latitude": 57.1764,
+    "longitude": -135.3019
+   },
+   "expected": {
+    "utc": "1805-07-06T00:14:13Z",
+    "longitudes": {
+     "Sun": 103.405588,
+     "Moon": 219.191086,
+     "Mercury": 93.366886,
+     "Venus": 114.156111,
+     "Mars": 165.35053,
+     "Jupiter": 236.979473,
+     "Saturn": 189.868274,
+     "Uranus": 196.886235,
+     "Neptune": 235.637699,
+     "Pluto": 340.816629,
+     "Ascendant": 219.979911
+    }
+   }
+  },
+  {
+   "name": "random 187",
+   "input": {
+    "date": "1813-10-30",
+    "time": "21:00",
+    "timezone": "Asia/Dubai",
+    "latitude": 25.3,
+    "longitude": 55.3
+   },
+   "expected": {
+    "utc": "1813-10-30T17:18:48Z",
+    "longitudes": {
+     "Sun": 216.924194,
+     "Moon": 287.684211,
+     "Mercury": 229.694261,
+     "Venus": 256.826519,
+     "Mars": 322.053841,
+     "Jupiter": 155.487404,
+     "Saturn": 284.232375,
+     "Uranus": 236.931276,
+     "Neptune": 253.926096,
+     "Pluto": 348.749902,
+     "Ascendant": 94.966972
+    }
+   }
+  },
+  {
+   "name": "random 188",
+   "input": {
+    "date": "1842-03-29",
+    "time": "23:24",
+    "timezone": "Asia/Macau",
+    "latitude": 22.1972,
+    "longitude": 113.5417
+   },
+   "expected": {
+    "utc": "1842-03-29T15:49:50Z",
+    "longitudes": {
+     "Sun": 8.556073,
+     "Moon": 229.798523,
+     "Mercury": 340.809055,
+     "Venus": 14.59617,
+     "Mars": 32.30424,
+     "Jupiter": 290.007292,
+     "Saturn": 283.905647,
+     "Uranus": 355.097145,
+     "Neptune": 318.513044,
+     "Pluto": 20.142184,
+     "Ascendant": 258.664667
+    }
+   }
+  },
+  {
+   "name": "random 189",
+   "input": {
+    "date": "2004-02-11",
+    "time": "01:44",
+    "timezone": "Europe/Moscow",
+    "latitude": 55.7558,
+    "longitude": 37.6178
+   },
+   "expected": {
+    "utc": "2004-02-10T22:44:00Z",
+    "longitudes": {
+     "Sun": 321.532564,
+     "Moon": 197.846907,
+     "Mercury": 305.760653,
+     "Venus": 2.673092,
+     "Mars": 34.78955,
+     "Jupiter": 166.704588,
+     "Saturn": 96.893116,
+     "Uranus": 332.145589,
+     "Neptune": 313.19201,
+     "Pluto": 261.745766,
+     "Ascendant": 225.615634
+    }
+   }
+  },
+  {
+   "name": "random 190",
+   "input": {
+    "date": "1838-02-15",
+    "time": "22:29",
+    "timezone": "Asia/Yerevan",
+    "latitude": 40.1833,
+    "longitude": 44.5
+   },
+   "expected": {
+    "utc": "1838-02-15T19:31:00Z",
+    "longitudes": {
+     "Sun": 326.734474,
+     "Moon": 214.628712,
+     "Mercury": 300.728425,
+     "Venus": 352.166557,
+     "Mars": 328.5518,
+     "Jupiter": 166.001987,
+     "Saturn": 238.453519,
+     "Uranus": 337.779152,
+     "Neptune": 308.589751,
+     "Pluto": 15.310438,
+     "Ascendant": 205.913527
+    }
+   }
+  },
+  {
+   "name": "random 191",
+   "input": {
+    "date": "1958-08-03",
+    "time": "02:08",
+    "timezone": "Asia/Gaza",
+    "latitude": 31.5,
+    "longitude": 34.4667
+   },
+   "expected": {
+    "utc": "1958-08-02T23:08:00Z",
+    "longitudes": {
+     "Sun": 130.125745,
+     "Moon": 347.909385,
+     "Mercury": 155.780383,
+     "Venus": 104.116038,
+     "Mars": 37.768641,
+     "Jupiter": 204.58796,
+     "Saturn": 259.448656,
+     "Uranus": 131.859221,
+     "Neptune": 212.110015,
+     "Pluto": 151.282049,
+     "Ascendant": 78.537463
+    }
+   }
+  },
+  {
+   "name": "random 192",
+   "input": {
+    "date": "1931-11-16",
+    "time": "13:50",
+    "timezone": "Asia/Bishkek",
+    "latitude": 42.9,
+    "longitude": 74.6
+   },
+   "expected": {
+    "utc": "1931-11-16T07:50:00Z",
+    "longitudes": {
+     "Sun": 232.995478,
+     "Moon": 314.324946,
+     "Mercury": 249.105909,
+     "Venus": 250.784335,
+     "Mars": 252.216912,
+     "Jupiter": 141.763106,
+     "Saturn": 289.067547,
+     "Uranus": 16.06499,
+     "Neptune": 157.811395,
+     "Pluto": 112.056476,
+     "Ascendant": 319.818306
+    }
+   }
+  },
+  {
+   "name": "random 193",
+   "input": {
+    "date": "1831-08-28",
+    "time": "08:19",
+    "timezone": "Asia/Jerusalem",
+    "latitude": 31.7806,
+    "longitude": 35.2239
+   },
+   "expected": {
+    "utc": "1831-08-28T05:58:06Z",
+    "longitudes": {
+     "Sun": 154.142899,
+     "Moon": 35.120845,
+     "Mercury": 181.044343,
+     "Venus": 195.520652,
+     "Mars": 163.172975,
+     "Jupiter": 315.196441,
+     "Saturn": 155.027303,
+     "Uranus": 311.669049,
+     "Neptune": 292.57922,
+     "Pluto": 10.302088,
+     "Ascendant": 188.981402
+    }
+   }
+  },
+  {
+   "name": "random 194",
+   "input": {
+    "date": "1907-03-30",
+    "time": "13:13",
+    "timezone": "Asia/Dushanbe",
+    "latitude": 38.5833,
+    "longitude": 68.8
+   },
+   "expected": {
+    "utc": "1907-03-30T08:37:48Z",
+    "longitudes": {
+     "Sun": 8.499758,
+     "Moon": 195.410497,
+     "Mercury": 348.793492,
+     "Venus": 326.854779,
+     "Mars": 268.832535,
+     "Jupiter": 92.659172,
+     "Saturn": 350.2197,
+     "Uranus": 282.565862,
+     "Neptune": 99.859769,
+     "Pluto": 81.836472,
+     "Ascendant": 127.755806
+    }
+   }
+  },
+  {
+   "name": "random 195",
+   "input": {
+    "date": "1934-12-01",
+    "time": "00:58",
+    "timezone": "Atlantic/Madeira",
+    "latitude": 32.6333,
+    "longitude": -16.9
+   },
+   "expected": {
+    "utc": "1934-12-01T01:58:00Z",
+    "longitudes": {
+     "Sun": 248.191474,
+     "Moon": 178.622886,
+     "Mercury": 232.192952,
+     "Venus": 251.155103,
+     "Mars": 174.698482,
+     "Jupiter": 220.960156,
+     "Saturn": 322.554644,
+     "Uranus": 28.039576,
+     "Neptune": 164.507148,
+     "Pluto": 115.840857,
+     "Ascendant": 173.043846
+    }
+   }
+  },
+  {
+   "name": "random 196",
+   "input": {
+    "date": "1850-02-06",
+    "time": "05:06",
+    "timezone": "Asia/Irkutsk",
+    "latitude": 52.2667,
+    "longitude": 104.3333
+   },
+   "expected": {
+    "utc": "1850-02-05T22:08:55Z",
+    "longitudes": {
+     "Sun": 316.82504,
+     "Moon": 247.734693,
+     "Mercury": 320.353243,
+     "Venus": 310.683655,
+     "Mars": 78.877279,
+     "Jupiter": 171.752653,
+     "Saturn": 4.563546,
+     "Uranus": 22.88773,
+     "Neptune": 333.838095,
+     "Pluto": 27.025544,
+     "Ascendant": 268.322924
+    }
+   }
+  },
+  {
+   "name": "random 197",
+   "input": {
+    "date": "2018-02-20",
+    "time": "01:43",
+    "timezone": "America/Havana",
+    "latitude": 23.1333,
+    "longitude": -82.3667
+   },
+   "expected": {
+    "utc": "2018-02-20T06:43:00Z",
+    "longitudes": {
+     "Sun": 331.572493,
+     "Moon": 23.100579,
+     "Mercury": 333.844311,
+     "Venus": 341.650751,
+     "Mars": 255.05195,
+     "Jupiter": 232.779273,
+     "Saturn": 276.631388,
+     "Uranus": 25.558562,
+     "Neptune": 343.468837,
+     "Pluto": 290.393264,
+     "Ascendant": 250.231136
+    }
+   }
+  },
+  {
+   "name": "random 198",
+   "input": {
+    "date": "1941-06-08",
+    "time": "17:19",
+    "timezone": "America/Rio_Branco",
+    "latitude": -9.9667,
+    "longitude": -67.8
+   },
+   "expected": {
+    "utc": "1941-06-08T22:19:00Z",
+    "longitudes": {
+     "Sun": 77.695691,
+     "Moon": 249.359592,
+     "Mercury": 101.215924,
+     "Venus": 91.145506,
+     "Mars": 345.672732,
+     "Jupiter": 63.130077,
+     "Saturn": 51.910962,
+     "Uranus": 57.472175,
+     "Neptune": 174.910534,
+     "Pluto": 122.651456,
+     "Ascendant": 259.08359
+    }
+   }
+  },
+  {
+   "name": "random 199",
+   "input": {
+    "date": "1996-05-14",
+    "time": "05:43",
+    "timezone": "Antarctica/Casey",
+    "latitude": -66.2833,
+    "longitude": 110.5167
+   },
+   "expected": {
+    "utc": "1996-05-13T21:43:00Z",
+    "longitudes": {
+     "Sun": 53.388003,
+     "Moon": 10.438446,
+     "Mercury": 55.164639,
+     "Venus": 87.539316,
+     "Mars": 38.330581,
+     "Jupiter": 287.520717,
+     "Saturn": 4.001891,
+     "Uranus": 304.573281,
+     "Neptune": 297.697226,
+     "Pluto": 241.978319
+    }
+   }
+  },
+  {
+   "name": "random 200",
+   "input": {
+    "date": "1952-01-28",
+    "time": "15:11",
+    "timezone": "Europe/Dublin",
+    "latitude": 53.3333,
+    "longitude": -6.25
+   },
+   "expected": {
+    "utc": "1952-01-28T15:11:00Z",
+    "longitudes": {
+     "Sun": 307.652727,
+     "Moon": 331.503619,
+     "Mercury": 291.605839,
+     "Venus": 271.177943,
+     "Mars": 213.840506,
+     "Jupiter": 9.788123,
+     "Saturn": 194.964792,
+     "Uranus": 100.912205,
+     "Neptune": 201.70476,
+     "Pluto": 140.641161,
+     "Ascendant": 109.615091
+    }
+   }
+  }
+ ]
+}

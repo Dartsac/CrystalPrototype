@@ -121,9 +121,26 @@ final class ChartBuildingTest extends TestCase {
 		];
 	}
 
+	public static function impossibleBirthDates(): array {
+		return [
+			'30 February'                => ['2000-02-30'],
+			'29 February, not leap year' => ['2001-02-29'],
+			'month 13'                   => ['2000-13-01'],
+			'31 April'                   => ['2000-04-31'],
+			'day 0'                      => ['2000-04-00'],
+		];
+	}
+
 	#[DataProvider('malformedBirthDates')]
-	public function testAMalformedBirthDateGivesNoChart(string $birthDate): void {
+	#[DataProvider('impossibleBirthDates')]
+	public function testAMalformedOrImpossibleBirthDateGivesNoChart(string $birthDate): void {
 		$this->assertNull(astroBuildChart($birthDate, '12:00', self::LONDON_LAT, self::LONDON_LNG, 'Europe/London'));
+	}
+
+	public function testALeapDayGivesAChart(): void {
+		$chart = astroBuildChart('2000-02-29', '12:00', self::LONDON_LAT, self::LONDON_LNG, 'Europe/London');
+
+		$this->assertEquals(self::utc('2000-02-29 12:00'), $chart['momentUtc']);
 	}
 
 	public static function malformedBirthTimes(): array {
@@ -135,8 +152,18 @@ final class ChartBuildingTest extends TestCase {
 		];
 	}
 
+	public static function impossibleBirthTimes(): array {
+		return [
+			'hour 25'   => ['25:00'],
+			'minute 75' => ['12:75'],
+			'second 60' => ['12:30:60'],
+			'24:00'     => ['24:00'],
+		];
+	}
+
 	#[DataProvider('malformedBirthTimes')]
-	public function testAMalformedBirthTimeIsTreatedAsUnknown(string $birthTime): void {
+	#[DataProvider('impossibleBirthTimes')]
+	public function testAMalformedOrImpossibleBirthTimeIsTreatedAsUnknown(string $birthTime): void {
 		$unknownTime = astroBuildChart('2000-03-20', null, self::LONDON_LAT, self::LONDON_LNG, 'Europe/London');
 		$chart = astroBuildChart('2000-03-20', $birthTime, self::LONDON_LAT, self::LONDON_LNG, 'Europe/London');
 
@@ -170,6 +197,10 @@ final class ChartBuildingTest extends TestCase {
 			// Sydney is on daylight saving time (UTC+11) in January.
 			'southern summer time' => ['2000-01-01', '00:00', 'Australia/Sydney', '1999-12-31 13:00:00'],
 			'with seconds'         => ['2000-07-04', '12:34:56', 'UTC', '2000-07-04 12:34:56'],
+			'first minute of day'  => ['2000-07-04', '00:00', 'UTC', '2000-07-04 00:00:00'],
+			'last minute of day'   => ['2000-07-04', '23:59', 'UTC', '2000-07-04 23:59:00'],
+			'last second of day'   => ['2000-07-04', '23:59:59', 'UTC', '2000-07-04 23:59:59'],
+			'single-digit hour'    => ['2000-07-04', '7:05', 'UTC', '2000-07-04 07:05:00'],
 		];
 	}
 

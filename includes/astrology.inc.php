@@ -376,6 +376,10 @@ function astroFirstOccurrence(DateTimeImmutable $local): DateTimeImmutable {
  * $lat/$lng   birth place coordinates, or null when unknown
  * $timezone   IANA zone of the birth place (e.g. 'America/New_York'), or null
  *
+ * A birth date that is malformed or not a real date gives no chart. A birth
+ * time that is malformed or not a real clock time (00:00 to 23:59:59) is
+ * treated as unknown, as is an unrecognised time zone.
+ *
  * A birth time skipped when the clocks go forward moves forward by the gap;
  * one repeated when they go back is read as its first occurrence.
  *
@@ -384,9 +388,10 @@ function astroFirstOccurrence(DateTimeImmutable $local): DateTimeImmutable {
  * window is flagged as 'uncertain'. The Ascendant needs both time and place.
  */
 function astroBuildChart(string $birthDate, ?string $birthTime, ?float $lat, ?float $lng, ?string $timezone): ?array {
-	if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $birthDate)) return null;
+	if (!preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $birthDate, $date)) return null;
+	if (!checkdate((int) $date[2], (int) $date[3], (int) $date[1])) return null;
 
-	$timeKnown = $birthTime !== null && preg_match('/^\d{1,2}:\d{2}(:\d{2})?$/', $birthTime) === 1;
+	$timeKnown = $birthTime !== null && preg_match('/^([01]?\d|2[0-3]):[0-5]\d(:[0-5]\d)?$/', $birthTime) === 1;
 	$zone = null;
 	if ($timezone !== null && $timezone !== '') {
 		try {
